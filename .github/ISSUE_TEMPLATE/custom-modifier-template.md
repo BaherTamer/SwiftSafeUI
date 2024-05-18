@@ -6,7 +6,10 @@ labels: new modifier
 assignees: BaherTamer
 
 ---
+### Description
+A clear and concise description of what the modifier does.
 
+### Code
 ``` swift
 //
 //  FileName.swift
@@ -19,4 +22,11 @@ assignees: BaherTamer
 import SwiftUI
 
 // Add your SwiftUI code and please don't forget to document it.
+```
+
+### Example Usage
+``` swift
+import SwiftUI
+
+// Example usage code here
 ```
