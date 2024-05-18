@@ -1,8 +1,8 @@
 ---
 name: Custom Modifier Template
 about: This template is used for adding a new custom modifier to the wiki.
-title: "[New Modifier] Add Your Modifier Name"
-labels: ''
+title: "[Modifier] Add Your Modifier Name"
+labels: new modifier
 assignees: BaherTamer
 
 ---
