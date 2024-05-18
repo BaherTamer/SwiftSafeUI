@@ -1,8 +1,5 @@
-# Contributing to SwiftUIDeprecationModifiers
-
+# How to Contribute
 Thank you for considering contributing to SwiftUIDeprecationModifiers! To ensure that the project remains organized and high-quality, please follow these guidelines when contributing.
-
-## How to Contribute
 
 ### Adding Custom Modifiers
 1. Create an issue: Use the template to propose your custom modifier. Provide the following information:
