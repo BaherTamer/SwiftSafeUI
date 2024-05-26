@@ -31,3 +31,13 @@ dependencies: [
     .package(url: "https://github.com/BaherTamer/SwiftSafeUI.git", from: "1.0.0")
 ]
 ```
+
+<br/>
+
+## 🧑‍💻 Contributing
+Contributions to SwiftSafeUI are welcome! If you encounter any issues, have feature requests, or would like to contribute enhancements, please submit a pull request or open an issue.
+
+<br/>
+
+## ⚖️ License
+SwiftSafeUI is available under the MIT license. See the [LICENSE](LICENSE) file for more details.
