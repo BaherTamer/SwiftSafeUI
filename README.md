@@ -6,7 +6,7 @@ SwiftSafeUI is a SwiftUI package designed to handle deprecation issues and maint
 <br/>
 
 ## 📝 Requirements
-- iOS 14.0+
+- iOS 13.0+
 
 <br/>
 
