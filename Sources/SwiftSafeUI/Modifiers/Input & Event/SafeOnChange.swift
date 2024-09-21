@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+@available(iOS 14.0, *)
 extension View {
     ///
     /// Adds an action to perform when the given value changes. Handles deprecation logic for different iOS versions.
@@ -18,6 +19,8 @@ extension View {
     /// If the device is running iOS 17.0 or later,
     /// it uses the new [``onChange(of:initial:_:)``](https://developer.apple.com/documentation/swiftui/view/onchange(of:initial:_:)-4psgg) modifier.
     /// For earlier versions, it falls back to the old [``onChange(of:perform:)``](https://developer.apple.com/documentation/swiftui/view/onchange(of:perform:)) modifier.
+    ///
+    /// > Note: This modifier is available from iOS 14.0 or later.
     ///
     /// - Parameters:
     ///   - value: The value to monitor for changes.
@@ -38,6 +41,7 @@ extension View {
     }
 }
 
+@available(iOS 14.0, *)
 fileprivate struct SafeOnChange<Value: Equatable>: ViewModifier {
     let value: Value
     var action: (Value, Value) -> Void
