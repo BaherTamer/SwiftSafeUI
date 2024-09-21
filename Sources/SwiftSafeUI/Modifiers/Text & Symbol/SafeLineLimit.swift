@@ -1,5 +1,5 @@
 //
-//  SafeAutocapitalization.swift
+//  SafeLineLimit.swift
 //
 //  GitHub Repo and Documentation: https://github.com/BaherTamer/SwiftSafeUI
 //
