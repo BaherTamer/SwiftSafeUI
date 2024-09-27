@@ -1,7 +1,7 @@
 //
 //  SafeBackground.swift
 //
-//  GitHub Repo: https://github.com/BaherTamer/SwiftSafeUI
+//  GitHub Repo & Documentation: https://github.com/BaherTamer/SwiftSafeUI
 //
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
@@ -30,7 +30,7 @@ extension View {
     ///             // Component code...
     ///         }
     ///         .safeBackground(alignment: .topTrailing) {
-    ///             TagView()
+    ///             StridePattern()
     ///         }
     ///     }
     /// }
