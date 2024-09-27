@@ -19,8 +19,8 @@ extension View {
     /// - Returns: A view that applies the line limit and space reservation based on the provided parameters.
     ///
     /// This modifier ensures that the `reservesSpace` functionality works across different iOS versions:
-    /// - On iOS 16 and later, it uses the native `lineLimit(_:reservesSpace:)` method to reserve space as needed.
-    /// - On earlier versions, it falls back to `lineLimit(_:)` and manually adjusts the view's height using a `GeometryReader` to mimic the `reservesSpace` behavior.
+    /// - On iOS 16 and later, it uses the native [`lineLimit(_:reservesSpace:)`](https://developer.apple.com/documentation/swiftui/view/linelimit(_:reservesspace:)) method to reserve space as needed.
+    /// - On earlier versions, it falls back to [`lineLimit(_:)`](https://developer.apple.com/documentation/swiftui/view/linelimit(_:)-513mb) and manually adjusts the view's height using a `GeometryReader` to mimic the `reservesSpace` behavior.
     ///
     /// > Tip: The `lineLimit` functionality itself remains consistent across all supported iOS versions. This modifier specifically addresses the `reservesSpace` feature on versions prior to iOS 16.
     ///
