@@ -1,7 +1,7 @@
 //
 //  SafeOnChange.swift
 //
-//  GitHub Repo and Documentation: https://github.com/BaherTamer/SwiftSafeUI
+//  GitHub Repo & Documentation: https://github.com/BaherTamer/SwiftSafeUI
 //
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
@@ -11,22 +11,31 @@ import SwiftUI
 @available(iOS 14.0, *)
 extension View {
     ///
-    /// Adds an action to perform when the given value changes. Handles deprecation logic for different iOS versions.
-    ///
-    /// This modifier triggers an action when the specified value changes.
-    /// It ensures compatibility with different iOS versions by using the appropriate `onChange` modifier based on the iOS version.
-    ///
-    /// If the device is running iOS 17.0 or later,
-    /// it uses the new [``onChange(of:initial:_:)``](https://developer.apple.com/documentation/swiftui/view/onchange(of:initial:_:)-4psgg) modifier.
-    /// For earlier versions, it falls back to the old [``onChange(of:perform:)``](https://developer.apple.com/documentation/swiftui/view/onchange(of:perform:)) modifier.
-    ///
-    /// > Note: This modifier is available from iOS 14.0 or later.
+    /// Executes an action when the specified value changes, with support for different iOS versions.
     ///
     /// - Parameters:
-    ///   - value: The value to monitor for changes.
-    ///   - action: A closure that is called with the old and new values when a change is detected.
+    ///   - value: The value to observe for changes. This value must conform to the `Equatable` protocol.
+    ///   - action: A closure that is executed when the observed value changes. It receives the old and new values as parameters.
     ///
-    /// - Returns: A view that applies the specified action when the value changes.
+    /// - Returns: A view that responds to changes in the specified value.
+    ///
+    /// This method allows you to observe changes to a value and execute a specified action. It behaves differently based on the iOS version:
+    /// - On iOS 17 and later, it utilizes the new [`onChange(of:initial:_:)`](https://developer.apple.com/documentation/swiftui/view/onchange(of:initial:_:)-4psgg) method.
+    /// - On earlier versions, it falls back to the [`onChange(of:perform:)`](https://developer.apple.com/documentation/swiftui/view/onchange(of:perform:)) method.
+    ///
+    /// ## Example
+    /// ```swift
+    /// struct ContentView: View {
+    ///     @State private var count = 0
+    ///
+    ///     var body: some View {
+    ///         Text("Count: \(count)")
+    ///             .safeOnChange(count) { oldValue, newValue in
+    ///                 print("Count changed from \(oldValue) to \(newValue)")
+    ///             }
+    ///     }
+    /// }
+    /// ```
     ///
     public func safeOnChange<Value: Equatable>(
         _ value: Value,
@@ -43,18 +52,36 @@ extension View {
 
 @available(iOS 14.0, *)
 fileprivate struct SafeOnChange<Value: Equatable>: ViewModifier {
+    // MARK: - Inputs
     let value: Value
     var action: (Value, Value) -> Void
     
+    // MARK: - Body
     func body(content: Content) -> some View {
         if #available(iOS 17.0, *) {
-            content
-                .onChange(of: value, action)
+            applyOnChange(content)
         } else {
-            content
-                .onChange(of: value) { [value] newValue in
-                    action(value, newValue)
-                }
+            applyDeprecatedOnChange(content)
         }
+    }
+}
+
+// MARK: - Private Helpers
+@available(iOS 14.0, *)
+fileprivate extension SafeOnChange {
+    @ViewBuilder
+    @available(iOS 17.0, *)
+    private func applyOnChange(_ content: Content) -> some View {
+        content
+            .onChange(of: value, action)
+    }
+    
+    @ViewBuilder
+    @available(iOS, introduced: 14.0, deprecated: 17.0)
+    private func applyDeprecatedOnChange(_ content: Content) -> some View {
+        content
+            .onChange(of: value) { [value] newValue in
+                action(value, newValue)
+            }
     }
 }
