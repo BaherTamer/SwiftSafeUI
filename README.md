@@ -6,6 +6,7 @@ SwiftSafeUI is a SwiftUI package designed to handle deprecation issues and maint
 <br/>
 
 ## 📝 Requirements
+- Swift 5.10+
 - iOS 13.0+
 
 <br/>
@@ -28,7 +29,7 @@ Add a dependency in your `Package.swift`
 
 ``` swift
 dependencies: [
-    .package(url: "https://github.com/BaherTamer/SwiftSafeUI.git", from: "1.1.0")
+    .package(url: "https://github.com/BaherTamer/SwiftSafeUI.git", .upToNextMajor(from: "1.1.1"))
 ]
 ```
 
@@ -36,11 +37,6 @@ dependencies: [
 
 ## 📜 Documentation
 Check out the [Wiki](https://github.com/BaherTamer/SwiftSafeUI/wiki) for usage examples on how to integrate SwiftSafeUI into your SwiftUI projects.
-
-<br/>
-
-## 🧑‍💻 Contributing
-Contributions to SwiftSafeUI are welcome! If you encounter any issues, have feature requests, or would like to contribute enhancements, please submit a pull request or open an issue.
 
 <br/>
 
