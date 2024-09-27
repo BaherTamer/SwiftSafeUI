@@ -23,6 +23,8 @@ extension View {
     /// - On iOS 17 and later, it utilizes the new [`onChange(of:initial:_:)`](https://developer.apple.com/documentation/swiftui/view/onchange(of:initial:_:)-4psgg) method.
     /// - On earlier versions, it falls back to the [`onChange(of:perform:)`](https://developer.apple.com/documentation/swiftui/view/onchange(of:perform:)) method.
     ///
+    /// > Important: This modifier requires iOS 14 or later.
+    ///
     /// ## Example
     /// ```swift
     /// struct ContentView: View {
