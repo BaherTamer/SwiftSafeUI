@@ -67,7 +67,6 @@ fileprivate struct SafeNavBarHidden: ViewModifier {
 
 // MARK: - Private Helpers
 fileprivate extension SafeNavBarHidden {
-    @ViewBuilder
     @available(iOS 18.0, *)
     private func applyToolbarVisibility(_ content: Content) -> some View {
         content
@@ -77,7 +76,6 @@ fileprivate extension SafeNavBarHidden {
             )
     }
     
-    @ViewBuilder
     @available(iOS, introduced: 16.0, deprecated: 18.0)
     private func applyToolbar(_ content: Content) -> some View {
         content
@@ -87,7 +85,6 @@ fileprivate extension SafeNavBarHidden {
             )
     }
     
-    @ViewBuilder
     @available(iOS, introduced: 13.0, deprecated: 16.0)
     private func applyNavigationBarHidden(_ content: Content) -> some View {
         content

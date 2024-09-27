@@ -69,14 +69,12 @@ fileprivate struct SafeOnChange<Value: Equatable>: ViewModifier {
 // MARK: - Private Helpers
 @available(iOS 14.0, *)
 fileprivate extension SafeOnChange {
-    @ViewBuilder
     @available(iOS 17.0, *)
     private func applyOnChange(_ content: Content) -> some View {
         content
             .onChange(of: value, action)
     }
     
-    @ViewBuilder
     @available(iOS, introduced: 14.0, deprecated: 17.0)
     private func applyDeprecatedOnChange(_ content: Content) -> some View {
         content

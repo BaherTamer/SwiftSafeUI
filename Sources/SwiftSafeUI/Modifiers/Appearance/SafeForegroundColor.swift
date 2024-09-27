@@ -54,14 +54,12 @@ fileprivate struct SafeForegroundColor: ViewModifier {
 
 // MARK: - Private Helpers
 fileprivate extension SafeForegroundColor {
-    @ViewBuilder
     @available(iOS 15.0, *)
     private func applyForegroundStyle(_ content: Content) -> some View {
         content
             .foregroundStyle(color)
     }
     
-    @ViewBuilder
     @available(iOS, introduced: 13.0, deprecated: 15.0)
     private func applyForegroundColor(_ content: Content) -> some View {
         content

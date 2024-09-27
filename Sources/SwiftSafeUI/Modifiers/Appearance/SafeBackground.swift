@@ -66,7 +66,6 @@ fileprivate struct SafeBackground<BackgroundContent: View>: ViewModifier {
 
 // MARK: - Private Helpers
 fileprivate extension SafeBackground {
-    @ViewBuilder
     @available(iOS 15.0, *)
     private func applyBackground(_ content: Content) -> some View {
         content
@@ -75,7 +74,6 @@ fileprivate extension SafeBackground {
             }
     }
     
-    @ViewBuilder
     @available(iOS, introduced: 13.0, deprecated: 15.0)
     private func applyDeprecatedBackground(_ content: Content) -> some View {
         content

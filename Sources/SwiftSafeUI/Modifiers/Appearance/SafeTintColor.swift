@@ -55,14 +55,12 @@ fileprivate struct SafeTintColor: ViewModifier {
 
 // MARK: - Private Helpers
 fileprivate extension SafeTintColor {
-    @ViewBuilder
     @available(iOS 16.0, *)
     private func applyTint(_ content: Content) -> some View {
         content
             .tint(color)
     }
     
-    @ViewBuilder
     @available(iOS, introduced: 13.0, deprecated: 16.0)
     private func applyAccentColor(_ content: Content) -> some View {
         content
