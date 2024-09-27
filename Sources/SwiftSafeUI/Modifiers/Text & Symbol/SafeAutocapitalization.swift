@@ -1,7 +1,7 @@
 //
 //  SafeAutocapitalization.swift
 //
-//  GitHub Repo and Documentation: https://github.com/BaherTamer/SwiftSafeUI
+//  GitHub Repo & Documentation: https://github.com/BaherTamer/SwiftSafeUI
 //
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
@@ -9,59 +9,88 @@
 import SwiftUI
 
 extension View {
-    /// 
-    /// Applies autocapitalization to the text input, handling deprecation logic for different iOS versions.
     ///
-    /// This modifier sets the autocapitalization style using the appropriate modifier based on the iOS version.
+    /// Applies autocapitalization behavior to a text input view, supporting different iOS versions.
     ///
-    /// If the device is running iOS 15.0 or later, it uses the [``textinputautocapitalization(_:)``](https://developer.apple.com/documentation/swiftui/view/textinputautocapitalization(_:)) modifier.
-    /// For earlier versions, it falls back to the [``autocapitalization(_:)``](https://developer.apple.com/documentation/swiftui/view/autocapitalization(_:)) modifier.
+    /// - Parameters:
+    ///   - style: The autocapitalization style to apply, represented by the ``AutocapitalizationType`` enum.
     ///
-    /// - Parameter style: The autocapitalization style to apply.
+    /// - Returns: A view that modifies the autocapitalization behavior based on the provided style.
     ///
-    /// - Returns: A view with the specified autocapitalization style applied to its text input.
+    /// This method enables applying an autocapitalization style to text input fields in SwiftUI, with backward compatibility for different iOS versions:
+    /// - On iOS 15 and later, it uses the [`textInputAutocapitalization(_:)`](https://developer.apple.com/documentation/swiftui/view/textinputautocapitalization(_:)) method.
+    /// - On earlier versions, it falls back to the [`autocapitalization(_:)`](https://developer.apple.com/documentation/swiftui/view/autocapitalization(_:)) method.
+    ///
+    /// ## Example
+    /// ```swift
+    /// struct ContentView: View {
+    ///     @State private var fullName = ""
+    ///
+    ///     var body: some View {
+    ///         TextField("Enter your full name", text: $fullName)
+    ///             .safeAutocapitalization(.words)
+    ///     }
+    /// }
+    /// ```
     ///
     public func safeAutocapitalization(_ style: AutocapitalizationType) -> some View {
-        modifier(SafeAutocapitalization(style: style))
+        modifier(
+            SafeAutocapitalization(style: style)
+        )
     }
 }
 
 fileprivate struct SafeAutocapitalization: ViewModifier {
+    // MARK: - Inputs
     let style: AutocapitalizationType
     
+    // MARK: - Body
     func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
-            content
-                .textInputAutocapitalization(style.modernValue)
+            applyAutocapitalization(content)
         } else {
-            content
-                .autocapitalization(style.deprecatedValue)
+            applyDeprecatedAutocapitalization(content)
         }
     }
 }
 
-/// A type that specifies the autocapitalization style for text input.
+// MARK: - Private Helpers
+fileprivate extension SafeAutocapitalization {
+    @available(iOS 15.0, *)
+    private func applyAutocapitalization(_ content: Content) -> some View {
+        content
+            .textInputAutocapitalization(style.value)
+    }
+    
+    @available(iOS, introduced: 13.0, deprecated: 15.0)
+    private func applyDeprecatedAutocapitalization(_ content: Content) -> some View {
+        content
+            .autocapitalization(style.deprecatedValue)
+    }
+}
+
 ///
-/// The `AutocapitalizationType` enum provides a unified way to handle different autocapitalization styles
-/// across different iOS versions.
+/// A representation of different autocapitalization styles available for text input views.
 ///
-/// ## Cases:
-///   - `sentences`: Capitalizes the first letter of each sentence.
-///  - `words`: Capitalizes the first letter of each word.
-///  - `characters`: Capitalizes all characters.
-///  - `never`: Does not apply any autocapitalization.
+/// This enum encapsulates the various autocapitalization options, with support for different iOS versions:
+/// - On iOS 15 and later, the enum maps to [`TextInputAutocapitalization`](https://developer.apple.com/documentation/swiftui/textinputautocapitalization).
+/// - On earlier versions, it maps to [`UITextAutocapitalizationType`](https://developer.apple.com/documentation/uikit/uitextautocapitalizationtype).
+///
 public enum AutocapitalizationType {
-    /// Capitalize the first letter of each sentence.
+    /// Automatically capitalize the first letter of each sentence.
     case sentences
-    /// Capitalize the first letter of each word.
+    
+    /// Automatically capitalize the first letter of each word.
     case words
-    /// Capitalize all characters.
+    
+    /// Automatically capitalize all characters.
     case characters
-    /// Do not apply any autocapitalization.
+    
+    /// Disable autocapitalization entirely.
     case never
     
     @available(iOS 15.0, *)
-    var modernValue: TextInputAutocapitalization {
+    fileprivate var value: TextInputAutocapitalization {
         switch self {
         case .sentences: .sentences
         case .words: .words
@@ -70,7 +99,7 @@ public enum AutocapitalizationType {
         }
     }
     
-    var deprecatedValue: UITextAutocapitalizationType {
+    fileprivate var deprecatedValue: UITextAutocapitalizationType {
         switch self {
         case .sentences: .sentences
         case .words: .words

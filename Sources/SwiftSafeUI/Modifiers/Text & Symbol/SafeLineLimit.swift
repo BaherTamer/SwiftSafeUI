@@ -1,7 +1,7 @@
 //
 //  SafeLineLimit.swift
 //
-//  GitHub Repo and Documentation: https://github.com/BaherTamer/SwiftSafeUI
+//  GitHub Repo & Documentation: https://github.com/BaherTamer/SwiftSafeUI
 //
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
@@ -10,17 +10,29 @@ import SwiftUI
 
 extension View {
     ///
-    /// Applies a line limit to the current view, handling the logic for reserving space for different iOS versions.
-    ///
-    /// This modifier applies the line limit and reserves space using the appropriate method based on the iOS version.
-    ///
-    /// If the device is running iOS 16.0 or later,
-    /// it uses the [``lineLimit(_:reservesSpace:)``](https://developer.apple.com/documentation/swiftui/view/linelimit(_:reservesspace:)) modifier.
-    /// For earlier versions, it sets a fixed frame height to reserve space for the specified number of lines.
+    /// Sets the maximum number of lines for the view's text content, providing compatibility for the `reservesSpace` feature on older iOS versions.
     ///
     /// - Parameters:
-    ///   - limit: The maximum number of lines for the text view.
-    ///   - reservesSpace: A Boolean value indicating whether the view reserves space for the specified number of lines, even if fewer lines are displayed.
+    ///   - limit: The maximum number of lines for the view’s text. Use `0` for unlimited lines.
+    ///   - reservesSpace: A `Bool` value indicating whether the text should reserve space for the specified number of lines, even if fewer lines are displayed.
+    ///
+    /// - Returns: A view that applies the line limit and space reservation based on the provided parameters.
+    ///
+    /// This modifier ensures that the `reservesSpace` functionality works across different iOS versions:
+    /// - On iOS 16 and later, it uses the native [`lineLimit(_:reservesSpace:)`](https://developer.apple.com/documentation/swiftui/view/linelimit(_:reservesspace:)) method to reserve space as needed.
+    /// - On earlier versions, it falls back to [`lineLimit(_:)`](https://developer.apple.com/documentation/swiftui/view/linelimit(_:)-513mb) and manually adjusts the view's height using a `GeometryReader` to mimic the `reservesSpace` behavior.
+    ///
+    /// > Tip: The `lineLimit` functionality itself remains consistent across all supported iOS versions. This modifier specifically addresses the `reservesSpace` feature on versions prior to iOS 16.
+    ///
+    /// ## Example
+    /// ```swift
+    /// struct ContentView: View {
+    ///     var body: some View {
+    ///         Text("This is a multi-line text example.")
+    ///             .safeLineLimit(2, reservesSpace: true)
+    ///     }
+    /// }
+    /// ```
     ///
     public func safeLineLimit(
         _ limit: Int,
@@ -46,20 +58,32 @@ fileprivate struct SafeLineLimit: ViewModifier {
     // MARK: - Body
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
-            content
-                .lineLimit(limit, reservesSpace: reservesSpace)
+            applyReservesSpace(content)
         } else {
-            content
-                .lineLimit(limit)
-                .background(geometryReader)
-                .frame(height: reservesSpace ? height : nil, alignment: .top)
-                .onPreferenceChange(TextHeightPreferenceKey.self) { height in
-                    self.height = height * CGFloat(limit)
-                }
+            applyDeprecatedReservesSpace(content)
         }
     }
+}
+
+// MARK: - Private Helpers
+fileprivate extension SafeLineLimit {
+    @available(iOS 16.0, *)
+    private func applyReservesSpace(_ content: Content) -> some View {
+        content
+            .lineLimit(limit, reservesSpace: reservesSpace)
+    }
     
-    // MARK: - Private Helpers
+    @available(iOS, introduced: 13.0, deprecated: 16.0)
+    private func applyDeprecatedReservesSpace(_ content: Content) -> some View {
+        content
+            .lineLimit(limit)
+            .background(geometryReader)
+            .frame(height: reservesSpace ? height : nil, alignment: .top)
+            .onPreferenceChange(TextHeightPreferenceKey.self) { height in
+                self.height = height * CGFloat(limit)
+            }
+    }
+    
     private var geometryReader: some View {
         GeometryReader { geometry in
             Color.clear
@@ -71,13 +95,13 @@ fileprivate struct SafeLineLimit: ViewModifier {
     }
 }
 
-private struct TextHeightPreferenceKey: PreferenceKey {
-    // MARK: - Variables
+// MARK: - Text Height Preference Key
+fileprivate struct TextHeightPreferenceKey: PreferenceKey {
+    // MARK: Variables
     static var defaultValue: CGFloat = 20
-
-    // MARK: - Config Functions
+    
+    // MARK: Config Functions
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
         value = max(value, nextValue())
     }
 }
-

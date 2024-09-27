@@ -1,7 +1,7 @@
 //
 //  SafeBackground.swift
 //
-//  GitHub Repo: https://github.com/BaherTamer/SwiftSafeUI
+//  GitHub Repo & Documentation: https://github.com/BaherTamer/SwiftSafeUI
 //
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
@@ -9,38 +9,77 @@
 import SwiftUI
 
 extension View {
-    /// 
-    /// Layers the views that you specify behind this view, handling deprecation logic for different iOS versions.
     ///
-    /// This modifier applies the background views using the appropriate modifier based on the iOS version.
-    ///
-    /// If the device is running iOS 15.0 or later,
-    /// it uses the [``background(alignment:content:)``](https://developer.apple.com/documentation/swiftui/view/background(alignment:content:)) modifier.
-    /// For earlier versions, it falls back to the [``background(_:alignment:)``](https://developer.apple.com/documentation/swiftui/view/background(_:alignment:))  modifier.
+    /// Adds a background view to this view, with support for different alignment options.
     ///
     /// - Parameters:
-    ///   - alignment: The alignment that the modifier uses to position the implicit `ZStack` that groups the background views. The default is `Alignment.center`.
-    ///   - backgroundContent: A `ViewBuilder` closure that provides the views to draw behind this view, stacked in a cascading order from bottom to top. The last view that you list appears at the front of the stack.
+    ///   - alignment: The alignment for the background view. The default value is `.center`.
+    ///   - backgroundContent: A closure that returns the view to be used as the background.
     ///
-    /// - Returns: A view that applies the specified background views.
-    /// 
+    /// - Returns: A view with the specified background applied.
+    ///
+    /// This method allows you to add a background view with a specified alignment. It uses a custom modifier that behaves differently based on the iOS version:
+    /// - On iOS 15 and later, it utilizes the new [`background(alignment:content:)`](https://developer.apple.com/documentation/swiftui/view/background(alignment:content:)) method.
+    /// - On earlier versions, it falls back to the [`background(_:alignment:)`](https://developer.apple.com/documentation/swiftui/view/background(_:alignment:)) method.
+    ///
+    /// ## Example
+    /// ```swift
+    /// struct ContentView: View {
+    ///     var body: some View {
+    ///         VStack {
+    ///             // Component code...
+    ///         }
+    ///         .safeBackground(alignment: .topTrailing) {
+    ///             StridePattern()
+    ///         }
+    ///     }
+    /// }
+    /// ```
+    ///
     public func safeBackground<BackgroundContent: View>(
         alignment: Alignment = .center,
-        @ViewBuilder backgroundContent: () -> BackgroundContent
+        @ViewBuilder content: () -> BackgroundContent
     ) -> some View {
-        modifier(SafeBackground(alignment: alignment, backgroundContent: backgroundContent()))
+        modifier(
+            SafeBackground(
+                alignment: alignment,
+                backgroundContent: content()
+            )
+        )
     }
 }
 
 fileprivate struct SafeBackground<BackgroundContent: View>: ViewModifier {
+    // MARK: - Inputs
     let alignment: Alignment
     let backgroundContent: BackgroundContent
     
+    // MARK: - Body
     func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
-            content.background(alignment: alignment) { backgroundContent }
+            applyBackground(content)
         } else {
-            content.background(backgroundContent, alignment: alignment)
+            applyDeprecatedBackground(content)
         }
+    }
+}
+
+// MARK: - Private Helpers
+fileprivate extension SafeBackground {
+    @available(iOS 15.0, *)
+    private func applyBackground(_ content: Content) -> some View {
+        content
+            .background(alignment: alignment) {
+                backgroundContent
+            }
+    }
+    
+    @available(iOS, introduced: 13.0, deprecated: 15.0)
+    private func applyDeprecatedBackground(_ content: Content) -> some View {
+        content
+            .background(
+                backgroundContent,
+                alignment: alignment
+            )
     }
 }
