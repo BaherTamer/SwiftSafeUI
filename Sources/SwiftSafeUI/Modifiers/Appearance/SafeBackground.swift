@@ -76,7 +76,7 @@ fileprivate extension SafeBackground {
     }
     
     @ViewBuilder
-    @available(iOS, introduced: 13.0, obsoleted: 15.0)
+    @available(iOS, introduced: 13.0, deprecated: 15.0)
     private func applyDeprecatedBackground(_ content: Content) -> some View {
         content
             .background(

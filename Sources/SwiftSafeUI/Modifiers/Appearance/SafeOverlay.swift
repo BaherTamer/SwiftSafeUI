@@ -76,7 +76,7 @@ fileprivate extension SafeOverlay {
     }
     
     @ViewBuilder
-    @available(iOS, introduced: 13.0, obsoleted: 15.0)
+    @available(iOS, introduced: 13.0, deprecated: 15.0)
     private func applyDeprecatedOverlay(_ content: Content) -> some View {
         content
             .overlay(

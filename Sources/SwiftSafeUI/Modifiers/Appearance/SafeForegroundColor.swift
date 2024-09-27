@@ -19,7 +19,7 @@ extension View {
     ///
     /// This method allows you to apply a foreground color to a view, adapting to the iOS version:
     /// - On iOS 15 and later, it utilizes the new [`foregroundStyle(_:)`](https://developer.apple.com/documentation/swiftui/view/foregroundstyle(_:) ) method.
-    /// - On earlier versions, it falls back to the deprecated [`foregroundColor(_:)`](https://developer.apple.com/documentation/swiftui/view/foregroundcolor(_:) ) method.
+    /// - On earlier versions, it falls back to the [`foregroundColor(_:)`](https://developer.apple.com/documentation/swiftui/view/foregroundcolor(_:) ) method.
     ///
     /// ## Example
     /// ```swift
@@ -62,7 +62,7 @@ fileprivate extension SafeForegroundColor {
     }
     
     @ViewBuilder
-    @available(iOS, introduced: 13.0, obsoleted: 15.0)
+    @available(iOS, introduced: 13.0, deprecated: 15.0)
     private func applyForegroundColor(_ content: Content) -> some View {
         content
             .foregroundColor(color)

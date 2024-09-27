@@ -19,7 +19,7 @@ extension View {
     ///
     /// This method allows you to apply a tint color to a view, adapting to the iOS version:
     /// - On iOS 16 and later, it utilizes the new [`tint(_:)`](https://developer.apple.com/documentation/swiftui/view/tint(_:)-23xyq) method.
-    /// - On earlier versions, it falls back to the deprecated [`accentColor(_:)`](https://developer.apple.com/documentation/swiftui/view/accentcolor(_:) ) method.
+    /// - On earlier versions, it falls back to the [`accentColor(_:)`](https://developer.apple.com/documentation/swiftui/view/accentcolor(_:) ) method.
     ///
     /// ## Example
     /// ```swift
@@ -63,7 +63,7 @@ fileprivate extension SafeTintColor {
     }
     
     @ViewBuilder
-    @available(iOS, introduced: 13.0, obsoleted: 16.0)
+    @available(iOS, introduced: 13.0, deprecated: 16.0)
     private func applyAccentColor(_ content: Content) -> some View {
         content
             .accentColor(color)
