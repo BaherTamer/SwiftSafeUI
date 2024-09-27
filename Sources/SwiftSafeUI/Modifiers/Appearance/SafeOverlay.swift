@@ -65,7 +65,7 @@ fileprivate struct SafeOverlay<OverlayContent: View>: ViewModifier {
 }
 
 // MARK: - Private Helpers
-extension SafeOverlay {
+fileprivate extension SafeOverlay {
     @ViewBuilder
     @available(iOS 15.0, *)
     private func applyOverlay(_ content: Content) -> some View {
