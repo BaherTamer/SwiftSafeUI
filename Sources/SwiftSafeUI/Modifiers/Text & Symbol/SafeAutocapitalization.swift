@@ -62,7 +62,7 @@ fileprivate extension SafeAutocapitalization {
             .textInputAutocapitalization(style.value)
     }
     
-    @available(iOS, introduced: 13.0, deprecated: 14.0)
+    @available(iOS, introduced: 13.0, deprecated: 15.0)
     private func applyDeprecatedAutocapitalization(_ content: Content) -> some View {
         content
             .autocapitalization(style.deprecatedValue)
