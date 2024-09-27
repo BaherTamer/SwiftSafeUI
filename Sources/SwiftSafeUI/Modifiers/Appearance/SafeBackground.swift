@@ -38,12 +38,12 @@ extension View {
     ///
     public func safeBackground<BackgroundContent: View>(
         alignment: Alignment = .center,
-        @ViewBuilder backgroundContent: () -> BackgroundContent
+        @ViewBuilder content: () -> BackgroundContent
     ) -> some View {
         modifier(
             SafeBackground(
                 alignment: alignment,
-                backgroundContent: backgroundContent()
+                backgroundContent: content()
             )
         )
     }
