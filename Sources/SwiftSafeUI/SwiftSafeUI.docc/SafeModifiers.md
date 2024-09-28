@@ -22,10 +22,15 @@ Provides a reliable way to use `SwiftUI` modifiers that ensure compatibility acr
 ### Auxiliary View Modifiers
 
 - ``SwiftUICore/View/safeNavBarHidden(_:)``
+- ``SwiftUICore/View/safeNavBarTitle(_:displayMode:)``
 
 ### Input & Event Modifiers
 
 - ``SwiftUICore/View/safeOnChange(_:perform:)``
+
+### Layout Modifiers
+
+- ``SwiftUICore/View/safeIgnoreSafeArea(_:)``
 
 ### Text & Symbol Modifiers
 
