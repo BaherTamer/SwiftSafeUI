@@ -23,3 +23,4 @@ Additionally, **SwiftSafeUI** includes a collection of custom views that enhance
 ### Essentials
 
 - <doc:SafeModifiers>
+- <doc:SafeViews>
