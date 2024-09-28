@@ -14,7 +14,7 @@ extension View {
     ///
     /// - Parameters:
     ///   - alignment: The alignment for the background view. The default value is `.center`.
-    ///   - backgroundContent: A closure that returns the view to be used as the background.
+    ///   - content: A closure that returns the view to be used as the background.
     ///
     /// - Returns: A view with the specified background applied.
     ///
