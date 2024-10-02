@@ -14,7 +14,7 @@ extension View {
     ///
     /// - Parameters:
     ///   - alignment: The alignment for the background view. The default value is `.center`.
-    ///   - backgroundContent: A closure that returns the view to be used as the background.
+    ///   - content: A closure that returns the view to be used as the background.
     ///
     /// - Returns: A view with the specified background applied.
     ///
@@ -36,9 +36,9 @@ extension View {
     /// }
     /// ```
     ///
-    public func safeBackground<BackgroundContent: View>(
+    public func safeBackground<Content: View>(
         alignment: Alignment = .center,
-        @ViewBuilder content: () -> BackgroundContent
+        @ViewBuilder content: () -> Content
     ) -> some View {
         modifier(
             SafeBackground(

@@ -14,7 +14,7 @@ extension View {
     ///
     /// - Parameters:
     ///   - alignment: The alignment for the overlay view. The default value is `.center`.
-    ///   - overlayContent: A closure that returns the view to be used as the overlay.
+    ///   - content: A closure that returns the view to be used as the overlay.
     ///
     /// - Returns: A view with the specified overlay applied.
     ///
@@ -36,9 +36,9 @@ extension View {
     /// }
     /// ```
     ///
-    public func safeOverlay<OverlayContent: View>(
+    public func safeOverlay<Content: View>(
         alignment: Alignment = .center,
-        @ViewBuilder content: () -> OverlayContent
+        @ViewBuilder content: () -> Content
     ) -> some View {
         modifier(
             SafeOverlay(
