@@ -8,7 +8,11 @@ Provides a reliable way to use `SwiftUI` modifiers that ensure compatibility acr
 
 
 ## Overview
-**SafeModifiers** are custom `SwiftUI` modifiers included in the **SwiftSafeUI** package, designed to help developers manage deprecation issues and maintain compatibility across various iOS versions. These modifiers encapsulate the necessary logic to apply UI changes while ensuring your app utilizes the latest methods and gracefully falls back to deprecated ones when needed. By using **SafeModifiers**, you can create a seamless and consistent user interface without worrying about version-specific APIs.
+**SafeModifiers** are custom `SwiftUI` modifiers included in the **SwiftSafeUI** package, designed to help developers manage deprecation issues and maintain compatibility across various iOS versions. 
+
+These modifiers encapsulate the necessary logic to apply UI changes while ensuring your app utilizes the latest methods and gracefully falls back to deprecated ones when needed.
+
+By using **SafeModifiers**, you can create a seamless and consistent user interface without worrying about version-specific APIs.
 
 
 ***
