@@ -1,24 +1,19 @@
 #!/bin/bash
 
-# Navigate to project root
 cd "$(dirname "$0")/.." || exit
 
 # Clear derived data
-rm -rf "$PWD/.derivedData"
+DERIVED_DATA_PATH=$(mktemp -d)
 
 # Build the documentation
 xcrun xcodebuild docbuild \
     -scheme SwiftSafeUI \
     -destination 'generic/platform=iOS Simulator' \
-    -derivedDataPath "$PWD/.derivedData" || exit
+    -derivedDataPath "$DERIVED_DATA_PATH" || exit
 
-# Process documentation for static hosting
 xcrun docc process-archive transform-for-static-hosting \
-    "$PWD/.derivedData/Build/Products/Debug-iphonesimulator/SwiftSafeUI.doccarchive" \
+    "$DERIVED_DATA_PATH/Build/Products/Debug-iphonesimulator/SwiftSafeUI.doccarchive" \
     --output-path ".docs" \
-    --hosting-base-path "SwiftSafeUI" || exit
+    --hosting-base-path "SwiftSafeUI"
 
-# Create redirect index.html
 echo '<script>window.location.href += "/documentation/swiftsafeui"</script>' > .docs/index.html
-
-echo "Documentation successfully updated."
