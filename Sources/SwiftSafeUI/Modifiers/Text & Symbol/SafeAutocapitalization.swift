@@ -34,7 +34,7 @@ extension View {
     /// }
     /// ```
     ///
-    public nonisolated func safeAutocapitalization(
+    nonisolated public func safeAutocapitalization(
         _ style: AutocapitalizationType
     ) -> some View {
         modifier(

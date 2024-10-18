@@ -35,7 +35,7 @@ extension View {
     /// }
     /// ```
     ///
-    public nonisolated func safeLineLimit(
+    nonisolated public func safeLineLimit(
         _ limit: Int,
         reservesSpace: Bool
     ) -> some View {

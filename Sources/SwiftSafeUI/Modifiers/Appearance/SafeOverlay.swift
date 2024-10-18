@@ -37,7 +37,7 @@ extension View {
     /// }
     /// ```
     ///
-    public nonisolated func safeOverlay<Content: View>(
+    nonisolated public func safeOverlay<Content: View>(
         alignment: Alignment = .center,
         @ViewBuilder content: () -> Content
     ) -> some View {

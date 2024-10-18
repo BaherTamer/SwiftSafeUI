@@ -37,7 +37,7 @@ extension View {
     /// }
     /// ```
     ///
-    public nonisolated func safeNavBarHidden(_ isHidden: Bool) -> some View {
+    nonisolated public func safeNavBarHidden(_ isHidden: Bool) -> some View {
         modifier(
             SafeNavBarHidden(isHidden: isHidden)
         )

@@ -40,7 +40,7 @@ extension View {
     /// }
     /// ```
     ///
-    public nonisolated func safeOnChange<Value: Equatable>(
+    nonisolated public func safeOnChange<Value: Equatable>(
         _ value: Value,
         perform action: @escaping (Value, Value) -> Void
     ) -> some View {

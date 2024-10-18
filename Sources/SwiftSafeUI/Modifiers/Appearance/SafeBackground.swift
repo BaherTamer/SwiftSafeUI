@@ -37,7 +37,7 @@ extension View {
     /// }
     /// ```
     ///
-    public nonisolated func safeBackground<Content: View>(
+    nonisolated public func safeBackground<Content: View>(
         alignment: Alignment = .center,
         @ViewBuilder content: () -> Content
     ) -> some View {

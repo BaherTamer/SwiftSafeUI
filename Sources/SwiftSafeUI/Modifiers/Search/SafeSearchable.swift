@@ -48,7 +48,7 @@ extension View {
     /// }
     /// ```
     ///
-    public nonisolated func safeSearchable<Suggestions: View>(
+    nonisolated public func safeSearchable<Suggestions: View>(
         text: Binding<String>,
         placement: SearchFieldPlacement = .automatic,
         prompt: LocalizedStringKey,

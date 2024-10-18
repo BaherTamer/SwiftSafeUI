@@ -38,7 +38,7 @@ extension View {
     /// }
     /// ```
     ///
-    public nonisolated func safeNavBarTitle(
+    nonisolated public func safeNavBarTitle(
         _ text: Text,
         displayMode: NavigationBarItem.TitleDisplayMode
     ) -> some View {

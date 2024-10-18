@@ -36,7 +36,7 @@ extension View {
     /// }
     /// ```
     ///
-    public nonisolated func safeMask<Content: View>(
+    nonisolated public func safeMask<Content: View>(
         alignment: Alignment = .center,
         @ViewBuilder _ content: () -> Content
     ) -> some View {

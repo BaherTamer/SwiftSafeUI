@@ -32,7 +32,7 @@ extension View {
     /// }
     /// ```
     ///
-    public nonisolated func safeForegroundColor(_ color: Color) -> some View {
+    nonisolated public func safeForegroundColor(_ color: Color) -> some View {
         modifier(
             SafeForegroundColor(color: color)
         )
