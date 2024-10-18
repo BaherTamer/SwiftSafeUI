@@ -17,3 +17,4 @@ Provides a reliable way to use `SwiftUI` views that ensure compatibility across 
 ## View
 
 - ``SafeScrollView``
+- ``SafeNavigationStack``
