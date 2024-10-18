@@ -34,6 +34,7 @@ extension View {
     /// }
     /// ```
     ///
+    nonisolated
     public func safeLineLimit(
         _ limit: Int,
         reservesSpace: Bool

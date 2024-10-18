@@ -31,6 +31,7 @@ extension View {
     /// }
     /// ```
     ///
+    nonisolated
     public func safeIgnoreSafeArea(
         _ edges: Edge.Set = .all
     ) -> some View {

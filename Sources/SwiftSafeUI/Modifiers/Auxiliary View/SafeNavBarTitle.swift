@@ -37,6 +37,7 @@ extension View {
     /// }
     /// ```
     ///
+    nonisolated
     public func safeNavBarTitle(
         _ text: Text,
         displayMode: NavigationBarItem.TitleDisplayMode

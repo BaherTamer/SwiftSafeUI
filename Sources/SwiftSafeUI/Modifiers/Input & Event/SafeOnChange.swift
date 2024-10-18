@@ -39,6 +39,7 @@ extension View {
     /// }
     /// ```
     ///
+    nonisolated
     public func safeOnChange<Value: Equatable>(
         _ value: Value,
         perform action: @escaping (Value, Value) -> Void

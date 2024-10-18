@@ -33,6 +33,7 @@ extension View {
     /// }
     /// ```
     ///
+    nonisolated
     public func safeAutocapitalization(_ style: AutocapitalizationType) -> some View {
         modifier(
             SafeAutocapitalization(style: style)

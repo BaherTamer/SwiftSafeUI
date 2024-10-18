@@ -32,6 +32,7 @@ extension View {
     /// }
     /// ```
     ///
+    nonisolated
     public func safeTintColor(_ color: Color) -> some View {
         modifier(
             SafeTintColor(color: color)
