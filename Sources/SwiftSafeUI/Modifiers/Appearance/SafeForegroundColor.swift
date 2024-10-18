@@ -1,7 +1,8 @@
 //
 //  SafeForegroundColor.swift
 //
-//  GitHub Repo & Documentation: https://github.com/BaherTamer/SwiftSafeUI
+//  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
+//  Documentation: https://bahertamer.github.io/SwiftSafeUI/
 //
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
