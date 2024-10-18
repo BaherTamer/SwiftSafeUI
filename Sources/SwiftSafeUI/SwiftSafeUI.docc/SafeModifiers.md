@@ -24,6 +24,10 @@ Provides a reliable way to use `SwiftUI` modifiers that ensure compatibility acr
 - ``SwiftUICore/View/safeNavBarHidden(_:)``
 - ``SwiftUICore/View/safeNavBarTitle(_:displayMode:)``
 
+### Drawing & Graphics
+
+- ``SwiftUICore/View/safeMask(alignment:_:)``
+
 ### Input & Event Modifiers
 
 - ``SwiftUICore/View/safeOnChange(_:perform:)``
