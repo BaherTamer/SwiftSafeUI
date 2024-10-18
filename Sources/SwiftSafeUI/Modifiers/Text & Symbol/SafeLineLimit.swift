@@ -1,12 +1,13 @@
 //
 //  SafeLineLimit.swift
 //
-//  GitHub Repo & Documentation: https://github.com/BaherTamer/SwiftSafeUI
+//  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
+//  Documentation: https://bahertamer.github.io/SwiftSafeUI/
 //
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
 
-import SwiftUI
+import SwiftUICore
 
 extension View {
     ///
@@ -34,7 +35,7 @@ extension View {
     /// }
     /// ```
     ///
-    public func safeLineLimit(
+    nonisolated public func safeLineLimit(
         _ limit: Int,
         reservesSpace: Bool
     ) -> some View {
@@ -47,14 +48,14 @@ extension View {
     }
 }
 
-fileprivate struct SafeLineLimit: ViewModifier {
+private struct SafeLineLimit: ViewModifier {
     // MARK: - Inputs
     let limit: Int
     let reservesSpace: Bool
-    
+
     // MARK: - Variables
     @State private var height: CGFloat = TextHeightPreferenceKey.defaultValue
-    
+
     // MARK: - Body
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
@@ -66,13 +67,13 @@ fileprivate struct SafeLineLimit: ViewModifier {
 }
 
 // MARK: - Private Helpers
-fileprivate extension SafeLineLimit {
+extension SafeLineLimit {
     @available(iOS 16.0, *)
     private func applyReservesSpace(_ content: Content) -> some View {
         content
             .lineLimit(limit, reservesSpace: reservesSpace)
     }
-    
+
     @available(iOS, introduced: 13.0, deprecated: 16.0)
     private func applyDeprecatedReservesSpace(_ content: Content) -> some View {
         content
@@ -83,7 +84,7 @@ fileprivate extension SafeLineLimit {
                 self.height = height * CGFloat(limit)
             }
     }
-    
+
     private var geometryReader: some View {
         GeometryReader { geometry in
             Color.clear
@@ -96,10 +97,10 @@ fileprivate extension SafeLineLimit {
 }
 
 // MARK: - Text Height Preference Key
-fileprivate struct TextHeightPreferenceKey: PreferenceKey {
+private struct TextHeightPreferenceKey: PreferenceKey {
     // MARK: Variables
     static var defaultValue: CGFloat = 20
-    
+
     // MARK: Config Functions
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
         value = max(value, nextValue())

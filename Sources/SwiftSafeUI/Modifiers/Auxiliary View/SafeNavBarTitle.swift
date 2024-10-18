@@ -1,7 +1,8 @@
 //
 //  SafeNavBarTitle.swift
 //
-//  GitHub Repo & Documentation: https://github.com/BaherTamer/SwiftSafeUI
+//  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
+//  Documentation: https://bahertamer.github.io/SwiftSafeUI/
 //
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
@@ -37,7 +38,7 @@ extension View {
     /// }
     /// ```
     ///
-    public func safeNavBarTitle(
+    nonisolated public func safeNavBarTitle(
         _ text: Text,
         displayMode: NavigationBarItem.TitleDisplayMode
     ) -> some View {
@@ -50,11 +51,11 @@ extension View {
     }
 }
 
-fileprivate struct SafeNavBarTitle: ViewModifier {
+private struct SafeNavBarTitle: ViewModifier {
     // MARK: - Inputs
     let text: Text
     let displayMode: NavigationBarItem.TitleDisplayMode
-    
+
     // MARK: - Body
     func body(content: Content) -> some View {
         if #available(iOS 14.0, *) {
@@ -66,14 +67,14 @@ fileprivate struct SafeNavBarTitle: ViewModifier {
 }
 
 // MARK: - Private Helpers
-fileprivate extension SafeNavBarTitle {
+extension SafeNavBarTitle {
     @available(iOS 14.0, *)
     private func applyNavigationTitle(_ content: Content) -> some View {
         content
             .navigationTitle(text)
             .navigationBarTitleDisplayMode(displayMode)
     }
-    
+
     @available(iOS, introduced: 13.0, deprecated: 14.0)
     private func applyNavigationBarTitle(_ content: Content) -> some View {
         content

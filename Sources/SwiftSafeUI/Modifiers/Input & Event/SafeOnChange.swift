@@ -1,12 +1,13 @@
 //
 //  SafeOnChange.swift
 //
-//  GitHub Repo & Documentation: https://github.com/BaherTamer/SwiftSafeUI
+//  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
+//  Documentation: https://bahertamer.github.io/SwiftSafeUI/
 //
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
 
-import SwiftUI
+import SwiftUICore
 
 @available(iOS 14.0, *)
 extension View {
@@ -39,7 +40,7 @@ extension View {
     /// }
     /// ```
     ///
-    public func safeOnChange<Value: Equatable>(
+    nonisolated public func safeOnChange<Value: Equatable>(
         _ value: Value,
         perform action: @escaping (Value, Value) -> Void
     ) -> some View {
@@ -53,11 +54,11 @@ extension View {
 }
 
 @available(iOS 14.0, *)
-fileprivate struct SafeOnChange<Value: Equatable>: ViewModifier {
+private struct SafeOnChange<Value: Equatable>: ViewModifier {
     // MARK: - Inputs
     let value: Value
     var action: (Value, Value) -> Void
-    
+
     // MARK: - Body
     func body(content: Content) -> some View {
         if #available(iOS 17.0, *) {
@@ -70,13 +71,13 @@ fileprivate struct SafeOnChange<Value: Equatable>: ViewModifier {
 
 // MARK: - Private Helpers
 @available(iOS 14.0, *)
-fileprivate extension SafeOnChange {
+extension SafeOnChange {
     @available(iOS 17.0, *)
     private func applyOnChange(_ content: Content) -> some View {
         content
             .onChange(of: value, action)
     }
-    
+
     @available(iOS, introduced: 14.0, deprecated: 17.0)
     private func applyDeprecatedOnChange(_ content: Content) -> some View {
         content

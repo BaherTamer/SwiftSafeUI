@@ -1,7 +1,8 @@
 //
 //  SafeScrollView.swift
 //
-//  GitHub Repo & Documentation: https://github.com/BaherTamer/SwiftSafeUI
+//  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
+//  Documentation: https://bahertamer.github.io/SwiftSafeUI/
 //
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
@@ -35,7 +36,7 @@ public struct SafeScrollView<Content: View>: View {
     private let axes: Axis.Set
     private let showsIndicators: Bool
     private let content: Content
-    
+
     // MARK: - Life Cycle
     ///
     /// Creates a new instance with the specified axes and scroll indicator visibility, with support for different iOS versions.
@@ -54,7 +55,7 @@ public struct SafeScrollView<Content: View>: View {
         self.showsIndicators = showsIndicators
         self.content = content()
     }
-    
+
     // MARK: - Body
     public var body: some View {
         if #available(iOS 16.0, *) {
@@ -66,7 +67,7 @@ public struct SafeScrollView<Content: View>: View {
 }
 
 // MARK: - Private Helpers
-fileprivate extension SafeScrollView {
+extension SafeScrollView {
     @available(iOS 16.0, *)
     private var scrollView: some View {
         ScrollView(axes) {
@@ -74,7 +75,7 @@ fileprivate extension SafeScrollView {
         }
         .scrollIndicators(showsIndicators ? .automatic : .hidden)
     }
-    
+
     @available(iOS, introduced: 13.0, deprecated: 16.0)
     private var deprecatedScrollView: some View {
         ScrollView(

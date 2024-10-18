@@ -1,12 +1,13 @@
 //
 //  SafeIgnoreSafeArea.swift
 //
-//  GitHub Repo & Documentation: https://github.com/BaherTamer/SwiftSafeUI
+//  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
+//  Documentation: https://bahertamer.github.io/SwiftSafeUI/
 //
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
 
-import SwiftUI
+import SwiftUICore
 
 extension View {
     ///
@@ -31,7 +32,7 @@ extension View {
     /// }
     /// ```
     ///
-    public func safeIgnoreSafeArea(
+    nonisolated public func safeIgnoreSafeArea(
         _ edges: Edge.Set = .all
     ) -> some View {
         modifier(
@@ -40,10 +41,10 @@ extension View {
     }
 }
 
-fileprivate struct SafeIgnoreSafeArea: ViewModifier {
+private struct SafeIgnoreSafeArea: ViewModifier {
     // MARK: - Inputs
     let edges: Edge.Set
-    
+
     // MARK: - Body
     func body(content: Content) -> some View {
         if #available(iOS 14.0, *) {
@@ -55,13 +56,13 @@ fileprivate struct SafeIgnoreSafeArea: ViewModifier {
 }
 
 // MARK: - Private Helpers
-fileprivate extension SafeIgnoreSafeArea {
+extension SafeIgnoreSafeArea {
     @available(iOS 14.0, *)
     private func applyIgnoresSafeArea(_ content: Content) -> some View {
         content
             .ignoresSafeArea(edges: edges)
     }
-    
+
     @available(iOS, introduced: 13.0, deprecated: 14.0)
     private func applyEdgesIgnoringSafeArea(_ content: Content) -> some View {
         content

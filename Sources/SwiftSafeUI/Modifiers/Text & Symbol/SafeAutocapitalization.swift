@@ -1,7 +1,8 @@
 //
 //  SafeAutocapitalization.swift
 //
-//  GitHub Repo & Documentation: https://github.com/BaherTamer/SwiftSafeUI
+//  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
+//  Documentation: https://bahertamer.github.io/SwiftSafeUI/
 //
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
@@ -33,17 +34,19 @@ extension View {
     /// }
     /// ```
     ///
-    public func safeAutocapitalization(_ style: AutocapitalizationType) -> some View {
+    nonisolated public func safeAutocapitalization(
+        _ style: AutocapitalizationType
+    ) -> some View {
         modifier(
             SafeAutocapitalization(style: style)
         )
     }
 }
 
-fileprivate struct SafeAutocapitalization: ViewModifier {
+private struct SafeAutocapitalization: ViewModifier {
     // MARK: - Inputs
     let style: AutocapitalizationType
-    
+
     // MARK: - Body
     func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
@@ -55,15 +58,17 @@ fileprivate struct SafeAutocapitalization: ViewModifier {
 }
 
 // MARK: - Private Helpers
-fileprivate extension SafeAutocapitalization {
+extension SafeAutocapitalization {
     @available(iOS 15.0, *)
     private func applyAutocapitalization(_ content: Content) -> some View {
         content
             .textInputAutocapitalization(style.value)
     }
-    
+
     @available(iOS, introduced: 13.0, deprecated: 15.0)
-    private func applyDeprecatedAutocapitalization(_ content: Content) -> some View {
+    private func applyDeprecatedAutocapitalization(_ content: Content)
+        -> some View
+    {
         content
             .autocapitalization(style.deprecatedValue)
     }
@@ -79,16 +84,16 @@ fileprivate extension SafeAutocapitalization {
 public enum AutocapitalizationType {
     /// Automatically capitalize the first letter of each sentence.
     case sentences
-    
+
     /// Automatically capitalize the first letter of each word.
     case words
-    
+
     /// Automatically capitalize all characters.
     case characters
-    
+
     /// Disable autocapitalization entirely.
     case never
-    
+
     @available(iOS 15.0, *)
     fileprivate var value: TextInputAutocapitalization {
         switch self {
@@ -98,7 +103,7 @@ public enum AutocapitalizationType {
         case .never: .never
         }
     }
-    
+
     fileprivate var deprecatedValue: UITextAutocapitalizationType {
         switch self {
         case .sentences: .sentences

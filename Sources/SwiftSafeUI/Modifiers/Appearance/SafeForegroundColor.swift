@@ -1,12 +1,13 @@
 //
 //  SafeForegroundColor.swift
 //
-//  GitHub Repo & Documentation: https://github.com/BaherTamer/SwiftSafeUI
+//  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
+//  Documentation: https://bahertamer.github.io/SwiftSafeUI/
 //
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
 
-import SwiftUI
+import SwiftUICore
 
 extension View {
     ///
@@ -31,17 +32,17 @@ extension View {
     /// }
     /// ```
     ///
-    public func safeForegroundColor(_ color: Color) -> some View {
+    nonisolated public func safeForegroundColor(_ color: Color) -> some View {
         modifier(
             SafeForegroundColor(color: color)
         )
     }
 }
 
-fileprivate struct SafeForegroundColor: ViewModifier {
+private struct SafeForegroundColor: ViewModifier {
     // MARK: - Inputs
     let color: Color
-    
+
     // MARK: - Body
     func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
@@ -53,13 +54,13 @@ fileprivate struct SafeForegroundColor: ViewModifier {
 }
 
 // MARK: - Private Helpers
-fileprivate extension SafeForegroundColor {
+extension SafeForegroundColor {
     @available(iOS 15.0, *)
     private func applyForegroundStyle(_ content: Content) -> some View {
         content
             .foregroundStyle(color)
     }
-    
+
     @available(iOS, introduced: 13.0, deprecated: 15.0)
     private func applyForegroundColor(_ content: Content) -> some View {
         content

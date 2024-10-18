@@ -1,12 +1,13 @@
 //
 //  SafeTintColor.swift
 //
-//  GitHub Repo & Documentation: https://github.com/BaherTamer/SwiftSafeUI
+//  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
+//  Documentation: https://bahertamer.github.io/SwiftSafeUI/
 //
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
 
-import SwiftUI
+import SwiftUICore
 
 extension View {
     ///
@@ -32,17 +33,17 @@ extension View {
     /// }
     /// ```
     ///
-    public func safeTintColor(_ color: Color) -> some View {
+    nonisolated public func safeTintColor(_ color: Color) -> some View {
         modifier(
             SafeTintColor(color: color)
         )
     }
 }
 
-fileprivate struct SafeTintColor: ViewModifier {
+private struct SafeTintColor: ViewModifier {
     // MARK: - Inputs
     let color: Color
-    
+
     // MARK: - Body
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
@@ -54,13 +55,13 @@ fileprivate struct SafeTintColor: ViewModifier {
 }
 
 // MARK: - Private Helpers
-fileprivate extension SafeTintColor {
+extension SafeTintColor {
     @available(iOS 16.0, *)
     private func applyTint(_ content: Content) -> some View {
         content
             .tint(color)
     }
-    
+
     @available(iOS, introduced: 13.0, deprecated: 16.0)
     private func applyAccentColor(_ content: Content) -> some View {
         content
