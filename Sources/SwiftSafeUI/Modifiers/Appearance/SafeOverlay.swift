@@ -7,7 +7,7 @@
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
 
-import SwiftUI
+import SwiftUICore
 
 extension View {
     ///
@@ -37,8 +37,7 @@ extension View {
     /// }
     /// ```
     ///
-    nonisolated
-    public func safeOverlay<Content: View>(
+    public nonisolated func safeOverlay<Content: View>(
         alignment: Alignment = .center,
         @ViewBuilder content: () -> Content
     ) -> some View {
@@ -51,11 +50,11 @@ extension View {
     }
 }
 
-fileprivate struct SafeOverlay<OverlayContent: View>: ViewModifier {
+private struct SafeOverlay<OverlayContent: View>: ViewModifier {
     // MARK: - Inputs
     let alignment: Alignment
     let overlayContent: OverlayContent
-    
+
     // MARK: - Body
     func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
@@ -67,7 +66,7 @@ fileprivate struct SafeOverlay<OverlayContent: View>: ViewModifier {
 }
 
 // MARK: - Private Helpers
-fileprivate extension SafeOverlay {
+extension SafeOverlay {
     @available(iOS 15.0, *)
     private func applyOverlay(_ content: Content) -> some View {
         content
@@ -75,7 +74,7 @@ fileprivate extension SafeOverlay {
                 overlayContent
             }
     }
-    
+
     @available(iOS, introduced: 13.0, deprecated: 15.0)
     private func applyDeprecatedOverlay(_ content: Content) -> some View {
         content

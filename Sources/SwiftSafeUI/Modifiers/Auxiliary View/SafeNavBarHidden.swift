@@ -37,24 +37,23 @@ extension View {
     /// }
     /// ```
     ///
-    nonisolated
-    public func safeNavBarHidden(_ isHidden: Bool) -> some View {
+    public nonisolated func safeNavBarHidden(_ isHidden: Bool) -> some View {
         modifier(
             SafeNavBarHidden(isHidden: isHidden)
         )
     }
 }
 
-fileprivate struct SafeNavBarHidden: ViewModifier {
+private struct SafeNavBarHidden: ViewModifier {
     // MARK: - Inputs
     let isHidden: Bool
-    
+
     // MARK: - Variables
     @available(iOS 15.0, *)
     private var visibility: Visibility {
         isHidden ? .hidden : .automatic
     }
-    
+
     // MARK: - Body
     func body(content: Content) -> some View {
         if #available(iOS 18.0, *) {
@@ -68,7 +67,7 @@ fileprivate struct SafeNavBarHidden: ViewModifier {
 }
 
 // MARK: - Private Helpers
-fileprivate extension SafeNavBarHidden {
+extension SafeNavBarHidden {
     @available(iOS 18.0, *)
     private func applyToolbarVisibility(_ content: Content) -> some View {
         content
@@ -77,7 +76,7 @@ fileprivate extension SafeNavBarHidden {
                 for: .navigationBar
             )
     }
-    
+
     @available(iOS, introduced: 16.0, deprecated: 18.0)
     private func applyToolbar(_ content: Content) -> some View {
         content
@@ -86,7 +85,7 @@ fileprivate extension SafeNavBarHidden {
                 for: .navigationBar
             )
     }
-    
+
     @available(iOS, introduced: 13.0, deprecated: 16.0)
     private func applyNavigationBarHidden(_ content: Content) -> some View {
         content

@@ -7,7 +7,7 @@
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
 
-import SwiftUI
+import SwiftUICore
 
 extension View {
     /// Applies a mask to this view using the provided content and alignment.
@@ -36,8 +36,7 @@ extension View {
     /// }
     /// ```
     ///
-    nonisolated
-    public func safeMask<Content: View>(
+    public nonisolated func safeMask<Content: View>(
         alignment: Alignment = .center,
         @ViewBuilder _ content: () -> Content
     ) -> some View {
@@ -50,11 +49,11 @@ extension View {
     }
 }
 
-fileprivate struct SafeMask<MaskContent: View>: ViewModifier {
+private struct SafeMask<MaskContent: View>: ViewModifier {
     // MARK: - Inputs
     let alignment: Alignment
     let maskContent: MaskContent
-    
+
     // MARK: - Body
     func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
@@ -66,7 +65,7 @@ fileprivate struct SafeMask<MaskContent: View>: ViewModifier {
 }
 
 // MARK: - Private Helpers
-fileprivate extension SafeMask {
+extension SafeMask {
     @available(iOS 15.0, *)
     private func applyMask(_ content: Content) -> some View {
         content
@@ -74,13 +73,13 @@ fileprivate extension SafeMask {
                 maskContent
             }
     }
-    
+
     @available(iOS, introduced: 13.0, deprecated: 15.0)
     private func applyDeprecatedMask(_ content: Content) -> some View {
         content
             .mask(deprecatedMaskContent)
     }
-    
+
     private var deprecatedMaskContent: some View {
         maskContent
             .frame(
