@@ -14,6 +14,8 @@ import SwiftUI
 /// - On iOS 16 and later, it utilizes the new [`NavigationStack`](https://developer.apple.com/documentation/swiftui/navigationstack) initializer [`init(root:)`](https://developer.apple.com/documentation/swiftui/navigationstack/init(root:)).
 /// - On earlier versions, it falls back to the old [`NavigationView`](https://developer.apple.com/documentation/swiftui/navigationview) initializer [`init(content:)`](https://developer.apple.com/documentation/swiftui/navigationview/init(content:)) with the old [`navigationViewStyle(_:)`](https://developer.apple.com/documentation/swiftui/view/navigationviewstyle(_:)) method.
 ///
+/// > Tip: If your app exclusively supports iOS 16 or later, you do not need to use this modifier. You can directly use `NavigationStack` as this modifier primarily addresses the deprecation of `NavigationView` in earlier iOS versions.
+///
 /// ## Example
 /// ```swift
 /// struct ContentView: View {
