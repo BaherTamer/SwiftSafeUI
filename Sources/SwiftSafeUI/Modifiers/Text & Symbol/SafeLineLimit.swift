@@ -81,7 +81,9 @@ extension SafeLineLimit {
             .background(geometryReader)
             .frame(height: reservesSpace ? height : nil, alignment: .top)
             .onPreferenceChange(TextHeightPreferenceKey.self) { height in
-                self.height = height * CGFloat(limit)
+                DispatchQueue.main.async {
+                    self.height = height * CGFloat(limit)
+                }
             }
     }
 
@@ -99,7 +101,7 @@ extension SafeLineLimit {
 // MARK: - Text Height Preference Key
 private struct TextHeightPreferenceKey: PreferenceKey {
     // MARK: Variables
-    static var defaultValue: CGFloat = 20
+    static let defaultValue: CGFloat = 20
 
     // MARK: Config Functions
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
