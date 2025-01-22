@@ -26,5 +26,6 @@ With **SwiftSafeUI**, you can focus on building your app’s features while conf
 
 ### Essentials
 
+- <doc:SafeEnvironmentValues>
 - <doc:SafeModifiers>
 - <doc:SafeViews>
