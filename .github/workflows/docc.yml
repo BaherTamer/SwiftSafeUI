@@ -20,6 +20,11 @@ jobs:
         with:
           fetch-depth: 0
           
+      - name: Install Xcode
+        run: |
+          sudo xcode-select --switch /Applications/Xcode.app
+          sudo xcodebuild -license accept
+          
       - name: Run Build Docs
         run: .scripts/build-docc.sh
         
