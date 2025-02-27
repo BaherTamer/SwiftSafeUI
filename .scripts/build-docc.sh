@@ -21,13 +21,15 @@ xcrun docc process-archive transform-for-static-hosting \
 
 echo '<script>window.location.href += "/documentation/swiftsafeui"</script>' > docs/index.html
 
-# Switch to docs branch, bringing uncommitted changes
-git fetch origin docs || true
-git checkout docs 2>/dev/null || git checkout -b docs
+# Ensure the latest docs branch is available
+git fetch origin docs
+
+# Switch to docs branch (without trying to create it)
+git checkout docs
 git pull origin docs --ff-only
 
 # Commit and push only on the docs branch
-git add -f docs  # Force add in case of ignored files
+git add -f docs  # Force add ignored files
 git commit -m "Update documentation"
 git push origin docs
 
