@@ -20,5 +20,8 @@ let package = Package(
         .target(
             name: "SwiftSafeUI"
         ),
+    ],
+    swiftLanguageModes: [
+        .v5, .v6
     ]
 )
