@@ -4,7 +4,11 @@ set -e  # Exit on error
 
 cd "$(dirname "$0")/.." || exit
 
-# Build documentation
+# Store the current branch name
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+# Generate documentation in the current branch
+rm -rf docs
 xcrun xcodebuild docbuild \
     -scheme SwiftSafeUI \
     -destination 'generic/platform=iOS Simulator' \
@@ -17,12 +21,15 @@ xcrun docc process-archive transform-for-static-hosting \
 
 echo '<script>window.location.href += "/documentation/swiftsafeui"</script>' > docs/index.html
 
-# Commit and push documentation updates
-git add docs
-git commit -m "Update documentation"
-git push origin docs --force  # Force push to ensure sync
+# Switch to docs branch, bringing uncommitted changes
+git fetch origin docs || true
+git checkout docs 2>/dev/null || git checkout -b docs
+git pull origin docs --ff-only
 
-# Restore the stashed changes if there was anything stashed
-if git stash list | grep -q "Auto stash before switching to docs branch"; then
-    git stash pop
-fi
+# Commit and push only on the docs branch
+git add -f docs  # Force add in case of ignored files
+git commit -m "Update documentation"
+git push origin docs
+
+# Switch back to the original branch
+git checkout "$CURRENT_BRANCH"
