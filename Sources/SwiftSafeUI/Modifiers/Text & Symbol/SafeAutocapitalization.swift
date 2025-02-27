@@ -81,7 +81,7 @@ extension SafeAutocapitalization {
 /// - On iOS 15 and later, the enum maps to [`TextInputAutocapitalization`](https://developer.apple.com/documentation/swiftui/textinputautocapitalization).
 /// - On earlier versions, it maps to [`UITextAutocapitalizationType`](https://developer.apple.com/documentation/uikit/uitextautocapitalizationtype).
 ///
-public enum AutocapitalizationType {
+public enum AutocapitalizationType: Sendable {
     /// Automatically capitalize the first letter of each sentence.
     case sentences
 
