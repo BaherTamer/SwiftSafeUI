@@ -21,15 +21,12 @@ xcrun docc process-archive transform-for-static-hosting \
 
 echo '<script>window.location.href += "/documentation/swiftsafeui"</script>' > docs/index.html
 
-# Ensure the latest docs branch is available
-git fetch origin docs
+# Switch to docs branch, keeping changes
+git checkout docs --detach  # Detach HEAD to prevent conflicts
+git checkout docs           # Now switch to docs while keeping changes
 
-# Switch to docs branch (without trying to create it)
-git checkout docs
-git pull origin docs --ff-only
-
-# Commit and push only on the docs branch
-git add -f docs  # Force add ignored files
+# Commit and push only the updated documentation
+git add -f docs  # Force add ignored files if needed
 git commit -m "Update documentation"
 git push origin docs
 
