@@ -7,7 +7,7 @@
 //  Copyright © 2024 Baher Tamer. All rights reserved.
 //
 
-import SwiftUI
+import SwiftUICore
 
 extension View {
     /// Applies a mask to this view using the provided content and alignment.
