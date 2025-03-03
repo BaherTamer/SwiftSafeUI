@@ -20,6 +20,19 @@ By using **SafeModifiers**, you can create a seamless and consistent user interf
 
 ## Modifiers
 
+### Accessibility Modifiers
+
+- ``SwiftUICore/View/safeAccessibilityActivationPoint(_:)``
+- ``SwiftUICore/View/safeAccessibilityAddTraits(_:)``
+- ``SwiftUICore/View/safeAccessibilityHidden(_:)``
+- ``SwiftUICore/View/safeAccessibilityHint(_:)``
+- ``SwiftUICore/View/safeAccessibilityIdentifier(_:)``
+- ``SwiftUICore/View/safeAccessibilityInputLabels(_:)``
+- ``SwiftUICore/View/safeAccessibilityLabel(_:)``
+- ``SwiftUICore/View/safeAccessibilityRemoveTraits(_:)``
+- ``SwiftUICore/View/safeAccessibilitySortPriority(_:)``
+- ``SwiftUICore/View/safeAccessibilityValue(_:)``
+
 ### Appearance Modifiers
 
 - ``SwiftUICore/View/safeBackground(alignment:content:)``
