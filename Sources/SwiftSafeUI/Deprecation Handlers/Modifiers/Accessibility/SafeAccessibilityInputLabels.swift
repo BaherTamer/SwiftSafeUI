@@ -22,7 +22,9 @@ extension View {
     ///
     /// > Note: If you don’t specify any input labels, the user can still refer to the view using the accessibility label that you add with the `safeAccessibilityLabel()` modifier.
     ///
-    nonisolated public func safeAccessibilityInputLabels(_ inputLabels: [Text]) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
+    nonisolated public func safeAccessibilityInputLabels(
+        _ inputLabels: [Text]
+    ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
         if #available(iOS 14.0, *) {
             accessibilityInputLabels(inputLabels)
         } else {

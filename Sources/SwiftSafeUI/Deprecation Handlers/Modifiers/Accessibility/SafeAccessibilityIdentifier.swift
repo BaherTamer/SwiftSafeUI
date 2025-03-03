@@ -20,7 +20,9 @@ extension View {
     /// ## Apple's Discussion
     /// Use this value for testing. It isn’t visible to the user.
     ///
-    nonisolated public func safeAccessibilityIdentifier(_ identifier: String) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
+    nonisolated public func safeAccessibilityIdentifier(
+        _ identifier: String
+    ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
         if #available(iOS 14.0, *) {
             accessibilityIdentifier(identifier)
         } else {

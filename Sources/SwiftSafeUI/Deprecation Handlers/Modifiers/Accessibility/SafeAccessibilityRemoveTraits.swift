@@ -17,7 +17,9 @@ extension View {
     /// - On iOS 14 and later, it uses the new [`accessibilityRemoveTraits(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityremovetraits(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(removeTraits:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(removeTraits:)) method.
     ///
-    nonisolated public func safeAccessibilityRemoveTraits(_ traits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
+    nonisolated public func safeAccessibilityRemoveTraits(
+        _ traits: AccessibilityTraits
+    ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
         if #available(iOS 14.0, *) {
             accessibilityRemoveTraits(traits)
         } else {

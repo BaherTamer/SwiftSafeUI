@@ -20,7 +20,9 @@ extension View {
     /// ## Apple's Discussion
     /// Use this method to describe the value represented by a view, but only if that’s different than the view’s label. For example, for a slider that you label as “Volume” using `accessibilityLabel()`, you can provide the current volume setting, like “60%”, using `accessibilityValue()`.
     ///
-    nonisolated public func safeAccessibilityValue(_ value: Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
+    nonisolated public func safeAccessibilityValue(
+        _ value: Text
+    ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
         if #available(iOS 14.0, *) {
             accessibilityValue(value)
         } else {

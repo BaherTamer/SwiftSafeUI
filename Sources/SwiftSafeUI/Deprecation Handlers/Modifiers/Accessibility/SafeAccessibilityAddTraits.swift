@@ -17,7 +17,9 @@ extension View {
     /// - On iOS 14 and later, it uses the new [`accessibilityAddTraits(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityaddtraits(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(addTraits:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(addTraits:)) method.
     ///
-    nonisolated public func safeAccessibilityAddTraits(_ traits: AccessibilityTraits) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
+    nonisolated public func safeAccessibilityAddTraits(
+        _ traits: AccessibilityTraits
+    ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
         if #available(iOS 14.0, *) {
             accessibilityAddTraits(traits)
         } else {

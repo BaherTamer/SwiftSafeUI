@@ -20,7 +20,9 @@ extension View {
     /// ## Apple's Discussion
     /// Provide a hint in the form of a brief phrase, like “Purchases the item” or “Downloads the attachment”.
     ///
-    nonisolated public func safeAccessibilityHint(_ hint: Text) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
+    nonisolated public func safeAccessibilityHint(
+        _ hint: Text
+    ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
         if #available(iOS 14.0, *) {
             accessibilityHint(hint)
         } else {

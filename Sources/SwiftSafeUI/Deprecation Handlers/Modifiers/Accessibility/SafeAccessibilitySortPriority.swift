@@ -20,7 +20,9 @@ extension View {
     /// ## Apple's Discussion
     /// Higher numbers are sorted first. The default sort priority is zero.
     ///
-    nonisolated public func safeAccessibilitySortPriority(_ sortPriority: Double) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
+    nonisolated public func safeAccessibilitySortPriority(
+        _ sortPriority: Double
+    ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
         if #available(iOS 14.0, *) {
             accessibilitySortPriority(sortPriority)
         } else {

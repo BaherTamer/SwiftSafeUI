@@ -17,7 +17,9 @@ extension View {
     /// - On iOS 14 and later, it uses the new [`accessibilityHidden(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityhidden(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(hidden:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(hidden:)) method.
     ///
-    nonisolated public func safeAccessibilityHidden(_ hidden: Bool) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
+    nonisolated public func safeAccessibilityHidden(
+        _ hidden: Bool
+    ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
         if #available(iOS 14.0, *) {
             accessibilityHidden(hidden)
         } else {
