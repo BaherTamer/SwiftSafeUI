@@ -51,7 +51,8 @@ By using **SafeModifiers**, you can create a seamless and consistent user interf
 
 ### Input & Event Modifiers
 
-- ``SwiftUICore/View/safeOnChange(_:perform:)``
+- ``SwiftUICore/View/safeOnChange(of:initial:_:)-35ola``
+- ``SwiftUICore/View/safeOnChange(of:initial:_:)-67u4j``
 
 ### Layout Modifiers
 

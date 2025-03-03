@@ -29,7 +29,7 @@ extension EnvironmentValues {
     /// @Environment(\.safeIsPresented) private var safeIsPresented
     /// ```
     ///
-    /// Read the value inside a view if you need to know when SwiftUI presents that view. For example, you can take an action when SwiftUI presents a view by using the ``SwiftUICore/View/safeOnChange(_:perform:)`` modifier:
+    /// Read the value inside a view if you need to know when SwiftUI presents that view. For example, you can take an action when SwiftUI presents a view by using the ``SwiftUICore/View/safeOnChange(of:initial:_:)-35ola`` modifier:
     ///
     /// ```swift
     /// .safeOnChange(of: isPresented) { _, isPresented in
