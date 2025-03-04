@@ -17,7 +17,7 @@ extension View {
     /// - On iOS 14 and later, it uses the new [`accessibilitySortPriority(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilitysortpriority(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(sortPriority:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(sortPriority:)) method.
     ///
-    /// ## Apple's Discussion
+    /// ## Apple Discussion
     /// Higher numbers are sorted first. The default sort priority is zero.
     ///
     nonisolated public func safeAccessibilitySortPriority(

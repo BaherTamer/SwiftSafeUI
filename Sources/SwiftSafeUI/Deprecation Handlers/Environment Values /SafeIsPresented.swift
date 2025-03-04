@@ -17,7 +17,7 @@ extension EnvironmentValues {
     /// - On iOS 15 and later, it uses the new [`isPresented`](https://developer.apple.com/documentation/swiftui/environmentvalues/ispresented) property.
     /// - On earlier versions, it falls back to the [`presentationMode`](https://developer.apple.com/documentation/swiftui/environmentvalues/presentationmode) environment value isPresented variable.
     ///
-    /// ## Apple's Discussion
+    /// ## Apple Discussion
     /// This behaves differently than [`onAppear(perform:)`](https://developer.apple.com/documentation/swiftui/view/onappear(perform:)), which SwiftUI can call more than once for a given presentation, like when you navigate back to a view that’s already in the navigation hierarchy.
     ///
     /// To dismiss the currently presented view, use ``safeDismiss``.

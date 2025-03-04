@@ -17,7 +17,7 @@ extension View {
     /// - On iOS 14 and later, it uses the new [`accessibilityActivationPoint(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityactivationpoint(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(activationPoint:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(activationPoint:)) method.
     ///
-    /// ## Apple's Discussion
+    /// ## Apple Discussion
     /// Use this modifier to ensure that the activation point for a small element remains accurate even if you present a larger version of the element to `VoiceOver`.
     ///
     /// If an activation point is not provided, an activation point will be derrived from one of the accessibility elements decendents or from the center of the accessibility frame.

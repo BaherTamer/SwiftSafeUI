@@ -17,7 +17,7 @@ extension View {
     /// - On iOS 14 and later, it uses the new [`accessibilityHint(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityhint(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(hint:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(hint:)) method.
     ///
-    /// ## Apple's Discussion
+    /// ## Apple Discussion
     /// Provide a hint in the form of a brief phrase, like “Purchases the item” or “Downloads the attachment”.
     ///
     nonisolated public func safeAccessibilityHint(

@@ -17,7 +17,7 @@ extension View {
     /// - On iOS 14 and later, it uses the new [`accessibilityIdentifier(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityidentifier(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(identifier:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(identifier:)) method.
     ///
-    /// ## Apple's Discussion
+    /// ## Apple Discussion
     /// Use this value for testing. It isn’t visible to the user.
     ///
     nonisolated public func safeAccessibilityIdentifier(

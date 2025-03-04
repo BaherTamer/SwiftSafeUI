@@ -18,7 +18,7 @@ extension View {
     /// - On iOS 14 and later, it utilizes the new [`ignoresSafeArea(_:edges:))`](https://developer.apple.com/documentation/swiftui/view/ignoressafearea(_:edges:)) method.
     /// - On earlier versions, it falls back to the [`edgesIgnoringSafeArea(_:)`](https://developer.apple.com/documentation/swiftui/view/edgesIgnoringSafeArea(_:) ) method.
     ///
-    /// ## Apple's Discussion
+    /// ## Apple Discussion
     /// By default, the SwiftUI layout system sizes and positions views to avoid certain safe areas. This ensures that system content like the software keyboard or edges of the device don’t obstruct your views. To extend your content into these regions, you can ignore safe areas on specific edges by applying this modifier.
     ///
     /// For examples of how to use this modifier, see [Adding a background to your view](https://developer.apple.com/documentation/swiftui/adding-a-background-to-your-view).

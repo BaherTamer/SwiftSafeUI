@@ -16,7 +16,7 @@ extension View {
     /// - On iOS 15 and later, it uses the new [`mask(alignment:_:)`](https://developer.apple.com/documentation/swiftui/view/mask(alignment:_:)) method.
     /// - On earlier versions, it falls back to the deprecated [`mask(_:)`](https://developer.apple.com/documentation/swiftui/view/mask(_:)) method.
     ///
-    /// ## Apple's Discussion
+    /// ## Apple Discussion
     /// Use ``safeMask(alignment:_:)`` when you want to apply the alpha (opacity) value of another view to the current view.
     ///
     /// ## Example

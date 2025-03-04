@@ -17,7 +17,7 @@ extension View {
     /// - On iOS 14 and later, it uses the new [`accessibilityValue(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityvalue(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(value:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(value:)) method.
     ///
-    /// ## Apple's Discussion
+    /// ## Apple Discussion
     /// Use this method to describe the value represented by a view, but only if that’s different than the view’s label. For example, for a slider that you label as “Volume” using `accessibilityLabel()`, you can provide the current volume setting, like “60%”, using `accessibilityValue()`.
     ///
     nonisolated public func safeAccessibilityValue(

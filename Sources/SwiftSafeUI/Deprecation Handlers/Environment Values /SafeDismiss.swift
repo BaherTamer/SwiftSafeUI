@@ -18,7 +18,7 @@ extension EnvironmentValues {
     /// - On iOS 15 and later, it uses the new [`dismiss()`](https://developer.apple.com/documentation/swiftui/environmentvalues/dismiss) method.
     /// - On earlier versions, it falls back to the [`presentationMode`](https://developer.apple.com/documentation/swiftui/environmentvalues/presentationmode) environment value dismiss method.
     ///
-    /// ## Apple's Discussion
+    /// ## Apple Discussion
     /// Use this environment value to get the dismiss action instance for the current [`Environment`](https://developer.apple.com/documentation/swiftui/environment). Then call the instance to perform the dismissal. You call the instance directly because it defines a [`callAsFunction()`](https://developer.apple.com/documentation/swiftui/dismissaction/callasfunction()) method that Swift calls when you call the instance.
     ///
     /// You can use this action to:

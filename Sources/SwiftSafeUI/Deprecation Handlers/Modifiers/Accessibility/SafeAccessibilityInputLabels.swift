@@ -17,7 +17,7 @@ extension View {
     /// - On iOS 14 and later, it uses the new [`accessibilityInputLabels(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityinputlabels(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(inputLabels:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(inputLabels:)) method.
     ///
-    /// ## Apple's Discussion
+    /// ## Apple Discussion
     /// Provide labels in descending order of importance. Voice Control and Full Keyboard Access use the input labels.
     ///
     /// > Note: If you don’t specify any input labels, the user can still refer to the view using the accessibility label that you add with the `safeAccessibilityLabel()` modifier.

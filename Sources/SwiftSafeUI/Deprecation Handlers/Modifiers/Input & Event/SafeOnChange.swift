@@ -18,7 +18,7 @@ extension View {
     /// - On iOS 17 and later, it utilizes the new [`onChange(of:initial:_:)`](https://developer.apple.com/documentation/swiftui/view/onchange(of:initial:_:)-8wgw9) method.
     /// - On earlier versions, it falls back to the [`onChange(of:perform:)`](https://developer.apple.com/documentation/swiftui/view/onchange(of:perform:)) method.
     ///
-    /// ## Apple's Discussion
+    /// ## Apple Discussion
     /// You can use `safeOnChange` to trigger a side effect as the result of a value changing, such as an `Environment` key or a `Binding`.
     ///
     /// The system may call the action closure on the main actor, so avoid long-running tasks in the closure. If you need to perform such tasks, detach an asynchronous background task.
@@ -87,7 +87,7 @@ extension View {
     /// - On iOS 17 and later, it utilizes the new [`onChange(of:initial:_:)`](https://developer.apple.com/documentation/swiftui/view/onchange(of:initial:_:)-4psgg) method.
     /// - On earlier versions, it falls back to the [`onChange(of:perform:)`](https://developer.apple.com/documentation/swiftui/view/onchange(of:perform:)) method.
     ///
-    /// ## Apple's Discussion
+    /// ## Apple Discussion
     /// You can use `safeOnChange` to trigger a side effect as the result of a value changing, such as an `Environment` key or a `Binding`.
     ///
     /// The system may call the action closure on the main actor, so avoid long-running tasks in the closure. If you need to perform such tasks, detach an asynchronous background task.
