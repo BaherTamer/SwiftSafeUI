@@ -19,8 +19,7 @@ extension View {
     /// - On earlier versions, it falls back to the [`searchable(text:placement:prompt:suggestions:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:suggestions:)) method.
     ///
     /// ## Apple Discussion
-    /// For more information about using searchable modifiers, see
-    /// [Adding a search interface to your app](https://developer.apple.com/documentation/swiftui/adding-a-search-interface-to-your-app)
+    /// For more information about using searchable modifiers, see [Adding a search interface to your app](https://developer.apple.com/documentation/swiftui/adding-a-search-interface-to-your-app)
     ///
     /// ## Example
     /// ```swift
@@ -83,8 +82,7 @@ extension View {
     /// - On earlier versions, it falls back to the [`searchable(text:placement:prompt:suggestions:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:suggestions:)) method.
     ///
     /// ## Apple Discussion
-    /// For more information about using searchable modifiers, see
-    /// [Adding a search interface to your app](https://developer.apple.com/documentation/swiftui/adding-a-search-interface-to-your-app)
+    /// For more information about using searchable modifiers, see [Adding a search interface to your app](https://developer.apple.com/documentation/swiftui/adding-a-search-interface-to-your-app)
     ///
     /// ## Example
     /// ```swift
@@ -147,8 +145,7 @@ extension View {
     /// - On earlier versions, it falls back to the [`searchable(text:placement:prompt:suggestions:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:suggestions:)) method.
     ///
     /// ## Apple Discussion
-    /// For more information about using searchable modifiers, see
-    /// [Adding a search interface to your app](https://developer.apple.com/documentation/swiftui/adding-a-search-interface-to-your-app)
+    /// For more information about using searchable modifiers, see [Adding a search interface to your app](https://developer.apple.com/documentation/swiftui/adding-a-search-interface-to-your-app)
     ///
     /// ## Example
     /// ```swift

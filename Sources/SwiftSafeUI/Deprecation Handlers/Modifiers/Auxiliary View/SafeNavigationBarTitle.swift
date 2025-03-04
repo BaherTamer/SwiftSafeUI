@@ -1,5 +1,5 @@
 //
-//  SafeNavBarTitle.swift
+//  SafeNavigationBarTitle.swift
 //
 //  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
 //  Documentation: https://bahertamer.github.io/SwiftSafeUI/
@@ -18,17 +18,10 @@ extension View {
     /// - On earlier versions, it falls back to the [`navigationBarTitle(_:displayMode:)`](https://developer.apple.com/documentation/swiftui/view/navigationbartitle(_:displaymode:)-8buvp ) method.
     ///
     /// ## Apple Discussion
-    /// Use `safeNavigationBarTitle(_:displayMode:)` to set the title of the navigation bar for this view and specify a display mode for the title from one of the
-    /// [`NavigationBarItem.TitleDisplayMode`](https://developer.apple.com/documentation/swiftui/navigationbaritem/titledisplaymode)
-    /// styles. This modifier only takes effect when this view is inside of and visible within a
-    /// [`NavigationView`](https://developer.apple.com/documentation/swiftui/navigationview).
+    /// Use `safeNavigationBarTitle(_:displayMode:)` to set the title of the navigation bar for this view and specify a display mode for the title from one of the [`NavigationBarItem.TitleDisplayMode`](https://developer.apple.com/documentation/swiftui/navigationbaritem/titledisplaymode) styles. This modifier only takes effect when this view is inside of and visible within a [`NavigationView`](https://developer.apple.com/documentation/swiftui/navigationview).
     ///
     /// ## Example
-    /// In the example below, text for the navigation bar title is provided using a
-    /// [`Text`](https://developer.apple.com/documentation/swiftui/text)
-    /// view. The navigation bar title’s
-    /// [`NavigationBarItem.TitleDisplayMode`](https://developer.apple.com/documentation/swiftui/navigationbaritem/titledisplaymode)
-    /// is set to `.inline` which places the navigation bar title in the bounds of the navigation bar.
+    /// In the example below, text for the navigation bar title is provided using a [`Text`](https://developer.apple.com/documentation/swiftui/text) view. The navigation bar title’s [`NavigationBarItem.TitleDisplayMode`](https://developer.apple.com/documentation/swiftui/navigationbaritem/titledisplaymode) is set to `.inline` which places the navigation bar title in the bounds of the navigation bar.
     ///
     /// ```swift
     /// struct FlavorView: View {
@@ -76,19 +69,12 @@ extension View {
     /// - On earlier versions, it falls back to the [`navigationBarTitle(_:displayMode:)`](https://developer.apple.com/documentation/swiftui/view/navigationbartitle(_:displaymode:)-gi7a ) method.
     ///
     /// ## Apple Discussion
-    /// Use `safeNavigationBarTitle(_:displayMode:)` to set the title of the navigation bar for this view and specify a display mode for the title from one of the
-    /// [`NavigationBarItem.TitleDisplayMode`](https://developer.apple.com/documentation/swiftui/navigationbaritem/titledisplaymode)
-    /// styles. This modifier only takes effect when this view is inside of and visible within a
-    /// [`NavigationView`](https://developer.apple.com/documentation/swiftui/navigationview).
+    /// Use `safeNavigationBarTitle(_:displayMode:)` to set the title of the navigation bar for this view and specify a display mode for the title from one of the [`NavigationBarItem.TitleDisplayMode`](https://developer.apple.com/documentation/swiftui/navigationbaritem/titledisplaymode) styles. This modifier only takes effect when this view is inside of and visible within a [`NavigationView`](https://developer.apple.com/documentation/swiftui/navigationview).
     ///
     /// If the `titleKey` can't be found, the title uses the text of the key name instead.
     ///
     /// ## Example
-    /// In the example below, text for the navigation bar title is provided using a
-    /// [`Text`](https://developer.apple.com/documentation/swiftui/text)
-    /// view. The navigation bar title’s
-    /// [`NavigationBarItem.TitleDisplayMode`](https://developer.apple.com/documentation/swiftui/navigationbaritem/titledisplaymode)
-    /// is set to `.inline` which places the navigation bar title in the bounds of the navigation bar.
+    /// In the example below, text for the navigation bar title is provided using a [`Text`](https://developer.apple.com/documentation/swiftui/text) view. The navigation bar title’s [`NavigationBarItem.TitleDisplayMode`](https://developer.apple.com/documentation/swiftui/navigationbaritem/titledisplaymode) is set to `.inline` which places the navigation bar title in the bounds of the navigation bar.
     ///
     /// ```swift
     /// struct FlavorView: View {

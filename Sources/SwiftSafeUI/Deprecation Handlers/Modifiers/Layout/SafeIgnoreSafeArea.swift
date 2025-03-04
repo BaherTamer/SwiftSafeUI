@@ -28,6 +28,7 @@ extension View {
     ///     Text("This text is outside of the top safe area.")
     ///         .safeIgnoreSafeArea([.top])
     ///         .border(Color.purple)
+    ///
     ///     Text("This text is inside VStack.")
     ///         .border(Color.yellow)
     /// }

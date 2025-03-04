@@ -9,9 +9,8 @@
 
 import SwiftUICore
 
-@MainActor
 extension EnvironmentValues {
-    ///
+
     /// An action that dismisses the current presentation.
     ///
     /// This environment value ensures compatibility across iOS versions:
@@ -80,11 +79,18 @@ extension EnvironmentValues {
     /// If you do this, the sheet fails to dismiss because the action applies to the environment where you declared it, which is that of the detail view, rather than the sheet.
     ///
     /// The dismiss action has no effect on a view that isn’t currently presented. If you need to query whether SwiftUI is currently presenting a view, read the ``safeIsPresented`` environment value.
-    ///
+    @MainActor
     public var safeDismiss: () -> Void {
         dismissAction
     }
 
+}
+
+// MARK: - Private Helpers
+extension EnvironmentValues {
+
+    /// Calls dismiss action based on iOS versions.
+    @MainActor
     private func dismissAction() {
         if #available(iOS 15, *) {
             dismiss()
@@ -92,4 +98,5 @@ extension EnvironmentValues {
             presentationMode.wrappedValue.dismiss()
         }
     }
+
 }

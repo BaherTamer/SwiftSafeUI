@@ -1,5 +1,5 @@
 //
-//  SafeNavBarHidden.swift
+//  SafeNavigationBarHidden.swift
 //
 //  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
 //  Documentation: https://bahertamer.github.io/SwiftSafeUI/
@@ -19,20 +19,19 @@ extension View {
     /// - On earlier versions, it falls back to the [`navigationBarHidden(_:)`](https://developer.apple.com/documentation/swiftui/view/navigationbarhidden(_:)) method.
     ///
     /// ## Apple Discussion
-    /// Use this method to hide the navigation bar. This modifier only takes effect when the modified view is inside of and visible within a
-    /// [`NavigationView`](https://developer.apple.com/documentation/swiftui/navigationview).
+    /// Use this method to hide the navigation bar. This modifier only takes effect when the modified view is inside of and visible within a [`NavigationView`](https://developer.apple.com/documentation/swiftui/navigationview).
     ///
     /// ## Example
     /// ```swift
     /// SafeNavigationStack {
     ///     ContentView()
-    ///         .safeNavBarHidden(true)
+    ///         .safeNavigationBarHidden(true)
     /// }
     /// ```
     ///
     /// - Parameter hidden: A Boolean value that indicates whether to hide the navigation bar.
     @ViewBuilder
-    nonisolated public func safeNavBarHidden(_ hidden: Bool) -> some View {
+    nonisolated public func safeNavigationBarHidden(_ hidden: Bool) -> some View {
         if #available(iOS 18.0, *) {
             toolbarVisibility(
                 getVisibility(for: hidden),

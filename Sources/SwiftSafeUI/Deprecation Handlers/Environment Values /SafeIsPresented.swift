@@ -10,7 +10,7 @@
 import SwiftUICore
 
 extension EnvironmentValues {
-    ///
+
     /// A Boolean value that indicates whether the view associated with this environment is currently presented.
     ///
     /// This environment value ensures compatibility across iOS versions:
@@ -38,7 +38,6 @@ extension EnvironmentValues {
     ///     }
     /// }
     /// ```
-    ///
     public var safeIsPresented: Bool {
         if #available(iOS 15, *) {
             isPresented
@@ -46,4 +45,5 @@ extension EnvironmentValues {
             presentationMode.wrappedValue.isPresented
         }
     }
+
 }
