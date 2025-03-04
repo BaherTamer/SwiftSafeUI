@@ -4,7 +4,7 @@
 //  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
 //  Documentation: https://bahertamer.github.io/SwiftSafeUI/
 //
-//  Copyright © 2024 Baher Tamer. All rights reserved.
+//  Copyright © 2025 Baher Tamer. All rights reserved.
 //
 
 import SwiftUI
