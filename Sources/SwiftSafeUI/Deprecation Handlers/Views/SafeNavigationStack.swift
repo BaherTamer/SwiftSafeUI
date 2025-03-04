@@ -1,8 +1,10 @@
 //
 //  SafeNavigationStack.swift
-//  SwiftSafeUI
 //
-//  Created by Baher Tamer on 18/10/2024.
+//  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
+//  Documentation: https://bahertamer.github.io/SwiftSafeUI/
+//
+//  Copyright © 2025 Baher Tamer. All rights reserved.
 //
 
 import SwiftUI
