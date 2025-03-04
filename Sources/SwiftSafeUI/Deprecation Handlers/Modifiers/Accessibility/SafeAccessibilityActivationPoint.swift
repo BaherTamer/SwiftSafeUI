@@ -10,7 +10,7 @@
 import SwiftUI
 
 extension View {
-    ///
+
     /// The activation point for an element is the location assistive technologies use to initiate gestures.
     ///
     /// This method ensures compatibility across iOS versions:
@@ -21,7 +21,6 @@ extension View {
     /// Use this modifier to ensure that the activation point for a small element remains accurate even if you present a larger version of the element to `VoiceOver`.
     ///
     /// If an activation point is not provided, an activation point will be derrived from one of the accessibility elements decendents or from the center of the accessibility frame.
-    ///
     nonisolated public func safeAccessibilityActivationPoint(
         _ activationPoint: CGPoint
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
@@ -31,4 +30,5 @@ extension View {
             accessibility(activationPoint: activationPoint)
         }
     }
+
 }

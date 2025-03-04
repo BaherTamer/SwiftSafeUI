@@ -10,6 +10,7 @@
 import SwiftUICore
 
 extension View {
+
     /// Masks this view using the alpha channel of the given view.
     ///
     /// This method ensures compatibility across iOS versions:
@@ -34,7 +35,6 @@ extension View {
     /// - Parameters:
     ///     - alignment: The alignment for `mask` in relation to this view.
     ///     - content: The view whose alpha the rendering system applies to the specified view.
-    ///
     @ViewBuilder
     nonisolated public func safeMask<Content: View>(
         alignment: Alignment = .center,
@@ -54,4 +54,5 @@ extension View {
             mask(framedContent)
         }
     }
+
 }

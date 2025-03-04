@@ -10,7 +10,7 @@
 import SwiftUI
 
 extension View {
-    ///
+
     /// Communicates to the user what happens after performing the view’s action.
     ///
     /// This method ensures compatibility across iOS versions:
@@ -19,7 +19,6 @@ extension View {
     ///
     /// ## Apple Discussion
     /// Provide a hint in the form of a brief phrase, like “Purchases the item” or “Downloads the attachment”.
-    ///
     nonisolated public func safeAccessibilityHint(
         _ hint: Text
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
@@ -29,4 +28,5 @@ extension View {
             accessibility(hint: hint)
         }
     }
+
 }

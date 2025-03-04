@@ -11,7 +11,7 @@ import SwiftUICore
 
 @available(iOS 14.0, *)
 extension View {
-    ///
+
     /// Adds a modifier for this view that fires an action when a specific value changes.
     ///
     /// This method ensures compatibility across iOS versions:
@@ -54,7 +54,6 @@ extension View {
     ///   - action: A closure to run when the value changes.
     ///
     /// - Returns: A view that fires an action when the specified value changes.
-    ///
     @ViewBuilder
     nonisolated public func safeOnChange<Value: Equatable>(
         of value: Value,
@@ -80,7 +79,7 @@ extension View {
         }
     }
 
-    ///
+
     /// Adds a modifier for this view that fires an action when a specific value changes.
     ///
     /// This method ensures compatibility across iOS versions:
@@ -123,7 +122,6 @@ extension View {
     ///   - action: A closure to run when the value changes.
     ///
     /// - Returns: A view that fires an action when the specified value changes.
-    ///
     @ViewBuilder
     nonisolated public func safeOnChange<Value: Equatable>(
         of value: Value,
@@ -148,4 +146,5 @@ extension View {
                 }
         }
     }
+
 }

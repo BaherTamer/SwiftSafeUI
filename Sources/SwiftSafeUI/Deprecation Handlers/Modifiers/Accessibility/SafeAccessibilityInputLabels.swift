@@ -10,7 +10,7 @@
 import SwiftUI
 
 extension View {
-    ///
+
     /// Sets alternate input labels with which users identify a view.
     ///
     /// This method ensures compatibility across iOS versions:
@@ -21,7 +21,6 @@ extension View {
     /// Provide labels in descending order of importance. Voice Control and Full Keyboard Access use the input labels.
     ///
     /// > Note: If you don’t specify any input labels, the user can still refer to the view using the accessibility label that you add with the `safeAccessibilityLabel()` modifier.
-    ///
     nonisolated public func safeAccessibilityInputLabels(
         _ inputLabels: [Text]
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
@@ -31,4 +30,5 @@ extension View {
             accessibility(inputLabels: inputLabels)
         }
     }
+
 }

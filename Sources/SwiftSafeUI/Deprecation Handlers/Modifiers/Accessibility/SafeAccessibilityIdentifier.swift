@@ -10,7 +10,7 @@
 import SwiftUI
 
 extension View {
-    ///
+
     /// Uses the string you specify to identify the view.
     ///
     /// This method ensures compatibility across iOS versions:
@@ -19,7 +19,6 @@ extension View {
     ///
     /// ## Apple Discussion
     /// Use this value for testing. It isn’t visible to the user.
-    ///
     nonisolated public func safeAccessibilityIdentifier(
         _ identifier: String
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
@@ -29,4 +28,5 @@ extension View {
             accessibility(identifier: identifier)
         }
     }
+
 }
