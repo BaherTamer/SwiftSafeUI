@@ -10,77 +10,55 @@
 import SwiftUICore
 
 extension View {
+
+    /// Layers the views that you specify in front of this view.
     ///
-    /// Adds an overlay view to this view, with support for different alignment options.
-    ///
-    /// - Parameters:
-    ///   - alignment: The alignment for the overlay view. The default value is `.center`.
-    ///   - content: A closure that returns the view to be used as the overlay.
-    ///
-    /// - Returns: A view with the specified overlay applied.
-    ///
-    /// This method allows you to add an overlay view with a specified alignment. It uses a custom modifier that behaves differently based on the iOS version:
+    /// This method ensures compatibility across iOS versions:
     /// - On iOS 15 and later, it utilizes the new [`overlay(alignment:content:)`](https://developer.apple.com/documentation/swiftui/view/overlay(alignment:content:)) method.
     /// - On earlier versions, it falls back to the [`overlay(_:alignment:)`](https://developer.apple.com/documentation/swiftui/view/overlay(_:alignment:)) method.
     ///
+    /// ## Apple Discussion
+    /// Use this modifier to place one or more views in front of another view.
+    ///
+    /// You can achieve layering without an overlay modifier by putting both the modified view and the overlay content into a [`ZStack`](https://developer.apple.com/documentation/swiftui/zstack). This can produce a simpler view hierarchy, but changes the layout priority that SwiftUI applies to the views. Use the overlay modifier when you want the modified view to dominate the layout.
+    ///
     /// ## Example
     /// ```swift
-    /// struct ContentView: View {
-    ///     var body: some View {
-    ///         VStack {
-    ///             // Component code...
-    ///         }
-    ///         .safeOverlay(alignment: .bottomTrailing) {
-    ///             BadgeView()
-    ///         }
+    /// Color.blue
+    ///     .frame(width: 200, height: 200)
+    ///     .safeOverlay(alignment: .bottom) {
+    ///         Circle()
+    ///             .frame(width: 100, height: 100)
+    ///
+    ///         Star()
     ///     }
-    /// }
     /// ```
     ///
-    public func safeOverlay<Content: View>(
+    /// - Parameters:
+    ///   - alignment: The alignment that the modifier uses to position the
+    ///     implicit [`ZStack`](https://developer.apple.com/documentation/swiftui/zstack) that groups the foreground views. The default
+    ///     is [`center`](https://developer.apple.com/documentation/swiftui/alignment/center).
+    ///   - content: A [`ViewBuilder`](https://developer.apple.com/documentation/swiftui/viewbuilder) that you use to declare the views to
+    ///     draw in front of this view, stacked in the order that you list them.
+    ///     The last view that you list appears at the front of the stack.
+    ///
+    /// - Returns: A view that uses the specified content as a foreground.
+    @ViewBuilder
+    nonisolated public func safeOverlay<Content: View>(
         alignment: Alignment = .center,
         @ViewBuilder content: () -> Content
     ) -> some View {
-        modifier(
-            SafeOverlay(
-                alignment: alignment,
-                overlayContent: content()
-            )
-        )
-    }
-}
-
-private struct SafeOverlay<OverlayContent: View>: ViewModifier {
-    // MARK: - Inputs
-    let alignment: Alignment
-    let overlayContent: OverlayContent
-
-    // MARK: - Body
-    func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
-            applyOverlay(content)
+            overlay(
+                alignment: alignment,
+                content: content
+            )
         } else {
-            applyDeprecatedOverlay(content)
-        }
-    }
-}
-
-// MARK: - Private Helpers
-extension SafeOverlay {
-    @available(iOS 15.0, *)
-    private func applyOverlay(_ content: Content) -> some View {
-        content
-            .overlay(alignment: alignment) {
-                overlayContent
-            }
-    }
-
-    @available(iOS, introduced: 13.0, deprecated: 15.0)
-    private func applyDeprecatedOverlay(_ content: Content) -> some View {
-        content
-            .overlay(
-                overlayContent,
+            overlay(
+                content(),
                 alignment: alignment
             )
+        }
     }
+
 }
