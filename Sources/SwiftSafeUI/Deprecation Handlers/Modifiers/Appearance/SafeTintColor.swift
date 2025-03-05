@@ -47,7 +47,7 @@ extension View {
     /// }
     /// ```
     ///
-    /// - Parameter tint: The tint to apply.
+    /// - Parameter color: The color to use as an accent color.
     @ViewBuilder
     nonisolated public func safeTintColor(_ color: Color?) -> some View {
         if #available(iOS 16.0, *) {
