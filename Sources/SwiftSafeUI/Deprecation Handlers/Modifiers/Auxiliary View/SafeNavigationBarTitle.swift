@@ -28,7 +28,7 @@ extension View {
     ///    let items = ["Chocolate", "Vanilla", "Strawberry", "Mint Chip", "Pistachio"]
     ///
     ///    var body: some View {
-    ///         SafeNavigationStack {
+    ///         SafeNavigationView {
     ///             List(items, id: \.self) {
     ///                 Text($0)
     ///             }
@@ -81,7 +81,7 @@ extension View {
     ///    let items = ["Chocolate", "Vanilla", "Strawberry", "Mint Chip", "Pistachio"]
     ///
     ///    var body: some View {
-    ///         SafeNavigationStack {
+    ///         SafeNavigationView {
     ///             List(items, id: \.self) {
     ///                 Text($0)
     ///             }

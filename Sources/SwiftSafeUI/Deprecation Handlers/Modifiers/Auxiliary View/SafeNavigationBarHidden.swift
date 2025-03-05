@@ -23,7 +23,7 @@ extension View {
     ///
     /// ## Example
     /// ```swift
-    /// SafeNavigationStack {
+    /// SafeNavigationView {
     ///     ContentView()
     ///         .safeNavigationBarHidden(true)
     /// }
