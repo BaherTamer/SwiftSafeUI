@@ -12,8 +12,8 @@ import SwiftUI
 /// A scrollable view.
 ///
 /// This view ensures compatibility across iOS versions:
-/// - On iOS 16 and later, it utilizes the new `ScrollView` initializer [`init(_:content:)`](https://developer.apple.com/documentation/swiftui/scrollview/init(_:content:)) with the new [`scrollIndicators(_:axes:)`](https://developer.apple.com/documentation/swiftui/view/scrollindicators(_:axes:)) method.
-/// - On earlier versions, it falls back to the old `ScrollView` initializer [`init(_:showsIndicators:content:)`](https://developer.apple.com/documentation/swiftui/scrollview/init(_:showsindicators:content:)).
+/// - On iOS 16 and later, it utilizes the new [`ScrollView`](https://developer.apple.com/documentation/swiftui/scrollview) initializer [`init(_:content:)`](https://developer.apple.com/documentation/swiftui/scrollview/init(_:content:)) with the new [`scrollIndicators(_:axes:)`](https://developer.apple.com/documentation/swiftui/view/scrollindicators(_:axes:)) method.
+/// - On earlier versions, it falls back to the old [`ScrollView`](https://developer.apple.com/documentation/swiftui/scrollview) initializer [`init(_:showsIndicators:content:)`](https://developer.apple.com/documentation/swiftui/scrollview/init(_:showsindicators:content:)).
 ///
 /// ## Apple Discussion
 /// The scroll view displays its content within the scrollable content region. As the user performs platform-appropriate scroll gestures, the scroll view adjusts what portion of the underlying content is visible. `ScrollView` can scroll horizontally, vertically, or both, but does not provide zooming functionality.
@@ -42,8 +42,8 @@ public struct SafeScrollView<Content: View>: View {
     /// Creates a new instance that's scrollable in the direction of the given axis and can show indicators while scrolling.
     ///
     /// This initializer ensures compatibility across iOS versions:
-    /// - On iOS 16 and later, it utilizes the new `ScrollView` initializer [`init(_:content:)`](https://developer.apple.com/documentation/swiftui/scrollview/init(_:content:)) with the new [`scrollIndicators(_:axes:)`](https://developer.apple.com/documentation/swiftui/view/scrollindicators(_:axes:)) method.
-    /// - On earlier versions, it falls back to the old `ScrollView` initializer [`init(_:showsIndicators:content:)`](https://developer.apple.com/documentation/swiftui/scrollview/init(_:showsindicators:content:)).
+    /// - On iOS 16 and later, it utilizes the new [`ScrollView`](https://developer.apple.com/documentation/swiftui/scrollview) initializer [`init(_:content:)`](https://developer.apple.com/documentation/swiftui/scrollview/init(_:content:)) with the new [`scrollIndicators(_:axes:)`](https://developer.apple.com/documentation/swiftui/view/scrollindicators(_:axes:)) method.
+    /// - On earlier versions, it falls back to the old [`ScrollView`](https://developer.apple.com/documentation/swiftui/scrollview) initializer [`init(_:showsIndicators:content:)`](https://developer.apple.com/documentation/swiftui/scrollview/init(_:showsindicators:content:)).
     ///
     /// - Parameters:
     ///   - axes: The scroll view's scrollable axis. The default axis is the `.vertical` axis.
