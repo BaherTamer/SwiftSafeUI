@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -14,14 +14,16 @@ let package = Package(
             targets: [
                 "SwiftSafeUI"
             ]
-        ),
+        )
     ],
     targets: [
         .target(
-            name: "SwiftSafeUI"
-        ),
-    ],
-    swiftLanguageModes: [
-        .v5, .v6
+            name: "SwiftSafeUI",
+            swiftSettings: [
+                .enableExperimentalFeature(
+                    "StrictConcurrency=complete"
+                )
+            ]
+        )
     ]
 )
