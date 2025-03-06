@@ -15,11 +15,13 @@ As SwiftUI evolves, Apple frequently introduces new APIs and deprecates older on
 <br/>
 
 ### What SwiftSafeUI Solves?
-**SwiftSafeUI** simplifies this process by encapsulating deprecation handling into reusable components. It helps you:
-1. Use the latest SwiftUI APIs without worrying about breaking older iOS versions.
-2. Reduce boilerplate code by centralizing version checks and fallback logic.
-3. Maintain a clean and future-proof codebase while supporting a wide range of iOS versions.
-4. Minimize technical debt by providing a structured approach to deprecation handling, ensuring your code remains scalable and maintainable as SwiftUI continues to evolve.
+**SwiftSafeUI** simplifies managing deprecated APIs in SwiftUI, providing a structured and efficient approach to handling version-specific UI changes across different iOS versions. It helps you:
+
+1. **Seamlessly handle deprecations:** Automatically uses the latest SwiftUI APIs while gracefully falling back to older alternatives when needed.
+2. **Reduce boilerplate and complexity:** Eliminates the need for scattered version checks and conditional logic, centralizing compatibility handling.
+3. **Future-proof your codebase:** Ensures your app remains adaptable as SwiftUI evolves, reducing manual maintenance and technical debt.
+4. **Improve scalability and maintainability:** Keeps your UI code clean, structured, and responsive, regardless of the iOS versions your app supports.
+5. **Streamline SwiftUI development:** Provides safe modifiers, views, and environment values that abstract away compatibility concerns, allowing you to focus on building features.
 
 <br/>
 
@@ -48,7 +50,7 @@ Add a dependency in your `Package.swift`
 dependencies: [
     .package(
         url: "https://github.com/BaherTamer/SwiftSafeUI.git",
-        .upToNextMajor(from: "1.4.0")
+        .upToNextMajor(from: "1.5.0")
     )
 ]
 ```
