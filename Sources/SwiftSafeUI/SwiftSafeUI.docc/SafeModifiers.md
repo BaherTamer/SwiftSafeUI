@@ -1,18 +1,18 @@
 # SafeModifiers
 
-Provides a reliable way to use `SwiftUI` modifiers that ensure compatibility across different iOS versions.
+Ensures compatibility for `SwiftUI` modifiers across different iOS versions.
 
 @Metadata {
     @PageColor(green)
+    @TitleHeading("Catalog")
 }
 
 
 ## Overview
-**SafeModifiers** are custom `SwiftUI` modifiers included in the **SwiftSafeUI** package, designed to help developers manage deprecation issues and maintain compatibility across various iOS versions. 
 
-These modifiers encapsulate the necessary logic to apply UI changes while ensuring your app utilizes the latest methods and gracefully falls back to deprecated ones when needed.
+**SafeModifiers** includes custom `SwiftUI` modifiers within the **SwiftSafeUI** framework, specifically designed to ensure compatibility across various iOS versions while reducing code duplication and minimizing technical debt.
 
-By using **SafeModifiers**, you can create a seamless and consistent user interface without worrying about version-specific APIs.
+By encapsulating necessary logic, **SafeModifiers** ensures that your app utilizes the latest available modifiers while gracefully falling back to deprecated ones when required. This allows you to focus on building your app without worrying about the hassle of writing version-specific checks.
 
 
 ***
@@ -42,8 +42,9 @@ By using **SafeModifiers**, you can create a seamless and consistent user interf
 
 ### Auxiliary View Modifiers
 
-- ``SwiftUICore/View/safeNavBarHidden(_:)``
-- ``SwiftUICore/View/safeNavBarTitle(_:displayMode:)``
+- ``SwiftUICore/View/safeNavigationBarHidden(_:)``
+- ``SwiftUICore/View/safeNavigationBarTitle(_:displayMode:)-3kpza``
+    - ``SwiftUICore/View/safeNavigationBarTitle(_:displayMode:)-3cyjb``
 
 ### Drawing & Graphics Modifiers
 
@@ -52,7 +53,7 @@ By using **SafeModifiers**, you can create a seamless and consistent user interf
 ### Input & Event Modifiers
 
 - ``SwiftUICore/View/safeOnChange(of:initial:_:)-35ola``
-- ``SwiftUICore/View/safeOnChange(of:initial:_:)-67u4j``
+    - ``SwiftUICore/View/safeOnChange(of:initial:_:)-67u4j``
 
 ### Layout Modifiers
 
@@ -60,9 +61,10 @@ By using **SafeModifiers**, you can create a seamless and consistent user interf
 
 ### Search Modifiers
 
-- ``SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)``
+- ``SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-9lajn``
+    - ``SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-186xi``
+    - ``SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-69o1z``
 
 ### Text & Symbol Modifiers
 
 - ``SwiftUICore/View/safeAutocapitalization(_:)``
-- ``SwiftUICore/View/safeLineLimit(_:reservesSpace:)``

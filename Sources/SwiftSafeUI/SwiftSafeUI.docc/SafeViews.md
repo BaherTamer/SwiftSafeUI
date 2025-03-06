@@ -1,24 +1,24 @@
 # SafeViews
 
-Provides a reliable way to use `SwiftUI` views that ensure compatibility across different iOS versions.
+Ensures compatibility for `SwiftUI` views across different iOS versions.
 
 @Metadata {
     @PageColor(green)
+    @TitleHeading("Catalog")
 }
 
 
 ## Overview
-**SafeViews** are custom `SwiftUI` views included in the **SwiftSafeUI** package, designed to help developers manage deprecation issues and maintain compatibility across various iOS versions.
 
-These views encapsulate the necessary logic to ensure your app utilizes the latest views initializers and gracefully falls back to deprecated ones when needed.
+**SafeViews** includes custom `SwiftUI` views within the **SwiftSafeUI** framework, specifically designed to ensure compatibility across various iOS versions while reducing code duplication and minimizing technical debt.
 
-By using **SafeViews**, you can create a seamless and consistent user interface without worrying about version-specific APIs.
+By encapsulating necessary logic, **SafeViews** ensures that your app utilizes the latest available views while gracefully falling back to deprecated ones when required. This allows you to focus on building your app without worrying about the hassle of writing version-specific checks.
 
 
 ***
 
 
-## View
+## Views
 
-- ``SafeScrollView``
-- ``SafeNavigationStack``
+* ``SafeNavigationView``
+* ``SafeScrollView``
