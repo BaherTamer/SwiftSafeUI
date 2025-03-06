@@ -15,10 +15,7 @@ Ensures compatibility for `SwiftUI` environment values across different iOS vers
 By encapsulating necessary logic, **SafeEnvironmentValues** ensures that your app utilizes the latest available environment values while gracefully falling back to deprecated ones when required. This allows you to focus on building your app without worrying about the hassle of writing version-specific checks.
 
 
-***
-
-
-## Environment Values
+## Topics
 
 - ``SwiftUICore/EnvironmentValues/safeDismiss``
 - ``SwiftUICore/EnvironmentValues/safeIsPresented``

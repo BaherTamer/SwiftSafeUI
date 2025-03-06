@@ -15,10 +15,7 @@ Ensures compatibility for `SwiftUI` views across different iOS versions.
 By encapsulating necessary logic, **SafeViews** ensures that your app utilizes the latest available views while gracefully falling back to deprecated ones when required. This allows you to focus on building your app without worrying about the hassle of writing version-specific checks.
 
 
-***
-
-
-## Views
+## Topics
 
 * ``SafeNavigationView``
 * ``SafeScrollView``

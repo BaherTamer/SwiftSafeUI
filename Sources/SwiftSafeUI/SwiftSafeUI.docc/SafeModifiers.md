@@ -15,10 +15,7 @@ Ensures compatibility for `SwiftUI` modifiers across different iOS versions.
 By encapsulating necessary logic, **SafeModifiers** ensures that your app utilizes the latest available modifiers while gracefully falling back to deprecated ones when required. This allows you to focus on building your app without worrying about the hassle of writing version-specific checks.
 
 
-***
-
-
-## Modifiers
+## Topics
 
 ### Accessibility Modifiers
 
@@ -44,7 +41,7 @@ By encapsulating necessary logic, **SafeModifiers** ensures that your app utiliz
 
 - ``SwiftUICore/View/safeNavigationBarHidden(_:)``
 - ``SwiftUICore/View/safeNavigationBarTitle(_:displayMode:)-3kpza``
-    - ``SwiftUICore/View/safeNavigationBarTitle(_:displayMode:)-3cyjb``
+- ``SwiftUICore/View/safeNavigationBarTitle(_:displayMode:)-3cyjb``
 
 ### Drawing & Graphics Modifiers
 
@@ -53,7 +50,7 @@ By encapsulating necessary logic, **SafeModifiers** ensures that your app utiliz
 ### Input & Event Modifiers
 
 - ``SwiftUICore/View/safeOnChange(of:initial:_:)-35ola``
-    - ``SwiftUICore/View/safeOnChange(of:initial:_:)-67u4j``
+- ``SwiftUICore/View/safeOnChange(of:initial:_:)-67u4j``
 
 ### Layout Modifiers
 
@@ -62,8 +59,8 @@ By encapsulating necessary logic, **SafeModifiers** ensures that your app utiliz
 ### Search Modifiers
 
 - ``SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-9lajn``
-    - ``SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-186xi``
-    - ``SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-69o1z``
+- ``SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-186xi``
+- ``SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-69o1z``
 
 ### Text & Symbol Modifiers
 
