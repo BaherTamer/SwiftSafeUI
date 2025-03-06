@@ -47,8 +47,8 @@ extension View {
     /// ***
     ///
     /// ## See All Declarations
-    /// - ``safeSearchable(text:placement:prompt:suggestions:)-186xi``
-    /// - ``safeSearchable(text:placement:prompt:suggestions:)-69o1z``
+    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-186xi>
+    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-69o1z>
     ///
     /// - Parameters:
     ///   - text: The text to display and edit in the search field.
@@ -116,8 +116,8 @@ extension View {
     /// ***
     ///
     /// ## See All Declarations
-    /// - ``safeSearchable(text:placement:prompt:suggestions:)-9lajn``
-    /// - ``safeSearchable(text:placement:prompt:suggestions:)-186xi``
+    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-9lajn>
+    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-186xi>
     ///
     /// - Parameters:
     ///   - text: The text to display and edit in the search field.
@@ -185,8 +185,8 @@ extension View {
     /// ***
     ///
     /// ## See All Declarations
-    /// - ``safeSearchable(text:placement:prompt:suggestions:)-9lajn``
-    /// - ``safeSearchable(text:placement:prompt:suggestions:)-69o1z``
+    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-9lajn>
+    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-69o1z>
     ///
     /// - Parameters:
     ///   - text: The text to display and edit in the search field.

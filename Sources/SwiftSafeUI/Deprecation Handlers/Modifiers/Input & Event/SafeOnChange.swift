@@ -51,7 +51,7 @@ extension View {
     /// ***
     ///
     /// ## See All Declarations
-    /// - ``safeOnChange(of:initial:_:)-67u4j``
+    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeOnChange(of:initial:_:)-67u4j>
     ///
     /// - Parameters:
     ///   - value: The value to check against when determining whether to run the closure.
@@ -124,7 +124,7 @@ extension View {
     /// ***
     ///
     /// ## See All Declarations
-    /// - ``safeOnChange(of:initial:_:)-35ola``
+    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeOnChange(of:initial:_:)-35ola>
     ///
     /// - Parameters:
     ///   - value: The value to check against when determining whether to run the closure.

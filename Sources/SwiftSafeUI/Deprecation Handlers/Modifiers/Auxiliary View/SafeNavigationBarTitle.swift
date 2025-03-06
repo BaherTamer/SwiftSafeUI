@@ -44,7 +44,7 @@ extension View {
     /// ***
     ///
     /// ## See All Declarations
-    /// - ``safeNavigationBarTitle(_:displayMode:)-3cyjb``
+    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeNavigationBarTitle(_:displayMode:)-3cyjb>
     ///
     /// - Parameters:
     ///   - title: A title for this view to display in the navigation bar.
@@ -102,7 +102,7 @@ extension View {
     /// ***
     ///
     /// ## See All Declarations
-    /// - ``safeNavigationBarTitle(_:displayMode:)-3kpza``
+    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeNavigationBarTitle(_:displayMode:)-3kpza>
     ///
     /// - Parameters:
     ///   - titleKey: A key to a localized description of this view to display in the navigation bar.
