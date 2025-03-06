@@ -44,12 +44,6 @@ extension View {
     ///
     /// > Important: This modifier requires iOS 15 or later.
     ///
-    /// ***
-    ///
-    /// ## See All Declarations
-    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-186xi>
-    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-69o1z>
-    ///
     /// - Parameters:
     ///   - text: The text to display and edit in the search field.
     ///   - placement: The preferred placement of the search field within the containing view hierarchy.
@@ -113,12 +107,6 @@ extension View {
     ///
     /// > Note: The `searchable` functionality itself remains consistent across all supported iOS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
     ///
-    /// ***
-    ///
-    /// ## See All Declarations
-    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-9lajn>
-    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-186xi>
-    ///
     /// - Parameters:
     ///   - text: The text to display and edit in the search field.
     ///   - placement: The preferred placement of the search field within the containing view hierarchy.
@@ -181,12 +169,6 @@ extension View {
     /// > Important: This modifier requires iOS 15 or later.
     ///
     /// > Note: The `searchable` functionality itself remains consistent across all supported iOS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
-    ///
-    /// ***
-    ///
-    /// ## See All Declarations
-    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-9lajn>
-    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-69o1z>
     ///
     /// - Parameters:
     ///   - text: The text to display and edit in the search field.

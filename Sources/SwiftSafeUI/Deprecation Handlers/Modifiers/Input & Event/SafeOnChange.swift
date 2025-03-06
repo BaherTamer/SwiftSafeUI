@@ -48,11 +48,6 @@ extension View {
     ///
     /// > Important: This modifier requires iOS 14 or later.
     ///
-    /// ***
-    ///
-    /// ## See All Declarations
-    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeOnChange(of:initial:_:)-67u4j>
-    ///
     /// - Parameters:
     ///   - value: The value to check against when determining whether to run the closure.
     ///   - initial: Whether the action should be run when this view initially appears.
@@ -120,11 +115,6 @@ extension View {
     /// ```
     ///
     /// > Important: This modifier requires iOS 14 or later.
-    ///
-    /// ***
-    ///
-    /// ## See All Declarations
-    /// - <doc:/documentation/SwiftSafeUI/SwiftUICore/View/safeOnChange(of:initial:_:)-35ola>
     ///
     /// - Parameters:
     ///   - value: The value to check against when determining whether to run the closure.
