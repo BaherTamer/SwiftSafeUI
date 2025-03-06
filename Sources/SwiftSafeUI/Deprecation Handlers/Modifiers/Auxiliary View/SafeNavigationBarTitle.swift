@@ -41,6 +41,11 @@ extension View {
     /// }
     /// ```
     ///
+    /// ***
+    ///
+    /// ## See All Declarations
+    /// - ``safeNavigationBarTitle(_:displayMode:)-3cyjb``
+    ///
     /// - Parameters:
     ///   - title: A title for this view to display in the navigation bar.
     ///   - displayMode: The style to use for displaying the navigation bar title.
@@ -93,6 +98,11 @@ extension View {
     ///     }
     /// }
     /// ```
+    ///
+    /// ***
+    ///
+    /// ## See All Declarations
+    /// - ``safeNavigationBarTitle(_:displayMode:)-3kpza``
     ///
     /// - Parameters:
     ///   - titleKey: A key to a localized description of this view to display in the navigation bar.
