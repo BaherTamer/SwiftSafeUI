@@ -65,3 +65,4 @@ By encapsulating necessary logic, **SafeModifiers** ensures that your app utiliz
 ### Text & Symbol Modifiers
 
 - ``SwiftUICore/View/safeAutocapitalization(_:)``
+- ``SwiftUICore/View/safeLineLimit(_:reservesSpace:)``
