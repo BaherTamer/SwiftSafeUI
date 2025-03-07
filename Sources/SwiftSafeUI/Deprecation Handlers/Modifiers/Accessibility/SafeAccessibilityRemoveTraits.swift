@@ -9,6 +9,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 extension View {
 
     /// Removes the given traits from this view.

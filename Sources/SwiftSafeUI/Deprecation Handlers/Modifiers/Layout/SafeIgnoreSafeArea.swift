@@ -9,6 +9,7 @@
 
 import SwiftUICore
 
+@available(iOS 13.0, *)
 extension View {
 
     /// Expands the safe area of a view.

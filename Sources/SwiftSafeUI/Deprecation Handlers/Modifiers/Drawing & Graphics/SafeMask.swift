@@ -9,6 +9,7 @@
 
 import SwiftUICore
 
+@available(iOS 13.0, *)
 extension View {
 
     /// Masks this view using the alpha channel of the given view.

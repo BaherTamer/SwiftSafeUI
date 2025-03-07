@@ -9,6 +9,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 extension View {
 
     /// Sets how often the shift key in the keyboard is automatically enabled.
@@ -52,6 +53,7 @@ extension View {
 ///
 /// ## Discussion
 /// Pass an instance of `AutocapitalizationType` to the ``SwiftUICore/View/safeAutocapitalization(_:)`` view modifier.
+@available(iOS 13.0, *)
 public enum AutocapitalizationType {
 
     /// Defines an autocapitalizing behavior that will capitalize the first letter in every sentence.

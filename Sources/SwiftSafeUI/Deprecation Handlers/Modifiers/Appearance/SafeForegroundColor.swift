@@ -9,6 +9,7 @@
 
 import SwiftUICore
 
+@available(iOS 13.0, *)
 extension View {
 
     /// Sets the color of the foreground elements displayed by this view.

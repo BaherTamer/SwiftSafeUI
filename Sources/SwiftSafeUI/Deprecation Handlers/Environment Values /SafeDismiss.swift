@@ -9,6 +9,7 @@
 
 import SwiftUICore
 
+@available(iOS 13.0, *)
 extension EnvironmentValues {
 
     /// An action that dismisses the current presentation.

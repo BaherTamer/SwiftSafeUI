@@ -9,6 +9,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 extension View {
 
     /// Adds a textual description of the value that the view contains.

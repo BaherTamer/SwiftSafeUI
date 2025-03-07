@@ -32,6 +32,7 @@ import SwiftUI
 ///     }
 /// }
 /// ```
+@available(iOS 13.0, *)
 public struct SafeScrollView<Content: View>: View {
     // MARK: - Inputs
     private let axes: Axis.Set

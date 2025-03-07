@@ -9,6 +9,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 extension View {
 
     /// Sets alternate input labels with which users identify a view.

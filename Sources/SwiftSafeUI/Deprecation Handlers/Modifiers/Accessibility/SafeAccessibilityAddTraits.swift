@@ -9,6 +9,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 extension View {
 
     /// Adds the given traits to the view.

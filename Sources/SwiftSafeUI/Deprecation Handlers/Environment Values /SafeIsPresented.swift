@@ -9,6 +9,7 @@
 
 import SwiftUICore
 
+@available(iOS 13.0, *)
 extension EnvironmentValues {
 
     /// A Boolean value that indicates whether the view associated with this environment is currently presented.

@@ -9,6 +9,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 extension View {
 
     /// Sets the sort priority order for this view’s accessibility element, relative to other elements at the same level.

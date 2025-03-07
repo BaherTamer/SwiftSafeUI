@@ -35,6 +35,7 @@ import SwiftUI
 /// ```
 ///
 /// > Tip: If your app exclusively supports iOS 16 or later, you do not need to use this view. You can directly use `NavigationStack` as this view primarily addresses the deprecation of `NavigationView` in earlier iOS versions.
+@available(iOS 13.0, *)
 public struct SafeNavigationView<Content: View>: View {
     // MARK: - Inputs
     private let content: Content

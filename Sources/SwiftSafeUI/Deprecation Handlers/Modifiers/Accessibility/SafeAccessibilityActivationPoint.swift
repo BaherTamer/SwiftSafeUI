@@ -9,6 +9,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 extension View {
 
     /// The activation point for an element is the location assistive technologies use to initiate gestures.
