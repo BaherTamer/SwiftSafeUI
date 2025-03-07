@@ -62,8 +62,8 @@ For detailed usage examples, instructions, and tips, visit the [SwiftSafeUI Docu
 
 <br/>
 
-## 🌟 Support
-If this project has been helpful to you, consider giving it a ⭐ on GitHub! Your support encourages continued development and improvements. We appreciate it!
+## ⭐️ Support
+If this project has been helpful to you, consider giving it a star on GitHub! Your support encourages continued development and improvements. We appreciate it!
 
 <br/>
 
