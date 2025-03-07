@@ -14,7 +14,7 @@ extension View {
 
     /// Marks this view as searchable, which configures the display of a search field.
     ///
-    /// This method ensures compatibility across iOS versions:
+    /// This method ensures compatibility across OS versions:
     /// - On iOS 16 and later, it uses the new [`searchable(text:placement:prompt:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:)) method along with [`searchSuggestions(_:)`](https://developer.apple.com/documentation/swiftui/view/searchsuggestions(_:)).
     /// - On earlier versions, it falls back to the [`searchable(text:placement:prompt:suggestions:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:suggestions:)) method.
     ///
@@ -40,7 +40,7 @@ extension View {
     /// }
     /// ```
     ///
-    /// > Note: The `searchable` functionality itself remains consistent across all supported iOS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
+    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
     ///
     /// > Important: This modifier requires iOS 15 or later.
     ///
@@ -77,7 +77,7 @@ extension View {
 
     /// Marks this view as searchable, which configures the display of a search field.
     ///
-    /// This method ensures compatibility across iOS versions:
+    /// This method ensures compatibility across OS versions:
     /// - On iOS 16 and later, it uses the new [`searchable(text:placement:prompt:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:)) method along with [`searchSuggestions(_:)`](https://developer.apple.com/documentation/swiftui/view/searchsuggestions(_:)).
     /// - On earlier versions, it falls back to the [`searchable(text:placement:prompt:suggestions:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:suggestions:)) method.
     ///
@@ -105,7 +105,7 @@ extension View {
     ///
     /// > Important: This modifier requires iOS 15 or later.
     ///
-    /// > Note: The `searchable` functionality itself remains consistent across all supported iOS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
+    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
     ///
     /// - Parameters:
     ///   - text: The text to display and edit in the search field.
@@ -140,7 +140,7 @@ extension View {
 
     /// Marks this view as searchable, which configures the display of a search field.
     ///
-    /// This method ensures compatibility across iOS versions:
+    /// This method ensures compatibility across OS versions:
     /// - On iOS 16 and later, it uses the new [`searchable(text:placement:prompt:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:)) method along with [`searchSuggestions(_:)`](https://developer.apple.com/documentation/swiftui/view/searchsuggestions(_:)).
     /// - On earlier versions, it falls back to the [`searchable(text:placement:prompt:suggestions:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:suggestions:)) method.
     ///
@@ -168,7 +168,7 @@ extension View {
     ///
     /// > Important: This modifier requires iOS 15 or later.
     ///
-    /// > Note: The `searchable` functionality itself remains consistent across all supported iOS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
+    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
     ///
     /// - Parameters:
     ///   - text: The text to display and edit in the search field.

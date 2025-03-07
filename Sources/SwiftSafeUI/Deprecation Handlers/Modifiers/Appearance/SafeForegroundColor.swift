@@ -14,7 +14,7 @@ extension View {
 
     /// Sets the color of the foreground elements displayed by this view.
     ///
-    /// This method ensures compatibility across iOS versions:
+    /// This method ensures compatibility across OS versions:
     /// - On iOS 15 and later, it utilizes the new [`foregroundStyle(_:)`](https://developer.apple.com/documentation/swiftui/view/foregroundstyle(_:) ) method.
     /// - On earlier versions, it falls back to the [`foregroundColor(_:)`](https://developer.apple.com/documentation/swiftui/view/foregroundcolor(_:) ) method.
     ///

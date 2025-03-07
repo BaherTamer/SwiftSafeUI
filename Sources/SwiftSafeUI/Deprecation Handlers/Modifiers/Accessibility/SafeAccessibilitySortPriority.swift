@@ -14,7 +14,7 @@ extension View {
 
     /// Sets the sort priority order for this view’s accessibility element, relative to other elements at the same level.
     ///
-    /// This method ensures compatibility across iOS versions:
+    /// This method ensures compatibility across OS versions:
     /// - On iOS 14 and later, it uses the new [`accessibilitySortPriority(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilitysortpriority(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(sortPriority:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(sortPriority:)) method.
     ///

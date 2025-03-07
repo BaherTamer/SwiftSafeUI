@@ -14,7 +14,7 @@ extension View {
 
     /// Sets a limit for the number of lines text can occupy in this view.
     ///
-    /// This method ensures compatibility across iOS versions:
+    /// This method ensures compatibility across OS versions:
     /// - On iOS 16 and later, it uses the native [`lineLimit(_:reservesSpace:)`](https://developer.apple.com/documentation/swiftui/view/linelimit(_:reservesspace:)) method to reserve space as needed.
     /// - On earlier versions, it falls back to [`lineLimit(_:)`](https://developer.apple.com/documentation/swiftui/view/linelimit(_:)-513mb) and manually adjusts the view's height using a `GeometryReader` to mimic the `reservesSpace` behavior.
     ///
@@ -31,7 +31,7 @@ extension View {
     /// }
     /// ```
     ///
-    /// > Note: The `lineLimit` functionality itself remains consistent across all supported iOS versions. This modifier specifically addresses the `reservesSpace` feature on versions prior to iOS 16.
+    /// > Note: The `lineLimit` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `reservesSpace` feature on versions prior to iOS 16.
     ///
     /// > Warning: This modifier should **not** be used as the height calculation for dynamic large text is not working as expected. Issues arise with dynamically adjusted text heights, especially with larger accessibility sizes and custom text settings.
     ///

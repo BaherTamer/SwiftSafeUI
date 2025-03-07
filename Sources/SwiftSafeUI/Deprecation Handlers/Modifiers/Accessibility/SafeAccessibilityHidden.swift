@@ -14,7 +14,7 @@ extension View {
 
     /// Specifies whether to hide this view from system accessibility features.
     ///
-    /// This method ensures compatibility across iOS versions:
+    /// This method ensures compatibility across OS versions:
     /// - On iOS 14 and later, it uses the new [`accessibilityHidden(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityhidden(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(hidden:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(hidden:)) method.
     nonisolated public func safeAccessibilityHidden(

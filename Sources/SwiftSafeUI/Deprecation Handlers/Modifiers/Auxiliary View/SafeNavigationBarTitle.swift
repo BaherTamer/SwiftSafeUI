@@ -14,7 +14,7 @@ extension View {
 
     /// Sets the title and display mode in the navigation bar for this view.
     ///
-    /// This method ensures compatibility across iOS versions:
+    /// This method ensures compatibility across OS versions:
     /// - On iOS 14 and later, it utilizes the new [`navigationTitle(_:)`](https://developer.apple.com/documentation/swiftui/view/navigationtitle(_:)-5di1u ) method along with [`navigationBarTitleDisplayMode(_:)`](https://developer.apple.com/documentation/swiftui/view/navigationbartitledisplaymode(_:) ).
     /// - On earlier versions, it falls back to the [`navigationBarTitle(_:displayMode:)`](https://developer.apple.com/documentation/swiftui/view/navigationbartitle(_:displaymode:)-8buvp ) method.
     ///
@@ -65,7 +65,7 @@ extension View {
 
     /// Sets the title and display mode in the navigation bar for this view.
     ///
-    /// This method ensures compatibility across iOS versions:
+    /// This method ensures compatibility across OS versions:
     /// - On iOS 14 and later, it utilizes the new [`navigationTitle(_:)`](https://developer.apple.com/documentation/swiftui/view/navigationtitle(_:)-43srq ) method along with [`navigationBarTitleDisplayMode(_:)`](https://developer.apple.com/documentation/swiftui/view/navigationbartitledisplaymode(_:) ).
     /// - On earlier versions, it falls back to the [`navigationBarTitle(_:displayMode:)`](https://developer.apple.com/documentation/swiftui/view/navigationbartitle(_:displaymode:)-gi7a ) method.
     ///
