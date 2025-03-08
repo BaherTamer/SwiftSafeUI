@@ -4,66 +4,44 @@
 //  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
 //  Documentation: https://bahertamer.github.io/SwiftSafeUI/
 //
-//  Copyright © 2024 Baher Tamer. All rights reserved.
+//  Copyright © 2025 Baher Tamer. All rights reserved.
 //
 
 import SwiftUICore
 
+@available(iOS 13.0, *)
 extension View {
+
+    /// Sets the color of the foreground elements displayed by this view.
     ///
-    /// Applies a foreground color to this view, with support for different iOS versions.
-    ///
-    /// - Parameters:
-    ///   - color: The color to be applied as the foreground color.
-    ///
-    /// - Returns: A view with the specified foreground color applied.
-    ///
-    /// This method allows you to apply a foreground color to a view, adapting to the iOS version:
+    /// This method ensures compatibility across OS versions:
     /// - On iOS 15 and later, it utilizes the new [`foregroundStyle(_:)`](https://developer.apple.com/documentation/swiftui/view/foregroundstyle(_:) ) method.
     /// - On earlier versions, it falls back to the [`foregroundColor(_:)`](https://developer.apple.com/documentation/swiftui/view/foregroundcolor(_:) ) method.
     ///
+    /// ## Apple Discussion
+    /// Use this method to style foreground content like text, shapes, and template images (including symbols).
+    ///
     /// ## Example
     /// ```swift
-    /// struct ContentView: View {
-    ///     var body: some View {
-    ///         Text("SwiftSafeUI")
-    ///             .safeForegroundColor(.green)
-    ///     }
+    /// HStack {
+    ///     Image(systemName: "triangle.fill")
+    ///     Text("Hello, world!")
+    ///     RoundedRectangle(cornerRadius: 5)
+    ///         .frame(width: 40, height: 20)
     /// }
+    /// .safeForegroundColor(.green)
     /// ```
     ///
+    /// - Parameter color: The foreground color to use when displaying this view.
+    ///
+    /// - Returns: A view that uses the foreground color you supply.
+    @ViewBuilder
     nonisolated public func safeForegroundColor(_ color: Color) -> some View {
-        modifier(
-            SafeForegroundColor(color: color)
-        )
-    }
-}
-
-private struct SafeForegroundColor: ViewModifier {
-    // MARK: - Inputs
-    let color: Color
-
-    // MARK: - Body
-    func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
-            applyForegroundStyle(content)
+            foregroundStyle(color)
         } else {
-            applyForegroundColor(content)
+            foregroundColor(color)
         }
     }
-}
 
-// MARK: - Private Helpers
-extension SafeForegroundColor {
-    @available(iOS 15.0, *)
-    private func applyForegroundStyle(_ content: Content) -> some View {
-        content
-            .foregroundStyle(color)
-    }
-
-    @available(iOS, introduced: 13.0, deprecated: 15.0)
-    private func applyForegroundColor(_ content: Content) -> some View {
-        content
-            .foregroundColor(color)
-    }
 }

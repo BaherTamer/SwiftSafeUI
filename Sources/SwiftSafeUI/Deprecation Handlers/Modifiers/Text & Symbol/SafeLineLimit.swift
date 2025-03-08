@@ -4,37 +4,40 @@
 //  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
 //  Documentation: https://bahertamer.github.io/SwiftSafeUI/
 //
-//  Copyright © 2024 Baher Tamer. All rights reserved.
+//  Copyright © 2025 Baher Tamer. All rights reserved.
 //
 
 import SwiftUICore
 
+@available(*, deprecated, message: "Due to an incorrect approach used for height calculation of text in dynamic large text cases, this modifier should no longer be used as it does not work as expected.")
 extension View {
+
+    /// Sets a limit for the number of lines text can occupy in this view.
     ///
-    /// Sets the maximum number of lines for the view's text content, providing compatibility for the `reservesSpace` feature on older iOS versions.
-    ///
-    /// - Parameters:
-    ///   - limit: The maximum number of lines for the view’s text. Use `0` for unlimited lines.
-    ///   - reservesSpace: A `Bool` value indicating whether the text should reserve space for the specified number of lines, even if fewer lines are displayed.
-    ///
-    /// - Returns: A view that applies the line limit and space reservation based on the provided parameters.
-    ///
-    /// This modifier ensures that the `reservesSpace` functionality works across different iOS versions:
+    /// This method ensures compatibility across OS versions:
     /// - On iOS 16 and later, it uses the native [`lineLimit(_:reservesSpace:)`](https://developer.apple.com/documentation/swiftui/view/linelimit(_:reservesspace:)) method to reserve space as needed.
     /// - On earlier versions, it falls back to [`lineLimit(_:)`](https://developer.apple.com/documentation/swiftui/view/linelimit(_:)-513mb) and manually adjusts the view's height using a `GeometryReader` to mimic the `reservesSpace` behavior.
     ///
-    /// > Tip: The `lineLimit` functionality itself remains consistent across all supported iOS versions. This modifier specifically addresses the `reservesSpace` feature on versions prior to iOS 16.
-    ///
     /// ## Example
     /// ```swift
-    /// struct ContentView: View {
-    ///     var body: some View {
-    ///         Text("This is a multi-line text example.")
-    ///             .safeLineLimit(2, reservesSpace: true)
-    ///     }
+    /// GroupBox {
+    ///     Text("Title")
+    ///         .font(.headline)
+    ///         .lineLimit(2, reservesSpace: true)
+    ///
+    ///     Text("Subtitle")
+    ///         .font(.subheadline)
+    ///         .lineLimit(4, reservesSpace: true)
     /// }
     /// ```
     ///
+    /// > Note: The `lineLimit` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `reservesSpace` feature on versions prior to iOS 16.
+    ///
+    /// > Warning: This modifier should **not** be used as the height calculation for dynamic large text is not working as expected. Issues arise with dynamically adjusted text heights, especially with larger accessibility sizes and custom text settings.
+    ///
+    /// - Parameters:
+    ///   - limit: The line limit.
+    ///   - reservesSpace: Whether text reserves space so that it always occupies the height required to display the specified number of lines.
     nonisolated public func safeLineLimit(
         _ limit: Int,
         reservesSpace: Bool
@@ -46,6 +49,7 @@ extension View {
             )
         )
     }
+
 }
 
 private struct SafeLineLimit: ViewModifier {
@@ -53,7 +57,7 @@ private struct SafeLineLimit: ViewModifier {
     let limit: Int
     let reservesSpace: Bool
 
-    // MARK: - Variables
+    // MARK: - States
     @State private var height: CGFloat = TextHeightPreferenceKey.defaultValue
 
     // MARK: - Body
@@ -100,11 +104,11 @@ extension SafeLineLimit {
 
 // MARK: - Text Height Preference Key
 private struct TextHeightPreferenceKey: PreferenceKey {
-    // MARK: Variables
+    // MARK: Constants
     static let defaultValue: CGFloat = 20
 
     // MARK: Config Functions
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = max(value, nextValue())
+        value = nextValue()
     }
 }

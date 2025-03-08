@@ -5,25 +5,28 @@
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FBaherTamer%2FSwiftSafeUI%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/BaherTamer/SwiftSafeUI)
 
 # SwiftSafeUI
-**SwiftSafeUI** is a Swift package designed to streamline the management of deprecated SwiftUI APIs across iOS versions. It provides a clean and efficient way to handle deprecation logic, ensuring your app always uses the latest APIs while seamlessly falling back to older, deprecated ones when necessary.
+**SwiftSafeUI** is a Swift package designed to streamline the management of deprecated SwiftUI APIs across OS versions. It provides a clean and efficient way to handle deprecation logic, ensuring your app always uses the latest APIs while seamlessly falling back to older, deprecated ones when necessary.
 
 <br/>
 
 ### Why Deprecation Handling Matters?
-As SwiftUI evolves, Apple frequently introduces new APIs and deprecates older ones. Supporting multiple iOS versions can lead to technical debt, as developers need to maintain compatibility without cluttering their code with version checks, conditional logic, and workarounds. Over time, this can make the codebase harder to maintain, slower to adapt to new changes, and more prone to bugs.
+As SwiftUI evolves with every release, Apple frequently introduces new APIs while deprecating older ones. Ignoring deprecated functionality can lead to accumulating technical debt, making your code harder to maintain and less adaptable to future changes. Without a proper strategy, version checks and workarounds can clutter your codebase, slowing down development and increasing the risk of bugs. Staying ahead of these changes ensures your app remains efficient, maintainable, and ready to leverage the latest SwiftUI improvements.
 
 <br/>
 
 ### What SwiftSafeUI Solves?
-**SwiftSafeUI** simplifies this process by encapsulating deprecation handling into reusable components. It helps you:
-1. Use the latest SwiftUI APIs without worrying about breaking older iOS versions.
-2. Reduce boilerplate code by centralizing version checks and fallback logic.
-3. Maintain a clean and future-proof codebase while supporting a wide range of iOS versions.
-4. Minimize technical debt by providing a structured approach to deprecation handling, ensuring your code remains scalable and maintainable as SwiftUI continues to evolve.
+**SwiftSafeUI** simplifies managing deprecated APIs in SwiftUI, providing a structured and efficient approach to handling version-specific UI changes across different OS versions. It helps you:
+
+1. **Seamlessly handle deprecations:** Automatically uses the latest SwiftUI APIs while gracefully falling back to older alternatives when needed.
+2. **Reduce boilerplate and complexity:** Eliminates the need for scattered version checks and conditional logic, centralizing compatibility handling.
+3. **Future-proof your codebase:** Ensures your app remains adaptable as SwiftUI evolves, reducing manual maintenance and technical debt.
+4. **Improve scalability and maintainability:** Keeps your UI code clean, structured, and responsive, regardless of the OS versions your app supports.
+5. **Streamline SwiftUI development:** Provides safe modifiers, views, and environment values that abstract away compatibility concerns, allowing you to focus on building features.
 
 <br/>
 
-## 📝 Requirements
+## ⚙️ Compatibility
+- Swift 5.9+
 - iOS 13.0+
 
 <br/>
@@ -48,7 +51,7 @@ Add a dependency in your `Package.swift`
 dependencies: [
     .package(
         url: "https://github.com/BaherTamer/SwiftSafeUI.git",
-        .upToNextMajor(from: "1.4.0")
+        .upToNextMajor(from: "1.5.0")
     )
 ]
 ```
@@ -60,13 +63,13 @@ For detailed usage examples, instructions, and tips, visit the [SwiftSafeUI Docu
 
 <br/>
 
-## 🌟 Support
-If this project has been helpful to you, consider giving it a ⭐ on GitHub! Your support encourages continued development and improvements. We appreciate it!
+## ⚖️ License
+**SwiftSafeUI** is available under the `MIT` license. See the [LICENSE](LICENSE) file for more details.
 
 <br/>
 
-## ⚖️ License
-**SwiftSafeUI** is available under the `MIT` license. See the [LICENSE](LICENSE) file for more details.
+## ⭐️ Support
+If this project has been helpful to you, consider giving it a star on GitHub! Your support encourages continued development and improvements. We appreciate it!
 
 <br/>
 

@@ -1,6 +1,6 @@
 # ``SwiftSafeUI``
 
-Encapsulates deprecation handling logic, maintaining compatibility across iOS versions.
+Encapsulates deprecation handling logic, ensuring compatibility across different OS versions.
 
 @Metadata {
     @PageImage(purpose: icon, source: "SwiftSafeUI-Icon", alt: "A technology icon representing the SwiftSafeUI framework.")
@@ -11,15 +11,13 @@ Encapsulates deprecation handling logic, maintaining compatibility across iOS ve
 
 ## Overview
 
-**SwiftSafeUI** is a comprehensive `SwiftUI` package designed to simplify deprecation handling and maintain compatibility across various iOS versions. This framework provides developers with the tools necessary to seamlessly manage UI changes without the hassle of dealing with version-specific APIs. 
+**SwiftSafeUI** is a `SwiftUI` framework that streamlines the management of deprecated APIs, providing an elegant solution to handle version-specific UI changes across different OS versions. By abstracting deprecation handling, **SwiftSafeUI** allows developers to focus on building features without worrying about maintaining compatibility with older OS versions.
 
-The package encapsulates deprecation handling logic, ensuring your app utilizes the latest methods & views while gracefully falling back on deprecated alternatives when necessary.
+As `SwiftUI` evolves, Apple introduces new APIs while phasing out older ones. With **SwiftSafeUI**, you can easily manage these changes. The framework ensures that your app always utilizes the most up-to-date methods, views, and envirnoment values, gracefully falling back on deprecated alternatives when needed. This approach minimizes the need for version checks, conditional logic, and manual maintenance, saving you time and reducing technical debt.
 
-By implementing custom modifiers, **SwiftSafeUI** allows you to apply consistent styling and behavior across different iOS environments, providing a smooth user experience.
+By centralizing your deprecation handling logic, **SwiftSafeUI** reduces boilerplate code, while keeping your app adaptable to new `SwiftUI` features. With safe modifiers, views, and environment values, **SwiftSafeUI** empowers you to create consistent, responsive, and future-proof interfaces. It abstracts away complex compatibility concerns, making your `SwiftUI` development smoother and more efficient, regardless of the OS version your app supports.
 
-Additionally, **SwiftSafeUI** includes a collection of custom views that enhance your `SwiftUI` development workflow, enabling you to create elegant, responsive interfaces without compromising compatibility.
-
-With **SwiftSafeUI**, you can focus on building your app’s features while confidently navigating the challenges posed by evolving iOS frameworks.
+By using **SwiftSafeUI**, you can confidently navigate the challenges of evolving APIs, ensuring that your app remains maintainable, scalable, and adaptable to future updates.
 
 
 ## Topics

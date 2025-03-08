@@ -1,24 +1,21 @@
 # SafeEnvironmentValues
 
-Provides a reliable way to use `SwiftUI` environment values that ensure compatibility across different iOS versions.
+Ensures compatibility for `SwiftUI` environment values across different OS versions.
 
 @Metadata {
     @PageColor(green)
+    @TitleHeading("Catalog")
 }
 
 
 ## Overview
-**SafeEnvironmentValues** are custom `SwiftUI` environment values included in the **SwiftSafeUI** package, designed to help developers manage deprecation issues and maintain compatibility across various iOS versions. 
 
-These environment values encapsulate the necessary logic to apply UI changes while ensuring your app utilizes the latest methods and gracefully falls back to deprecated ones when needed.
+**SafeEnvironmentValues** includes custom `SwiftUI` environment values within the **SwiftSafeUI** framework, specifically designed to ensure compatibility across various OS versions while reducing code duplication and minimizing technical debt.
 
-By using **SafeEnvironmentValues**, you can create a seamless and consistent user interface without worrying about version-specific APIs.
-
-
-***
+By encapsulating necessary logic, **SafeEnvironmentValues** ensures that your app utilizes the latest available environment values while gracefully falling back to deprecated ones when required. This allows you to focus on building your app without worrying about the hassle of writing version-specific checks.
 
 
-## EnvironmentValues
+## Topics
 
 - ``SwiftUICore/EnvironmentValues/safeDismiss``
 - ``SwiftUICore/EnvironmentValues/safeIsPresented``

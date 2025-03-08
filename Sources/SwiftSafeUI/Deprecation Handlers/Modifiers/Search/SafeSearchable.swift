@@ -4,42 +4,34 @@
 //  GitHub Repository: https://github.com/BaherTamer/SwiftSafeUI
 //  Documentation: https://bahertamer.github.io/SwiftSafeUI/
 //
-//  Copyright © 2024 Baher Tamer. All rights reserved.
+//  Copyright © 2025 Baher Tamer. All rights reserved.
 //
 
 import SwiftUI
 
 @available(iOS 15.0, *)
 extension View {
+
+    /// Marks this view as searchable, which configures the display of a search field.
     ///
-    /// Adds a search field to this view with customizable suggestions and prompt, ensuring compatibility with different iOS versions.
-    ///
-    /// - Parameters:
-    ///   - text: A binding to the search text.
-    ///   - placement: The placement of the search field. The default value is `.automatic`.
-    ///   - prompt: A localized string to display as a placeholder in the search field.
-    ///   - suggestions: A closure that returns the view used to display search suggestions.
-    ///
-    /// - Returns: A view that incorporates a searchable field with suggestions.
-    ///
-    /// This method provides a search functionality with suggestions for users. It adapts based on the iOS version:
+    /// This method ensures compatibility across OS versions:
     /// - On iOS 16 and later, it uses the new [`searchable(text:placement:prompt:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:)) method along with [`searchSuggestions(_:)`](https://developer.apple.com/documentation/swiftui/view/searchsuggestions(_:)).
     /// - On earlier versions, it falls back to the [`searchable(text:placement:prompt:suggestions:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:suggestions:)) method.
     ///
-    /// > Important: This modifier requires iOS 15 or later.
-    ///
-    /// > Tip: The `searchable` functionality itself remains consistent across all supported iOS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
+    /// ## Apple Discussion
+    /// For more information about using searchable modifiers, see [Adding a search interface to your app](https://developer.apple.com/documentation/swiftui/adding-a-search-interface-to-your-app)
     ///
     /// ## Example
     /// ```swift
     /// struct ContentView: View {
     ///     @State private var searchText = ""
+    ///     private var searchPrompt: Text?
     ///
     ///     var body: some View {
     ///         List {
     ///             // List items...
     ///         }
-    ///         .safeSearchable($searchText, prompt: "Search items") {
+    ///         .safeSearchable($searchText, prompt: searchPrompt) {
     ///             Text("🍎").searchCompletion("apple")
     ///             Text("🍐").searchCompletion("pear")
     ///             Text("🍌").searchCompletion("banana")
@@ -48,65 +40,167 @@ extension View {
     /// }
     /// ```
     ///
-    public func safeSearchable<Suggestions: View>(
+    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
+    ///
+    /// > Important: This modifier requires iOS 15 or later.
+    ///
+    /// - Parameters:
+    ///   - text: The text to display and edit in the search field.
+    ///   - placement: The preferred placement of the search field within the containing view hierarchy.
+    ///   - prompt: A [`Text`](https://developer.apple.com/documentation/swiftui/text) view representing the prompt of the search field which provides users with guidance on what to search for.
+    ///   - suggestions: A view builder that produces content that populates a list of suggestions.
+    @ViewBuilder
+    nonisolated public func safeSearchable<Suggestions: View>(
+        text: Binding<String>,
+        placement: SearchFieldPlacement = .automatic,
+        prompt: Text? = nil,
+        @ViewBuilder suggestions: () -> Suggestions
+    ) -> some View {
+        if #available(iOS 16.0, *) {
+            self
+                .searchable(
+                    text: text,
+                    placement: placement,
+                    prompt: prompt
+                )
+                .searchSuggestions(suggestions)
+        } else {
+            searchable(
+                text: text,
+                placement: placement,
+                prompt: prompt,
+                suggestions: suggestions
+            )
+        }
+    }
+
+
+    /// Marks this view as searchable, which configures the display of a search field.
+    ///
+    /// This method ensures compatibility across OS versions:
+    /// - On iOS 16 and later, it uses the new [`searchable(text:placement:prompt:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:)) method along with [`searchSuggestions(_:)`](https://developer.apple.com/documentation/swiftui/view/searchsuggestions(_:)).
+    /// - On earlier versions, it falls back to the [`searchable(text:placement:prompt:suggestions:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:suggestions:)) method.
+    ///
+    /// ## Apple Discussion
+    /// For more information about using searchable modifiers, see [Adding a search interface to your app](https://developer.apple.com/documentation/swiftui/adding-a-search-interface-to-your-app)
+    ///
+    /// ## Example
+    /// ```swift
+    /// struct ContentView: View {
+    ///     @State private var searchText = ""
+    ///     private let searchPrompt: LocalizedStringKey = "Search items"
+    ///
+    ///     var body: some View {
+    ///         List {
+    ///             // List items...
+    ///         }
+    ///         .safeSearchable($searchText, prompt: searchPrompt) {
+    ///             Text("🍎").searchCompletion("apple")
+    ///             Text("🍐").searchCompletion("pear")
+    ///             Text("🍌").searchCompletion("banana")
+    ///         }
+    ///     }
+    /// }
+    /// ```
+    ///
+    /// > Important: This modifier requires iOS 15 or later.
+    ///
+    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
+    ///
+    /// - Parameters:
+    ///   - text: The text to display and edit in the search field.
+    ///   - placement: The preferred placement of the search field within the containing view hierarchy.
+    ///   - prompt: A key for the localized prompt of the search field which provides users with guidance on what to search for.
+    ///   - suggestions: A view builder that produces content that populates a list of suggestions.
+    @ViewBuilder
+    nonisolated public func safeSearchable<Suggestions: View>(
         text: Binding<String>,
         placement: SearchFieldPlacement = .automatic,
         prompt: LocalizedStringKey,
         @ViewBuilder suggestions: () -> Suggestions
     ) -> some View {
-        modifier(
-            SafeSearchable(
+        if #available(iOS 16.0, *) {
+            self
+                .searchable(
+                    text: text,
+                    placement: placement,
+                    prompt: prompt
+                )
+                .searchSuggestions(suggestions)
+        } else {
+            searchable(
                 text: text,
                 placement: placement,
                 prompt: prompt,
-                suggestions: suggestions()
+                suggestions: suggestions
             )
-        )
-    }
-}
-
-@available(iOS 15.0, *)
-private struct SafeSearchable<Suggestions: View>: ViewModifier {
-    // MARK: - Inputs
-    @Binding var text: String
-    let placement: SearchFieldPlacement
-    let prompt: LocalizedStringKey
-    let suggestions: Suggestions
-
-    // MARK: - Body
-    func body(content: Content) -> some View {
-        if #available(iOS 16.0, *) {
-            applySearchableWithSuggestions(content)
-        } else {
-            applyDeprecatedSearchable(content)
         }
     }
-}
 
-// MARK: - Private Helpers
-@available(iOS 15.0, *)
-extension SafeSearchable {
-    @available(iOS 16.0, *)
-    private func applySearchableWithSuggestions(_ content: Content) -> some View {
-        content
-            .searchable(
-                text: $text,
-                placement: placement,
-                prompt: prompt
-            )
-            .searchSuggestions {
-                suggestions
-            }
-    }
 
-    @available(iOS, introduced: 15.0, deprecated: 16.0)
-    private func applyDeprecatedSearchable(_ content: Content) -> some View {
-        content
-            .searchable(
-                text: $text,
+    /// Marks this view as searchable, which configures the display of a search field.
+    ///
+    /// This method ensures compatibility across OS versions:
+    /// - On iOS 16 and later, it uses the new [`searchable(text:placement:prompt:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:)) method along with [`searchSuggestions(_:)`](https://developer.apple.com/documentation/swiftui/view/searchsuggestions(_:)).
+    /// - On earlier versions, it falls back to the [`searchable(text:placement:prompt:suggestions:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:suggestions:)) method.
+    ///
+    /// ## Apple Discussion
+    /// For more information about using searchable modifiers, see [Adding a search interface to your app](https://developer.apple.com/documentation/swiftui/adding-a-search-interface-to-your-app)
+    ///
+    /// ## Example
+    /// ```swift
+    /// struct ContentView: View {
+    ///     @State private var searchText = ""
+    ///     private let searchPrompt = "Search items"
+    ///
+    ///     var body: some View {
+    ///         List {
+    ///             // List items...
+    ///         }
+    ///         .safeSearchable($searchText, prompt: searchPrompt) {
+    ///             Text("🍎").searchCompletion("apple")
+    ///             Text("🍐").searchCompletion("pear")
+    ///             Text("🍌").searchCompletion("banana")
+    ///         }
+    ///     }
+    /// }
+    /// ```
+    ///
+    /// > Important: This modifier requires iOS 15 or later.
+    ///
+    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
+    ///
+    /// - Parameters:
+    ///   - text: The text to display and edit in the search field.
+    ///   - placement: The preferred placement of the search field within the containing view hierarchy.
+    ///   - prompt: A string representing the prompt of the search field which provides users with guidance on what to search for.
+    ///   - suggestions: A view builder that produces content that populates a list of suggestions.
+    @ViewBuilder
+    nonisolated public func safeSearchable<
+        Suggestions: View,
+        Prompt: StringProtocol
+    >(
+        text: Binding<String>,
+        placement: SearchFieldPlacement = .automatic,
+        prompt: Prompt,
+        @ViewBuilder suggestions: () -> Suggestions
+    ) -> some View {
+        if #available(iOS 16.0, *) {
+            self
+                .searchable(
+                    text: text,
+                    placement: placement,
+                    prompt: prompt
+                )
+                .searchSuggestions(suggestions)
+        } else {
+            searchable(
+                text: text,
                 placement: placement,
                 prompt: prompt,
-                suggestions: { suggestions }
+                suggestions: suggestions
             )
+        }
     }
+
 }
