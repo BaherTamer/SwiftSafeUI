@@ -1,9 +1,5 @@
 ![GitHub Cover](https://github.com/BaherTamer/SwiftSafeUI/assets/99125691/5d634f97-8819-4d79-94ac-403447107218)
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://spdx.org/licenses/MIT.html)
-[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FBaherTamer%2FSwiftSafeUI%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/BaherTamer/SwiftSafeUI)
-[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FBaherTamer%2FSwiftSafeUI%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/BaherTamer/SwiftSafeUI)
-
 # SwiftSafeUI
 **SwiftSafeUI** is a Swift package designed to streamline the management of deprecated SwiftUI APIs across OS versions. It provides a clean and efficient way to handle deprecation logic, ensuring your app always uses the latest APIs while seamlessly falling back to older, deprecated ones when necessary.
 
