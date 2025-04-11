@@ -9,7 +9,7 @@
 
 import SwiftUICore
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Masks this view using the alpha channel of the given view.
@@ -41,7 +41,7 @@ extension View {
         alignment: Alignment = .center,
         @ViewBuilder _ content: () -> Content
     ) -> some View {
-        if #available(iOS 15.0, *) {
+        if #available(iOS 15.0, macOS 12.0, *) {
             mask(
                 alignment: alignment,
                 content
