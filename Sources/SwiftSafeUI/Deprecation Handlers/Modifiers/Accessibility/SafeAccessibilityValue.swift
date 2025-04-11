@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Adds a textual description of the value that the view contains.
@@ -23,7 +23,7 @@ extension View {
     nonisolated public func safeAccessibilityValue(
         _ value: Text
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 11.0, *) {
             accessibilityValue(value)
         } else {
             accessibility(value: value)

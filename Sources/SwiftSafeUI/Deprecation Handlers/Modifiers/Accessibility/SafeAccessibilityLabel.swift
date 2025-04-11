@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Adds a label to the view that describes its contents.
@@ -23,7 +23,7 @@ extension View {
     nonisolated public func safeAccessibilityLabel(
         _ label: Text
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 11.0, *) {
             accessibilityLabel(label)
         } else {
             accessibility(label: label)

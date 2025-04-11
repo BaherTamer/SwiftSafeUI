@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Removes the given traits from this view.
@@ -20,7 +20,7 @@ extension View {
     nonisolated public func safeAccessibilityRemoveTraits(
         _ traits: AccessibilityTraits
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 11.0, *) {
             accessibilityRemoveTraits(traits)
         } else {
             accessibility(removeTraits: traits)

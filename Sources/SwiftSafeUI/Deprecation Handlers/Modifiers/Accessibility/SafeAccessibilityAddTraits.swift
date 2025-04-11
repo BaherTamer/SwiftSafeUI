@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Adds the given traits to the view.
@@ -20,7 +20,7 @@ extension View {
     nonisolated public func safeAccessibilityAddTraits(
         _ traits: AccessibilityTraits
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 11.0, *) {
             accessibilityAddTraits(traits)
         } else {
             accessibility(addTraits: traits)

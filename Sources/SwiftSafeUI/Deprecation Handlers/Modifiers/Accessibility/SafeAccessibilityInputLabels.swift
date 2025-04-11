@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Sets alternate input labels with which users identify a view.
@@ -25,7 +25,7 @@ extension View {
     nonisolated public func safeAccessibilityInputLabels(
         _ inputLabels: [Text]
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 11.0, *) {
             accessibilityInputLabels(inputLabels)
         } else {
             accessibility(inputLabels: inputLabels)

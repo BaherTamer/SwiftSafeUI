@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Sets the sort priority order for this view’s accessibility element, relative to other elements at the same level.
@@ -23,7 +23,7 @@ extension View {
     nonisolated public func safeAccessibilitySortPriority(
         _ sortPriority: Double
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 11.0, *) {
             accessibilitySortPriority(sortPriority)
         } else {
             accessibility(sortPriority: sortPriority)

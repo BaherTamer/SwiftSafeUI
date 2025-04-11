@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Uses the string you specify to identify the view.
@@ -23,7 +23,7 @@ extension View {
     nonisolated public func safeAccessibilityIdentifier(
         _ identifier: String
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 11.0, *) {
             accessibilityIdentifier(identifier)
         } else {
             accessibility(identifier: identifier)

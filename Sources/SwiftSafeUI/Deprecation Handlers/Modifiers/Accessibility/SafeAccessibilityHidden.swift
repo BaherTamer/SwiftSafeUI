@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Specifies whether to hide this view from system accessibility features.
@@ -20,7 +20,7 @@ extension View {
     nonisolated public func safeAccessibilityHidden(
         _ hidden: Bool
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 11.0, *) {
             accessibilityHidden(hidden)
         } else {
             accessibility(hidden: hidden)

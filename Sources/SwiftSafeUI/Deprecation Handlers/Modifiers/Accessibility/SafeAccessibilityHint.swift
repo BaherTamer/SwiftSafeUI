@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Communicates to the user what happens after performing the view’s action.
@@ -23,7 +23,7 @@ extension View {
     nonisolated public func safeAccessibilityHint(
         _ hint: Text
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 11.0, *) {
             accessibilityHint(hint)
         } else {
             accessibility(hint: hint)
