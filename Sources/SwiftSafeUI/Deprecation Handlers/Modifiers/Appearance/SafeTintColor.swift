@@ -9,7 +9,7 @@
 
 import SwiftUICore
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Sets the tint color within this view.
@@ -51,7 +51,7 @@ extension View {
     /// - Parameter color: The color to use as an accent color.
     @ViewBuilder
     nonisolated public func safeTintColor(_ color: Color?) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, macOS 13.0, *) {
             tint(color)
         } else {
             accentColor(color)

@@ -9,7 +9,7 @@
 
 import SwiftUICore
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Layers the views that you specify in front of this view.
@@ -49,7 +49,7 @@ extension View {
         alignment: Alignment = .center,
         @ViewBuilder content: () -> Content
     ) -> some View {
-        if #available(iOS 15.0, *) {
+        if #available(iOS 15.0, macOS 12.0, *) {
             overlay(
                 alignment: alignment,
                 content: content

@@ -9,7 +9,7 @@
 
 import SwiftUICore
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Sets the color of the foreground elements displayed by this view.
@@ -37,7 +37,7 @@ extension View {
     /// - Returns: A view that uses the foreground color you supply.
     @ViewBuilder
     nonisolated public func safeForegroundColor(_ color: Color) -> some View {
-        if #available(iOS 15.0, *) {
+        if #available(iOS 15.0, macOS 12.0, *) {
             foregroundStyle(color)
         } else {
             foregroundColor(color)

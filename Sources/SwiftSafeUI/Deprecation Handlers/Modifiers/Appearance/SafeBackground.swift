@@ -9,7 +9,7 @@
 
 import SwiftUICore
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Layers the views that you specify behind this view.
@@ -46,7 +46,7 @@ extension View {
         alignment: Alignment = .center,
         @ViewBuilder content: () -> Content
     ) -> some View {
-        if #available(iOS 15.0, *) {
+        if #available(iOS 15.0, macOS 12.0, *) {
             background(
                 alignment: alignment,
                 content: content
