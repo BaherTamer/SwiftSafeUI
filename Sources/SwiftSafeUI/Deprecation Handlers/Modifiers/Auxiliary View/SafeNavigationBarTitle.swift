@@ -7,9 +7,12 @@
 //  Copyright © 2025 Baher Tamer. All rights reserved.
 //
 
+#if os(iOS)
+
 import SwiftUI
 
 @available(iOS 13.0, *)
+@available(macOS, unavailable)
 extension View {
 
     /// Sets the title and display mode in the navigation bar for this view.
@@ -116,3 +119,5 @@ extension View {
     }
 
 }
+
+#endif

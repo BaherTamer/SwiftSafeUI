@@ -7,9 +7,12 @@
 //  Copyright © 2025 Baher Tamer. All rights reserved.
 //
 
+#if os(iOS)
+
 import SwiftUICore
 
 @available(iOS 13.0, *)
+@available(macOS, unavailable)
 extension View {
 
     /// Hides the navigation bar for this view.
@@ -51,6 +54,8 @@ extension View {
 }
 
 // MARK: - Private Helpers
+@available(iOS 13.0, *)
+@available(macOS, unavailable)
 extension View {
 
     /// Determines the visibility state of a view based on the `isHidden` parameter.
@@ -62,3 +67,5 @@ extension View {
     }
 
 }
+
+#endif
