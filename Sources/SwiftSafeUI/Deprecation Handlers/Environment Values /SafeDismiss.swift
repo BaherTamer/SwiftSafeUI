@@ -9,7 +9,7 @@
 
 import SwiftUICore
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension EnvironmentValues {
 
     /// An action that dismisses the current presentation.
@@ -88,12 +88,13 @@ extension EnvironmentValues {
 }
 
 // MARK: - Private Helpers
+@available(iOS 13.0, macOS 10.15, *)
 extension EnvironmentValues {
 
     /// Calls dismiss action based on OS versions.
     @MainActor
     private func dismissAction() {
-        if #available(iOS 15, *) {
+        if #available(iOS 15, macOS 12.0, *) {
             dismiss()
         } else {
             presentationMode.wrappedValue.dismiss()
