@@ -12,7 +12,7 @@ import SwiftUI
 /// A view for presenting a stack of views that represents a visible path in a navigation hierarchy.
 ///
 /// This view ensures compatibility across OS versions:
-/// - On iOS 16 and later, it utilizes the new [`NavigationStack`](https://developer.apple.com/documentation/swiftui/navigationstack) initializer [`init(root:)`](https://developer.apple.com/documentation/swiftui/navigationstack/init(root:)).
+/// - On **iOS 16, macOS 13**, and later, it utilizes the new [`NavigationStack`](https://developer.apple.com/documentation/swiftui/navigationstack) initializer [`init(root:)`](https://developer.apple.com/documentation/swiftui/navigationstack/init(root:)).
 /// - On earlier versions, it falls back to the old [`NavigationView`](https://developer.apple.com/documentation/swiftui/navigationview) initializer [`init(content:)`](https://developer.apple.com/documentation/swiftui/navigationview/init(content:)).
 ///
 /// ## Apple Discussion
@@ -44,7 +44,7 @@ public struct SafeNavigationView<Content: View>: View {
     /// Creates a destination-based navigation view.
     ///
     /// This initializer ensures compatibility across OS versions:
-    /// - On iOS 16 and later, it utilizes the new [`NavigationStack`](https://developer.apple.com/documentation/swiftui/navigationstack) initializer [`init(root:)`](https://developer.apple.com/documentation/swiftui/navigationstack/init(root:)).
+    /// - On **iOS 16, macOS 13**, and later, it utilizes the new [`NavigationStack`](https://developer.apple.com/documentation/swiftui/navigationstack) initializer [`init(root:)`](https://developer.apple.com/documentation/swiftui/navigationstack/init(root:)).
     /// - On earlier versions, it falls back to the old [`NavigationView`](https://developer.apple.com/documentation/swiftui/navigationview) initializer [`init(content:)`](https://developer.apple.com/documentation/swiftui/navigationview/init(content:)).
     ///
     /// > Tip: If your app exclusively supports iOS 16 or later, you do not need to use this initializer. You can directly use `NavigationStack` as this initializer primarily addresses the deprecation of `NavigationView` in earlier OS versions.

@@ -12,7 +12,7 @@ import SwiftUI
 /// A scrollable view.
 ///
 /// This view ensures compatibility across OS versions:
-/// - On iOS 16 and later, it utilizes the new [`ScrollView`](https://developer.apple.com/documentation/swiftui/scrollview) initializer [`init(_:content:)`](https://developer.apple.com/documentation/swiftui/scrollview/init(_:content:)) with the new [`scrollIndicators(_:axes:)`](https://developer.apple.com/documentation/swiftui/view/scrollindicators(_:axes:)) method.
+/// - On **iOS 16, macOS 13**, and later, it utilizes the new [`ScrollView`](https://developer.apple.com/documentation/swiftui/scrollview) initializer [`init(_:content:)`](https://developer.apple.com/documentation/swiftui/scrollview/init(_:content:)) with the new [`scrollIndicators(_:axes:)`](https://developer.apple.com/documentation/swiftui/view/scrollindicators(_:axes:)) method.
 /// - On earlier versions, it falls back to the old [`ScrollView`](https://developer.apple.com/documentation/swiftui/scrollview) initializer [`init(_:showsIndicators:content:)`](https://developer.apple.com/documentation/swiftui/scrollview/init(_:showsindicators:content:)).
 ///
 /// ## Apple Discussion
@@ -43,7 +43,7 @@ public struct SafeScrollView<Content: View>: View {
     /// Creates a new instance that's scrollable in the direction of the given axis and can show indicators while scrolling.
     ///
     /// This initializer ensures compatibility across OS versions:
-    /// - On iOS 16 and later, it utilizes the new [`ScrollView`](https://developer.apple.com/documentation/swiftui/scrollview) initializer [`init(_:content:)`](https://developer.apple.com/documentation/swiftui/scrollview/init(_:content:)) with the new [`scrollIndicators(_:axes:)`](https://developer.apple.com/documentation/swiftui/view/scrollindicators(_:axes:)) method.
+    /// - On **iOS 16, macOS 13**, and later, it utilizes the new [`ScrollView`](https://developer.apple.com/documentation/swiftui/scrollview) initializer [`init(_:content:)`](https://developer.apple.com/documentation/swiftui/scrollview/init(_:content:)) with the new [`scrollIndicators(_:axes:)`](https://developer.apple.com/documentation/swiftui/view/scrollindicators(_:axes:)) method.
     /// - On earlier versions, it falls back to the old [`ScrollView`](https://developer.apple.com/documentation/swiftui/scrollview) initializer [`init(_:showsIndicators:content:)`](https://developer.apple.com/documentation/swiftui/scrollview/init(_:showsindicators:content:)).
     ///
     /// - Parameters:
