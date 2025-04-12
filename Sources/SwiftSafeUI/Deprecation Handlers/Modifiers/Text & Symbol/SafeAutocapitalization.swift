@@ -7,6 +7,8 @@
 //  Copyright © 2025 Baher Tamer. All rights reserved.
 //
 
+#if os(iOS)
+
 import SwiftUI
 
 @available(iOS 13.0, *)
@@ -88,3 +90,5 @@ public enum AutocapitalizationType {
     }
 
 }
+
+#endif

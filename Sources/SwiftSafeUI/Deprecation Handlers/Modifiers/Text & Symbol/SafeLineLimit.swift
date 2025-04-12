@@ -9,7 +9,8 @@
 
 import SwiftUICore
 
-@available(*, deprecated, message: "Due to an incorrect approach used for height calculation of text in dynamic large text cases, this modifier should no longer be used as it does not work as expected.")
+@available(iOS, introduced: 13.0, deprecated: 100000.0, message: "Due to an incorrect approach used for height calculation of text in dynamic large text cases, this modifier should no longer be used as it does not work as expected.")
+@available(macOS, introduced: 10.15, deprecated: 100000.0, message: "Due to an incorrect approach used for height calculation of text in dynamic large text cases, this modifier should no longer be used as it does not work as expected.")
 extension View {
 
     /// Sets a limit for the number of lines text can occupy in this view.
@@ -52,6 +53,7 @@ extension View {
 
 }
 
+@available(iOS 13.0, macOS 10.15, *)
 private struct SafeLineLimit: ViewModifier {
     // MARK: - Inputs
     let limit: Int
@@ -62,7 +64,7 @@ private struct SafeLineLimit: ViewModifier {
 
     // MARK: - Body
     func body(content: Content) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, macOS 13.0, *) {
             applyReservesSpace(content)
         } else {
             applyDeprecatedReservesSpace(content)
@@ -71,14 +73,16 @@ private struct SafeLineLimit: ViewModifier {
 }
 
 // MARK: - Private Helpers
+@available(iOS 13.0, macOS 10.15, *)
 extension SafeLineLimit {
-    @available(iOS 16.0, *)
+    @available(iOS 16.0, macOS 13.0, *)
     private func applyReservesSpace(_ content: Content) -> some View {
         content
             .lineLimit(limit, reservesSpace: reservesSpace)
     }
 
     @available(iOS, introduced: 13.0, deprecated: 16.0)
+    @available(macOS, introduced: 10.15, deprecated: 13.0)
     private func applyDeprecatedReservesSpace(_ content: Content) -> some View {
         content
             .lineLimit(limit)
@@ -103,6 +107,7 @@ extension SafeLineLimit {
 }
 
 // MARK: - Text Height Preference Key
+@available(iOS 13.0, macOS 10.15, *)
 private struct TextHeightPreferenceKey: PreferenceKey {
     // MARK: Constants
     static let defaultValue: CGFloat = 20
