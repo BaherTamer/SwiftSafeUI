@@ -16,7 +16,7 @@ import SwiftUI
 /// - On earlier versions, it falls back to the old [`NavigationView`](https://developer.apple.com/documentation/swiftui/navigationview) initializer [`init(content:)`](https://developer.apple.com/documentation/swiftui/navigationview/init(content:)).
 ///
 /// ## Apple Discussion
-/// Use a `SafeNavigationView` to create a navigation-based app in which the user can traverse a collection of views. Users navigate to a destination view by selecting a [`NavigationLink`](https://developer.apple.com/documentation/swiftui/navigationlink) that you provide. On iPadOS and macOS, the destination content appears in the next column. Other platforms push a new view onto the stack, and enable removing items from the stack with platform-specific controls, like a Back button or a swipe gesture.
+/// Use a `SafeNavigationView` to create a navigation-based app in which the user can traverse a collection of views. Users navigate to a destination view by selecting a [`NavigationLink`](https://developer.apple.com/documentation/swiftui/navigationlink) that you provide. On all platforms push a new view onto the stack, and enable removing items from the stack with platform-specific controls, like a Back button or a swipe gesture.
 ///
 /// ## Example
 /// Use the ``SafeNavigationView/init(content:)`` initializer to create a navigation view that directly associates navigation links and their destination views:
