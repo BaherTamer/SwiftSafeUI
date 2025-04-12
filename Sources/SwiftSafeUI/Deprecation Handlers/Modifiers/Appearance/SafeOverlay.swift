@@ -15,7 +15,7 @@ extension View {
     /// Layers the views that you specify in front of this view.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 15 and later, it utilizes the new [`overlay(alignment:content:)`](https://developer.apple.com/documentation/swiftui/view/overlay(alignment:content:)) method.
+    /// - On **iOS 15, macOS 12**, and later, it utilizes the new [`overlay(alignment:content:)`](https://developer.apple.com/documentation/swiftui/view/overlay(alignment:content:)) method.
     /// - On earlier versions, it falls back to the [`overlay(_:alignment:)`](https://developer.apple.com/documentation/swiftui/view/overlay(_:alignment:)) method.
     ///
     /// ## Apple Discussion
