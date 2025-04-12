@@ -9,8 +9,7 @@
 
 import SwiftUICore
 
-@available(iOS, introduced: 13.0, deprecated: 100000.0, message: "Due to an incorrect approach used for height calculation of text in dynamic large text cases, this modifier should no longer be used as it does not work as expected.")
-@available(macOS, introduced: 10.15, deprecated: 100000.0, message: "Due to an incorrect approach used for height calculation of text in dynamic large text cases, this modifier should no longer be used as it does not work as expected.")
+@available(*, deprecated, message: "Due to an incorrect approach used for height calculation of text in dynamic large text cases, this modifier should no longer be used as it does not work as expected.")
 extension View {
 
     /// Sets a limit for the number of lines text can occupy in this view.
