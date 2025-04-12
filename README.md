@@ -22,10 +22,10 @@ As SwiftUI evolves with every release, Apple frequently introduces new APIs whil
 <br/>
 
 ## ⚙️ Compatibility
-- Swift 5.9+
-- iOS 13.0+
-- iPadOS 13.0+
-- macOS 10.15+
+`Swift 5.9+`
+`iOS 13.0+`
+`iPadOS 13.0+`
+`macOS 10.15+`
 
 <br/>
 
