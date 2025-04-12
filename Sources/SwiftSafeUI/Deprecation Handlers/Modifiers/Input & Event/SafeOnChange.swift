@@ -46,7 +46,7 @@ extension View {
     /// }
     /// ```
     ///
-    /// > Important: This modifier requires iOS 14 or later.
+    /// > Important: This modifier requires **iOS 14 and macOS 11** or later.
     ///
     /// - Parameters:
     ///   - value: The value to check against when determining whether to run the closure.
@@ -114,7 +114,7 @@ extension View {
     /// }
     /// ```
     ///
-    /// > Important: This modifier requires iOS 14 or later.
+    /// > Important: This modifier requires **iOS 14 and macOS 11** or later.
     ///
     /// - Parameters:
     ///   - value: The value to check against when determining whether to run the closure.
