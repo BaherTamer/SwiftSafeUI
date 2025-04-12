@@ -15,7 +15,7 @@ extension View {
     /// Adds a textual description of the value that the view contains.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 14 and later, it uses the new [`accessibilityValue(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityvalue(_:)) method.
+    /// - On **iOS 14, macOS 11**, and later, it uses the new [`accessibilityValue(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityvalue(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(value:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(value:)) method.
     ///
     /// ## Apple Discussion

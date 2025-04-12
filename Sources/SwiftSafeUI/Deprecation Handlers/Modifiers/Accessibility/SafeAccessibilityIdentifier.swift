@@ -15,7 +15,7 @@ extension View {
     /// Uses the string you specify to identify the view.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 14 and later, it uses the new [`accessibilityIdentifier(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityidentifier(_:)) method.
+    /// - On **iOS 14, macOS 11**, and later, it uses the new [`accessibilityIdentifier(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityidentifier(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(identifier:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(identifier:)) method.
     ///
     /// ## Apple Discussion
