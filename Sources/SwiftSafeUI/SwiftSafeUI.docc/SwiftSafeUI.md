@@ -6,6 +6,7 @@ Encapsulates deprecation handling logic, ensuring compatibility across different
     @PageImage(purpose: icon, source: "SwiftSafeUI-Icon", alt: "A technology icon representing the SwiftSafeUI framework.")
     @PageColor(green)
     @Available(iOS, introduced: "13.0")
+    @Available(macOS, introduced: "10.15")
 }
 
 
