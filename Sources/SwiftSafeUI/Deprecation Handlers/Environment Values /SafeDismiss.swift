@@ -94,7 +94,7 @@ extension EnvironmentValues {
     /// Calls dismiss action based on OS versions.
     @MainActor
     private func dismissAction() {
-        if #available(iOS 15, macOS 12.0, *) {
+        if #available(iOS 15.0, macOS 12.0, *) {
             dismiss()
         } else {
             presentationMode.wrappedValue.dismiss()

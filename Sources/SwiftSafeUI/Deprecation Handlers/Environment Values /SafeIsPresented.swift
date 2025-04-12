@@ -40,7 +40,7 @@ extension EnvironmentValues {
     /// }
     /// ```
     public var safeIsPresented: Bool {
-        if #available(iOS 15, macOS 12.0, *) {
+        if #available(iOS 15.0, macOS 12.0, *) {
             isPresented
         } else {
             presentationMode.wrappedValue.isPresented
