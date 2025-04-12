@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-@available(iOS 15.0, *)
+@available(iOS 15.0, macOS 12.0, *)
 extension View {
 
     /// Marks this view as searchable, which configures the display of a search field.
@@ -56,7 +56,7 @@ extension View {
         prompt: Text? = nil,
         @ViewBuilder suggestions: () -> Suggestions
     ) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, macOS 13.0, *) {
             self
                 .searchable(
                     text: text,
@@ -119,7 +119,7 @@ extension View {
         prompt: LocalizedStringKey,
         @ViewBuilder suggestions: () -> Suggestions
     ) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, macOS 13.0, *) {
             self
                 .searchable(
                     text: text,
@@ -185,7 +185,7 @@ extension View {
         prompt: Prompt,
         @ViewBuilder suggestions: () -> Suggestions
     ) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, macOS 13.0, *) {
             self
                 .searchable(
                     text: text,
