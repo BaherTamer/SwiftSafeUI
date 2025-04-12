@@ -15,7 +15,7 @@ extension View {
     /// Expands the safe area of a view.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On **iOS 14, macOS 11**, and later, it utilizes the new [`ignoresSafeArea(_:edges:))`](https://developer.apple.com/documentation/swiftui/view/ignoressafearea(_:edges:)) method.
+    /// - On **iOS 14, iPadOS 14, macOS 11**, and later, it utilizes the new [`ignoresSafeArea(_:edges:))`](https://developer.apple.com/documentation/swiftui/view/ignoressafearea(_:edges:)) method.
     /// - On earlier versions, it falls back to the [`edgesIgnoringSafeArea(_:)`](https://developer.apple.com/documentation/swiftui/view/edgesIgnoringSafeArea(_:) ) method.
     ///
     /// ## Apple Discussion

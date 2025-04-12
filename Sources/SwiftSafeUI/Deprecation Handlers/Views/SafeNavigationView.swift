@@ -12,7 +12,7 @@ import SwiftUI
 /// A view for presenting a stack of views that represents a visible path in a navigation hierarchy.
 ///
 /// This view ensures compatibility across OS versions:
-/// - On **iOS 16, macOS 13**, and later, it utilizes the new [`NavigationStack`](https://developer.apple.com/documentation/swiftui/navigationstack) initializer [`init(root:)`](https://developer.apple.com/documentation/swiftui/navigationstack/init(root:)).
+/// - On **iOS 16, iPadOS 16, macOS 13**, and later, it utilizes the new [`NavigationStack`](https://developer.apple.com/documentation/swiftui/navigationstack) initializer [`init(root:)`](https://developer.apple.com/documentation/swiftui/navigationstack/init(root:)).
 /// - On earlier versions, it falls back to the old [`NavigationView`](https://developer.apple.com/documentation/swiftui/navigationview) initializer [`init(content:)`](https://developer.apple.com/documentation/swiftui/navigationview/init(content:)).
 ///
 /// ## Apple Discussion
@@ -34,7 +34,7 @@ import SwiftUI
 /// }
 /// ```
 ///
-/// > Tip: If your app exclusively supports **iOS 16 and macOS 13** or later, you do not need to use this view. You can directly use `NavigationStack` as this view primarily addresses the deprecation of `NavigationView` in earlier OS versions.
+/// > Tip: If your app exclusively supports **iOS 16, iPadOS 16 , and macOS 13** or later, you do not need to use this view. You can directly use `NavigationStack` as this view primarily addresses the deprecation of `NavigationView` in earlier OS versions.
 @available(iOS 13.0, macOS 10.15, *)
 public struct SafeNavigationView<Content: View>: View {
     // MARK: - Inputs
@@ -44,10 +44,10 @@ public struct SafeNavigationView<Content: View>: View {
     /// Creates a destination-based navigation view.
     ///
     /// This initializer ensures compatibility across OS versions:
-    /// - On **iOS 16, macOS 13**, and later, it utilizes the new [`NavigationStack`](https://developer.apple.com/documentation/swiftui/navigationstack) initializer [`init(root:)`](https://developer.apple.com/documentation/swiftui/navigationstack/init(root:)).
+    /// - On **iOS 16, iPadOS 16, macOS 13**, and later, it utilizes the new [`NavigationStack`](https://developer.apple.com/documentation/swiftui/navigationstack) initializer [`init(root:)`](https://developer.apple.com/documentation/swiftui/navigationstack/init(root:)).
     /// - On earlier versions, it falls back to the old [`NavigationView`](https://developer.apple.com/documentation/swiftui/navigationview) initializer [`init(content:)`](https://developer.apple.com/documentation/swiftui/navigationview/init(content:)).
     ///
-    /// > Tip: If your app exclusively supports **iOS 16 and macOS 13** or later, you do not need to use this initializer. You can directly use `NavigationStack` as this initializer primarily addresses the deprecation of `NavigationView` in earlier OS versions.
+    /// > Tip: If your app exclusively supports **iOS 16, iPadOS 16 , and macOS 13** or later, you do not need to use this initializer. You can directly use `NavigationStack` as this initializer primarily addresses the deprecation of `NavigationView` in earlier OS versions.
     ///
     /// - Parameter content: A [`ViewBuilder`](https://developer.apple.com/documentation/swiftui/viewbuilder) that produces the content that the navigation view wraps. Any views after the first act as placeholders for corresponding columns in a multicolumn display.
     public init(@ViewBuilder content: () -> Content) {

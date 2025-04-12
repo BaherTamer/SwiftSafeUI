@@ -15,7 +15,7 @@ extension View {
     /// Masks this view using the alpha channel of the given view.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On **iOS 15, macOS 12**, and later, it uses the new [`mask(alignment:_:)`](https://developer.apple.com/documentation/swiftui/view/mask(alignment:_:)) method.
+    /// - On **iOS 15, iPadOS 15, macOS 12**, and later, it uses the new [`mask(alignment:_:)`](https://developer.apple.com/documentation/swiftui/view/mask(alignment:_:)) method.
     /// - On earlier versions, it falls back to the deprecated [`mask(_:)`](https://developer.apple.com/documentation/swiftui/view/mask(_:)) method.
     ///
     /// ## Apple Discussion

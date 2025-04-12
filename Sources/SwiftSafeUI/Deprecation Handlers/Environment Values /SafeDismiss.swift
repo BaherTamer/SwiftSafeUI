@@ -15,7 +15,7 @@ extension EnvironmentValues {
     /// An action that dismisses the current presentation.
     ///
     /// This environment value ensures compatibility across OS versions:
-    /// - On **iOS 15, macOS 12**, and later, it uses the new [`dismiss()`](https://developer.apple.com/documentation/swiftui/environmentvalues/dismiss) method.
+    /// - On **iOS 15, iPadOS 15, macOS 12**, and later, it uses the new [`dismiss()`](https://developer.apple.com/documentation/swiftui/environmentvalues/dismiss) method.
     /// - On earlier versions, it falls back to the [`presentationMode`](https://developer.apple.com/documentation/swiftui/environmentvalues/presentationmode) environment value dismiss method.
     ///
     /// ## Apple Discussion

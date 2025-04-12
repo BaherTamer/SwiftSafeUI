@@ -15,7 +15,7 @@ extension View {
     /// Adds a label to the view that describes its contents.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On **iOS 14, macOS 11**, and later, it uses the new [`accessibilityLabel(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilitylabel(_:)) method.
+    /// - On **iOS 14, iPadOS 14, macOS 11**, and later, it uses the new [`accessibilityLabel(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilitylabel(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(label:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(label:)) method.
     ///
     /// ## Apple Discussion

@@ -15,7 +15,7 @@ extension View {
     /// The activation point for an element is the location assistive technologies use to initiate gestures.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On **iOS 14, macOS 11**, and later, it uses the new [`accessibilityActivationPoint(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityactivationpoint(_:)) method.
+    /// - On **iOS 14, iPadOS 14, macOS 11**, and later, it uses the new [`accessibilityActivationPoint(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityactivationpoint(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(activationPoint:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(activationPoint:)) method.
     ///
     /// ## Apple Discussion

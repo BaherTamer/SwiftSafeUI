@@ -15,7 +15,7 @@ extension EnvironmentValues {
     /// A Boolean value that indicates whether the view associated with this environment is currently presented.
     ///
     /// This environment value ensures compatibility across OS versions:
-    /// - On **iOS 15, macOS 12**, and later, it uses the new [`isPresented`](https://developer.apple.com/documentation/swiftui/environmentvalues/ispresented) property.
+    /// - On **iOS 15, iPadOS 15, macOS 12**, and later, it uses the new [`isPresented`](https://developer.apple.com/documentation/swiftui/environmentvalues/ispresented) property.
     /// - On earlier versions, it falls back to the [`presentationMode`](https://developer.apple.com/documentation/swiftui/environmentvalues/presentationmode) environment value isPresented variable.
     ///
     /// ## Apple Discussion

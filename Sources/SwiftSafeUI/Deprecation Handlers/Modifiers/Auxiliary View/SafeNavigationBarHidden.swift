@@ -18,8 +18,8 @@ extension View {
     /// Hides the navigation bar for this view.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On **iOS 18** and later, it utilizes the new [`toolbarVisibility(_:for:)`](https://developer.apple.com/documentation/swiftui/view/toolbarvisibility(_:for:)) method.
-    /// - On **iOS 16** and later, it uses the deprecated [`toolbar(_:for:)`](https://developer.apple.com/documentation/swiftui/view/toolbar(_:for:)) method.
+    /// - On **iOS 18, iPadOS 18** and later, it utilizes the new [`toolbarVisibility(_:for:)`](https://developer.apple.com/documentation/swiftui/view/toolbarvisibility(_:for:)) method.
+    /// - On **iOS 16, iPadOS 16** and later, it uses the deprecated [`toolbar(_:for:)`](https://developer.apple.com/documentation/swiftui/view/toolbar(_:for:)) method.
     /// - On earlier versions, it falls back to the [`navigationBarHidden(_:)`](https://developer.apple.com/documentation/swiftui/view/navigationbarhidden(_:)) method.
     ///
     /// ## Apple Discussion

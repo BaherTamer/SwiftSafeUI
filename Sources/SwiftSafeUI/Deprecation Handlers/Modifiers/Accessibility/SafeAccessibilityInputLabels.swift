@@ -15,7 +15,7 @@ extension View {
     /// Sets alternate input labels with which users identify a view.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On **iOS 14, macOS 11**, and later, it uses the new [`accessibilityInputLabels(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityinputlabels(_:)) method.
+    /// - On **iOS 14, iPadOS 14, macOS 11**, and later, it uses the new [`accessibilityInputLabels(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityinputlabels(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(inputLabels:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(inputLabels:)) method.
     ///
     /// ## Apple Discussion

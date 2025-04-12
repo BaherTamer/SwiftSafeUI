@@ -15,7 +15,7 @@ extension View {
     /// Layers the views that you specify behind this view.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On **iOS 15, macOS 12**, and later, it utilizes the new [`background(alignment:content:)`](https://developer.apple.com/documentation/swiftui/view/background(alignment:content:)) method.
+    /// - On **iOS 15, iPadOS 15, macOS 12**, and later, it utilizes the new [`background(alignment:content:)`](https://developer.apple.com/documentation/swiftui/view/background(alignment:content:)) method.
     /// - On earlier versions, it falls back to the [`background(_:alignment:)`](https://developer.apple.com/documentation/swiftui/view/background(_:alignment:)) method.
     ///
     /// ## Apple Discussion
