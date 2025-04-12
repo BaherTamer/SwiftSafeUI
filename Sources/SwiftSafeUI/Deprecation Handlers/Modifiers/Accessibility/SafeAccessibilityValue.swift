@@ -9,13 +9,13 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Adds a textual description of the value that the view contains.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 14 and later, it uses the new [`accessibilityValue(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityvalue(_:)) method.
+    /// - On **iOS 14, iPadOS 14, macOS 11**, and later, it uses the new [`accessibilityValue(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityvalue(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(value:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(value:)) method.
     ///
     /// ## Apple Discussion
@@ -23,7 +23,7 @@ extension View {
     nonisolated public func safeAccessibilityValue(
         _ value: Text
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 11.0, *) {
             accessibilityValue(value)
         } else {
             accessibility(value: value)

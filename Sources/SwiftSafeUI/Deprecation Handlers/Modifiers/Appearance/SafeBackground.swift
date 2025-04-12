@@ -9,13 +9,13 @@
 
 import SwiftUICore
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Layers the views that you specify behind this view.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 15 and later, it utilizes the new [`background(alignment:content:)`](https://developer.apple.com/documentation/swiftui/view/background(alignment:content:)) method.
+    /// - On **iOS 15, iPadOS 15, macOS 12**, and later, it utilizes the new [`background(alignment:content:)`](https://developer.apple.com/documentation/swiftui/view/background(alignment:content:)) method.
     /// - On earlier versions, it falls back to the [`background(_:alignment:)`](https://developer.apple.com/documentation/swiftui/view/background(_:alignment:)) method.
     ///
     /// ## Apple Discussion
@@ -46,7 +46,7 @@ extension View {
         alignment: Alignment = .center,
         @ViewBuilder content: () -> Content
     ) -> some View {
-        if #available(iOS 15.0, *) {
+        if #available(iOS 15.0, macOS 12.0, *) {
             background(
                 alignment: alignment,
                 content: content

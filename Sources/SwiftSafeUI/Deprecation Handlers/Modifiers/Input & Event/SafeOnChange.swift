@@ -9,13 +9,13 @@
 
 import SwiftUICore
 
-@available(iOS 14.0, *)
+@available(iOS 14.0, macOS 11.0, *)
 extension View {
 
     /// Adds a modifier for this view that fires an action when a specific value changes.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 17 and later, it utilizes the new [`onChange(of:initial:_:)`](https://developer.apple.com/documentation/swiftui/view/onchange(of:initial:_:)-8wgw9) method.
+    /// - On **iOS 17, iPadOS 17, macOS 14**, and later, it utilizes the new [`onChange(of:initial:_:)`](https://developer.apple.com/documentation/swiftui/view/onchange(of:initial:_:)-8wgw9) method.
     /// - On earlier versions, it falls back to the [`onChange(of:perform:)`](https://developer.apple.com/documentation/swiftui/view/onchange(of:perform:)) method.
     ///
     /// ## Apple Discussion
@@ -46,7 +46,7 @@ extension View {
     /// }
     /// ```
     ///
-    /// > Important: This modifier requires iOS 14 or later.
+    /// > Important: This modifier requires **iOS 14, iPadOS 14 , and macOS 11** or later.
     ///
     /// - Parameters:
     ///   - value: The value to check against when determining whether to run the closure.
@@ -60,7 +60,7 @@ extension View {
         initial: Bool = false,
         _ action: @escaping () -> Void
     ) -> some View {
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, macOS 14.0, *) {
             onChange(
                 of: value,
                 initial: initial,
@@ -83,7 +83,7 @@ extension View {
     /// Adds a modifier for this view that fires an action when a specific value changes.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 17 and later, it utilizes the new [`onChange(of:initial:_:)`](https://developer.apple.com/documentation/swiftui/view/onchange(of:initial:_:)-4psgg) method.
+    /// - On **iOS 17, iPadOS 17, macOS 14**, and later, it utilizes the new [`onChange(of:initial:_:)`](https://developer.apple.com/documentation/swiftui/view/onchange(of:initial:_:)-4psgg) method.
     /// - On earlier versions, it falls back to the [`onChange(of:perform:)`](https://developer.apple.com/documentation/swiftui/view/onchange(of:perform:)) method.
     ///
     /// ## Apple Discussion
@@ -114,7 +114,7 @@ extension View {
     /// }
     /// ```
     ///
-    /// > Important: This modifier requires iOS 14 or later.
+    /// > Important: This modifier requires **iOS 14, iPadOS 14 , and macOS 11** or later.
     ///
     /// - Parameters:
     ///   - value: The value to check against when determining whether to run the closure.
@@ -128,7 +128,7 @@ extension View {
         initial: Bool = false,
         _ action: @escaping (Value, Value) -> Void
     ) -> some View {
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, macOS 14.0, *) {
             onChange(
                 of: value,
                 initial: initial,

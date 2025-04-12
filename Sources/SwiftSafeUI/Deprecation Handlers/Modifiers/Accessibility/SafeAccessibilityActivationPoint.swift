@@ -9,13 +9,13 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// The activation point for an element is the location assistive technologies use to initiate gestures.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 14 and later, it uses the new [`accessibilityActivationPoint(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityactivationpoint(_:)) method.
+    /// - On **iOS 14, iPadOS 14, macOS 11**, and later, it uses the new [`accessibilityActivationPoint(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityactivationpoint(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(activationPoint:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(activationPoint:)) method.
     ///
     /// ## Apple Discussion
@@ -25,7 +25,7 @@ extension View {
     nonisolated public func safeAccessibilityActivationPoint(
         _ activationPoint: CGPoint
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 11.0, *) {
             accessibilityActivationPoint(activationPoint)
         } else {
             accessibility(activationPoint: activationPoint)

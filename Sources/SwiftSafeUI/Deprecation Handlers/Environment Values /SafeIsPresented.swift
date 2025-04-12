@@ -9,13 +9,13 @@
 
 import SwiftUICore
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension EnvironmentValues {
 
     /// A Boolean value that indicates whether the view associated with this environment is currently presented.
     ///
     /// This environment value ensures compatibility across OS versions:
-    /// - On iOS 15 and later, it uses the new [`isPresented`](https://developer.apple.com/documentation/swiftui/environmentvalues/ispresented) property.
+    /// - On **iOS 15, iPadOS 15, macOS 12**, and later, it uses the new [`isPresented`](https://developer.apple.com/documentation/swiftui/environmentvalues/ispresented) property.
     /// - On earlier versions, it falls back to the [`presentationMode`](https://developer.apple.com/documentation/swiftui/environmentvalues/presentationmode) environment value isPresented variable.
     ///
     /// ## Apple Discussion
@@ -40,7 +40,7 @@ extension EnvironmentValues {
     /// }
     /// ```
     public var safeIsPresented: Bool {
-        if #available(iOS 15, *) {
+        if #available(iOS 15.0, macOS 12.0, *) {
             isPresented
         } else {
             presentationMode.wrappedValue.isPresented

@@ -49,6 +49,7 @@ By encapsulating necessary logic, **SafeModifiers** ensures that your app utiliz
 
 ### Input & Event Modifiers
 
+- ``SwiftUICore/View/safeFocusable(_:)``
 - ``SwiftUICore/View/safeOnChange(of:initial:_:)-35ola``
 - ``SwiftUICore/View/safeOnChange(of:initial:_:)-67u4j``
 

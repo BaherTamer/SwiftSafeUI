@@ -9,13 +9,13 @@
 
 import SwiftUI
 
-@available(iOS 15.0, *)
+@available(iOS 15.0, macOS 12.0, *)
 extension View {
 
     /// Marks this view as searchable, which configures the display of a search field.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 16 and later, it uses the new [`searchable(text:placement:prompt:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:)) method along with [`searchSuggestions(_:)`](https://developer.apple.com/documentation/swiftui/view/searchsuggestions(_:)).
+    /// - On **iOS 16, iPadOS 16, macOS 13**, and later, it uses the new [`searchable(text:placement:prompt:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:)) method along with [`searchSuggestions(_:)`](https://developer.apple.com/documentation/swiftui/view/searchsuggestions(_:)).
     /// - On earlier versions, it falls back to the [`searchable(text:placement:prompt:suggestions:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:suggestions:)) method.
     ///
     /// ## Apple Discussion
@@ -40,9 +40,9 @@ extension View {
     /// }
     /// ```
     ///
-    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
+    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to **iOS 16, iPadOS 16 , and macOS 13**.
     ///
-    /// > Important: This modifier requires iOS 15 or later.
+    /// > Important: This modifier requires **iOS 15, iPadOS 15 , and macOS 12** or later.
     ///
     /// - Parameters:
     ///   - text: The text to display and edit in the search field.
@@ -56,7 +56,7 @@ extension View {
         prompt: Text? = nil,
         @ViewBuilder suggestions: () -> Suggestions
     ) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, macOS 13.0, *) {
             self
                 .searchable(
                     text: text,
@@ -78,7 +78,7 @@ extension View {
     /// Marks this view as searchable, which configures the display of a search field.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 16 and later, it uses the new [`searchable(text:placement:prompt:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:)) method along with [`searchSuggestions(_:)`](https://developer.apple.com/documentation/swiftui/view/searchsuggestions(_:)).
+    /// - On **iOS 16, iPadOS 16, macOS 13**, and later, it uses the new [`searchable(text:placement:prompt:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:)) method along with [`searchSuggestions(_:)`](https://developer.apple.com/documentation/swiftui/view/searchsuggestions(_:)).
     /// - On earlier versions, it falls back to the [`searchable(text:placement:prompt:suggestions:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:suggestions:)) method.
     ///
     /// ## Apple Discussion
@@ -103,9 +103,9 @@ extension View {
     /// }
     /// ```
     ///
-    /// > Important: This modifier requires iOS 15 or later.
+    /// > Important: This modifier requires **iOS 15, iPadOS 15 , and macOS 12** or later.
     ///
-    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
+    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to **iOS 16, iPadOS 16 , and macOS 13**.
     ///
     /// - Parameters:
     ///   - text: The text to display and edit in the search field.
@@ -119,7 +119,7 @@ extension View {
         prompt: LocalizedStringKey,
         @ViewBuilder suggestions: () -> Suggestions
     ) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, macOS 13.0, *) {
             self
                 .searchable(
                     text: text,
@@ -141,7 +141,7 @@ extension View {
     /// Marks this view as searchable, which configures the display of a search field.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 16 and later, it uses the new [`searchable(text:placement:prompt:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:)) method along with [`searchSuggestions(_:)`](https://developer.apple.com/documentation/swiftui/view/searchsuggestions(_:)).
+    /// - On **iOS 16, iPadOS 16, macOS 13**, and later, it uses the new [`searchable(text:placement:prompt:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:)) method along with [`searchSuggestions(_:)`](https://developer.apple.com/documentation/swiftui/view/searchsuggestions(_:)).
     /// - On earlier versions, it falls back to the [`searchable(text:placement:prompt:suggestions:)`](https://developer.apple.com/documentation/swiftui/view/searchable(text:placement:prompt:suggestions:)) method.
     ///
     /// ## Apple Discussion
@@ -166,9 +166,9 @@ extension View {
     /// }
     /// ```
     ///
-    /// > Important: This modifier requires iOS 15 or later.
+    /// > Important: This modifier requires **iOS 15, iPadOS 15 , and macOS 12** or later.
     ///
-    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
+    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to **iOS 16, iPadOS 16 , and macOS 13**.
     ///
     /// - Parameters:
     ///   - text: The text to display and edit in the search field.
@@ -185,7 +185,7 @@ extension View {
         prompt: Prompt,
         @ViewBuilder suggestions: () -> Suggestions
     ) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, macOS 13.0, *) {
             self
                 .searchable(
                     text: text,

@@ -7,6 +7,8 @@
 //  Copyright © 2025 Baher Tamer. All rights reserved.
 //
 
+#if os(iOS)
+
 import SwiftUI
 
 @available(iOS 13.0, *)
@@ -15,7 +17,7 @@ extension View {
     /// Sets how often the shift key in the keyboard is automatically enabled.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 15 and later, it uses the [`textInputAutocapitalization(_:)`](https://developer.apple.com/documentation/swiftui/view/textinputautocapitalization(_:)) method.
+    /// - On **iOS 15, iPadOS 15** and later, it uses the [`textInputAutocapitalization(_:)`](https://developer.apple.com/documentation/swiftui/view/textinputautocapitalization(_:)) method.
     /// - On earlier versions, it falls back to the [`autocapitalization(_:)`](https://developer.apple.com/documentation/swiftui/view/autocapitalization(_:)) method.
     ///
     /// ## Apple Discussion
@@ -48,7 +50,7 @@ extension View {
 /// The kind of autocapitalization behavior applied during text input.
 ///
 /// This enum ensures compatibility across OS versions:
-/// - On iOS 15 and later, the enum maps to [`TextInputAutocapitalization`](https://developer.apple.com/documentation/swiftui/textinputautocapitalization).
+/// - On **iOS 15, iPadOS 15** and later, the enum maps to [`TextInputAutocapitalization`](https://developer.apple.com/documentation/swiftui/textinputautocapitalization).
 /// - On earlier versions, it maps to [`UITextAutocapitalizationType`](https://developer.apple.com/documentation/uikit/uitextautocapitalizationtype).
 ///
 /// ## Discussion
@@ -88,3 +90,5 @@ public enum AutocapitalizationType {
     }
 
 }
+
+#endif

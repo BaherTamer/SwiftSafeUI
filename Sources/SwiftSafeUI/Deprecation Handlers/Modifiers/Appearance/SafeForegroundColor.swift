@@ -9,13 +9,13 @@
 
 import SwiftUICore
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Sets the color of the foreground elements displayed by this view.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 15 and later, it utilizes the new [`foregroundStyle(_:)`](https://developer.apple.com/documentation/swiftui/view/foregroundstyle(_:) ) method.
+    /// - On **iOS 15, iPadOS 15, macOS 12**, and later, it utilizes the new [`foregroundStyle(_:)`](https://developer.apple.com/documentation/swiftui/view/foregroundstyle(_:) ) method.
     /// - On earlier versions, it falls back to the [`foregroundColor(_:)`](https://developer.apple.com/documentation/swiftui/view/foregroundcolor(_:) ) method.
     ///
     /// ## Apple Discussion
@@ -37,7 +37,7 @@ extension View {
     /// - Returns: A view that uses the foreground color you supply.
     @ViewBuilder
     nonisolated public func safeForegroundColor(_ color: Color) -> some View {
-        if #available(iOS 15.0, *) {
+        if #available(iOS 15.0, macOS 12.0, *) {
             foregroundStyle(color)
         } else {
             foregroundColor(color)

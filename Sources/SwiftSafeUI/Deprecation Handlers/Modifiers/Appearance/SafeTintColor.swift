@@ -9,13 +9,13 @@
 
 import SwiftUICore
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Sets the tint color within this view.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 16 and later, it utilizes the new [`tint(_:)`](https://developer.apple.com/documentation/swiftui/view/tint(_:)-23xyq) method.
+    /// - On **iOS 16, iPadOS 16, macOS 13**, and later, it utilizes the new [`tint(_:)`](https://developer.apple.com/documentation/swiftui/view/tint(_:)-23xyq) method.
     /// - On earlier versions, it falls back to the [`accentColor(_:)`](https://developer.apple.com/documentation/swiftui/view/accentcolor(_:) ) method.
     ///
     /// ## Apple Discussion
@@ -51,7 +51,7 @@ extension View {
     /// - Parameter color: The color to use as an accent color.
     @ViewBuilder
     nonisolated public func safeTintColor(_ color: Color?) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, macOS 13.0, *) {
             tint(color)
         } else {
             accentColor(color)

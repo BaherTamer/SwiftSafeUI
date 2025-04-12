@@ -9,13 +9,13 @@
 
 import SwiftUICore
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Layers the views that you specify in front of this view.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 15 and later, it utilizes the new [`overlay(alignment:content:)`](https://developer.apple.com/documentation/swiftui/view/overlay(alignment:content:)) method.
+    /// - On **iOS 15, iPadOS 15, macOS 12**, and later, it utilizes the new [`overlay(alignment:content:)`](https://developer.apple.com/documentation/swiftui/view/overlay(alignment:content:)) method.
     /// - On earlier versions, it falls back to the [`overlay(_:alignment:)`](https://developer.apple.com/documentation/swiftui/view/overlay(_:alignment:)) method.
     ///
     /// ## Apple Discussion
@@ -49,7 +49,7 @@ extension View {
         alignment: Alignment = .center,
         @ViewBuilder content: () -> Content
     ) -> some View {
-        if #available(iOS 15.0, *) {
+        if #available(iOS 15.0, macOS 12.0, *) {
             overlay(
                 alignment: alignment,
                 content: content

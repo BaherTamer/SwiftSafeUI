@@ -9,13 +9,13 @@
 
 import SwiftUICore
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Masks this view using the alpha channel of the given view.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 15 and later, it uses the new [`mask(alignment:_:)`](https://developer.apple.com/documentation/swiftui/view/mask(alignment:_:)) method.
+    /// - On **iOS 15, iPadOS 15, macOS 12**, and later, it uses the new [`mask(alignment:_:)`](https://developer.apple.com/documentation/swiftui/view/mask(alignment:_:)) method.
     /// - On earlier versions, it falls back to the deprecated [`mask(_:)`](https://developer.apple.com/documentation/swiftui/view/mask(_:)) method.
     ///
     /// ## Apple Discussion
@@ -41,7 +41,7 @@ extension View {
         alignment: Alignment = .center,
         @ViewBuilder _ content: () -> Content
     ) -> some View {
-        if #available(iOS 15.0, *) {
+        if #available(iOS 15.0, macOS 12.0, *) {
             mask(
                 alignment: alignment,
                 content

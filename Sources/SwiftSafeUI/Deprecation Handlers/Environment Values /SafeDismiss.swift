@@ -9,13 +9,13 @@
 
 import SwiftUICore
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension EnvironmentValues {
 
     /// An action that dismisses the current presentation.
     ///
     /// This environment value ensures compatibility across OS versions:
-    /// - On iOS 15 and later, it uses the new [`dismiss()`](https://developer.apple.com/documentation/swiftui/environmentvalues/dismiss) method.
+    /// - On **iOS 15, iPadOS 15, macOS 12**, and later, it uses the new [`dismiss()`](https://developer.apple.com/documentation/swiftui/environmentvalues/dismiss) method.
     /// - On earlier versions, it falls back to the [`presentationMode`](https://developer.apple.com/documentation/swiftui/environmentvalues/presentationmode) environment value dismiss method.
     ///
     /// ## Apple Discussion
@@ -88,12 +88,13 @@ extension EnvironmentValues {
 }
 
 // MARK: - Private Helpers
+@available(iOS 13.0, macOS 10.15, *)
 extension EnvironmentValues {
 
     /// Calls dismiss action based on OS versions.
     @MainActor
     private func dismissAction() {
-        if #available(iOS 15, *) {
+        if #available(iOS 15.0, macOS 12.0, *) {
             dismiss()
         } else {
             presentationMode.wrappedValue.dismiss()

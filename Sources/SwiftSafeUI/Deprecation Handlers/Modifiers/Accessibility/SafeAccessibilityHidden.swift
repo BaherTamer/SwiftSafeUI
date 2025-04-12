@@ -9,18 +9,18 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Specifies whether to hide this view from system accessibility features.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 14 and later, it uses the new [`accessibilityHidden(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityhidden(_:)) method.
+    /// - On **iOS 14, iPadOS 14, macOS 11**, and later, it uses the new [`accessibilityHidden(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityhidden(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(hidden:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(hidden:)) method.
     nonisolated public func safeAccessibilityHidden(
         _ hidden: Bool
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 11.0, *) {
             accessibilityHidden(hidden)
         } else {
             accessibility(hidden: hidden)

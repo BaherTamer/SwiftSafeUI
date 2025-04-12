@@ -15,7 +15,7 @@ extension View {
     /// Sets a limit for the number of lines text can occupy in this view.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 16 and later, it uses the native [`lineLimit(_:reservesSpace:)`](https://developer.apple.com/documentation/swiftui/view/linelimit(_:reservesspace:)) method to reserve space as needed.
+    /// - On **iOS 16, iPadOS 16, macOS 13**, and later, it uses the native [`lineLimit(_:reservesSpace:)`](https://developer.apple.com/documentation/swiftui/view/linelimit(_:reservesspace:)) method to reserve space as needed.
     /// - On earlier versions, it falls back to [`lineLimit(_:)`](https://developer.apple.com/documentation/swiftui/view/linelimit(_:)-513mb) and manually adjusts the view's height using a `GeometryReader` to mimic the `reservesSpace` behavior.
     ///
     /// ## Example
@@ -31,7 +31,7 @@ extension View {
     /// }
     /// ```
     ///
-    /// > Note: The `lineLimit` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `reservesSpace` feature on versions prior to iOS 16.
+    /// > Note: The `lineLimit` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `reservesSpace` feature on versions prior to **iOS 16, iPadOS 16 , and macOS 13**.
     ///
     /// > Warning: This modifier should **not** be used as the height calculation for dynamic large text is not working as expected. Issues arise with dynamically adjusted text heights, especially with larger accessibility sizes and custom text settings.
     ///
@@ -52,6 +52,7 @@ extension View {
 
 }
 
+@available(iOS 13.0, macOS 10.15, *)
 private struct SafeLineLimit: ViewModifier {
     // MARK: - Inputs
     let limit: Int
@@ -62,7 +63,7 @@ private struct SafeLineLimit: ViewModifier {
 
     // MARK: - Body
     func body(content: Content) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, macOS 13.0, *) {
             applyReservesSpace(content)
         } else {
             applyDeprecatedReservesSpace(content)
@@ -71,14 +72,16 @@ private struct SafeLineLimit: ViewModifier {
 }
 
 // MARK: - Private Helpers
+@available(iOS 13.0, macOS 10.15, *)
 extension SafeLineLimit {
-    @available(iOS 16.0, *)
+    @available(iOS 16.0, macOS 13.0, *)
     private func applyReservesSpace(_ content: Content) -> some View {
         content
             .lineLimit(limit, reservesSpace: reservesSpace)
     }
 
     @available(iOS, introduced: 13.0, deprecated: 16.0)
+    @available(macOS, introduced: 10.15, deprecated: 13.0)
     private func applyDeprecatedReservesSpace(_ content: Content) -> some View {
         content
             .lineLimit(limit)
@@ -103,6 +106,7 @@ extension SafeLineLimit {
 }
 
 // MARK: - Text Height Preference Key
+@available(iOS 13.0, macOS 10.15, *)
 private struct TextHeightPreferenceKey: PreferenceKey {
     // MARK: Constants
     static let defaultValue: CGFloat = 20

@@ -9,13 +9,13 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Uses the string you specify to identify the view.
     ///
     /// This method ensures compatibility across OS versions:
-    /// - On iOS 14 and later, it uses the new [`accessibilityIdentifier(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityidentifier(_:)) method.
+    /// - On **iOS 14, iPadOS 14, macOS 11**, and later, it uses the new [`accessibilityIdentifier(_:)`](https://developer.apple.com/documentation/swiftui/view/accessibilityidentifier(_:)) method.
     /// - On earlier versions, it falls back to the [`accessibility(identifier:)`](https://developer.apple.com/documentation/swiftui/view/accessibility(identifier:)) method.
     ///
     /// ## Apple Discussion
@@ -23,7 +23,7 @@ extension View {
     nonisolated public func safeAccessibilityIdentifier(
         _ identifier: String
     ) -> ModifiedContent<Self, AccessibilityAttachmentModifier> {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 11.0, *) {
             accessibilityIdentifier(identifier)
         } else {
             accessibility(identifier: identifier)
