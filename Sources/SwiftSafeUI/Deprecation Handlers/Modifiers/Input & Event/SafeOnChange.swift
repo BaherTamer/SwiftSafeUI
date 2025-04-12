@@ -9,7 +9,7 @@
 
 import SwiftUICore
 
-@available(iOS 14.0, *)
+@available(iOS 14.0, macOS 11.0, *)
 extension View {
 
     /// Adds a modifier for this view that fires an action when a specific value changes.
@@ -60,7 +60,7 @@ extension View {
         initial: Bool = false,
         _ action: @escaping () -> Void
     ) -> some View {
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, macOS 14.0, *) {
             onChange(
                 of: value,
                 initial: initial,
@@ -128,7 +128,7 @@ extension View {
         initial: Bool = false,
         _ action: @escaping (Value, Value) -> Void
     ) -> some View {
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, macOS 14.0, *) {
             onChange(
                 of: value,
                 initial: initial,
