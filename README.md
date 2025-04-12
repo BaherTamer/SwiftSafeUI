@@ -24,6 +24,7 @@ As SwiftUI evolves with every release, Apple frequently introduces new APIs whil
 ## ⚙️ Compatibility
 - Swift 5.9+
 - iOS 13.0+
+- macOS 10.15+
 
 <br/>
 
@@ -47,7 +48,7 @@ Add a dependency in your `Package.swift`
 dependencies: [
     .package(
         url: "https://github.com/BaherTamer/SwiftSafeUI.git",
-        .upToNextMajor(from: "1.5.0")
+        .upToNextMajor(from: "1.6.0")
     )
 ]
 ```
