@@ -40,7 +40,7 @@ extension View {
     /// }
     /// ```
     ///
-    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
+    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to **iOS 16 and macOS 13**.
     ///
     /// > Important: This modifier requires **iOS 15 and macOS 12** or later.
     ///
@@ -105,7 +105,7 @@ extension View {
     ///
     /// > Important: This modifier requires **iOS 15 and macOS 12** or later.
     ///
-    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
+    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to **iOS 16 and macOS 13**.
     ///
     /// - Parameters:
     ///   - text: The text to display and edit in the search field.
@@ -168,7 +168,7 @@ extension View {
     ///
     /// > Important: This modifier requires **iOS 15 and macOS 12** or later.
     ///
-    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to iOS 16.
+    /// > Note: The `searchable` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `searchSuggestions` feature on versions prior to **iOS 16 and macOS 13**.
     ///
     /// - Parameters:
     ///   - text: The text to display and edit in the search field.

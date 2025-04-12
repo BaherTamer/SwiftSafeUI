@@ -32,7 +32,7 @@ extension View {
     /// }
     /// ```
     ///
-    /// > Note: The `lineLimit` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `reservesSpace` feature on versions prior to iOS 16.
+    /// > Note: The `lineLimit` functionality itself remains consistent across all supported OS versions. This modifier specifically addresses the `reservesSpace` feature on versions prior to **iOS 16 and macOS 13**.
     ///
     /// > Warning: This modifier should **not** be used as the height calculation for dynamic large text is not working as expected. Issues arise with dynamically adjusted text heights, especially with larger accessibility sizes and custom text settings.
     ///
