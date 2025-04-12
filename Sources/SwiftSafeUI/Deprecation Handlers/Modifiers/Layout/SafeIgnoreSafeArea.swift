@@ -9,7 +9,7 @@
 
 import SwiftUICore
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension View {
 
     /// Expands the safe area of a view.
@@ -45,7 +45,7 @@ extension View {
     nonisolated public func safeIgnoreSafeArea(
         _ edges: Edge.Set = .all
     ) -> some View {
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 11.0, *) {
             ignoresSafeArea(edges: edges)
         } else {
             edgesIgnoringSafeArea(edges)
