@@ -32,7 +32,7 @@ import SwiftUI
 ///     }
 /// }
 /// ```
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 public struct SafeScrollView<Content: View>: View {
     // MARK: - Inputs
     private let axes: Axis.Set
@@ -62,7 +62,7 @@ public struct SafeScrollView<Content: View>: View {
 
     // MARK: - Body
     public var body: some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, macOS 13.0, *) {
             scrollView
         } else {
             deprecatedScrollView
@@ -71,8 +71,9 @@ public struct SafeScrollView<Content: View>: View {
 }
 
 // MARK: - Private Helpers
+@available(iOS 13.0, macOS 10.15, *)
 extension SafeScrollView {
-    @available(iOS 16.0, *)
+    @available(iOS 16.0, macOS 13.0, *)
     private var scrollView: some View {
         ScrollView(axes) {
             content
@@ -81,6 +82,7 @@ extension SafeScrollView {
     }
 
     @available(iOS, introduced: 13.0, deprecated: 16.0)
+    @available(macOS, introduced: 10.15, deprecated: 13.0)
     private var deprecatedScrollView: some View {
         ScrollView(
             axes,
