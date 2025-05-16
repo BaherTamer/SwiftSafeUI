@@ -57,6 +57,10 @@ By encapsulating necessary logic, **SafeModifiers** ensures that your app utiliz
 
 - ``SwiftUICore/View/safeIgnoreSafeArea(_:)``
 
+### Presentation Modifiers
+
+- ``SwiftUICore/View/safePresentationBackground(alignment:content:)``
+
 ### Search Modifiers
 
 - ``SwiftUICore/View/safeSearchable(text:placement:prompt:suggestions:)-9lajn``
