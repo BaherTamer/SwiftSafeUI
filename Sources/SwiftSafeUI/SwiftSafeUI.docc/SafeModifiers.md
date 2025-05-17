@@ -40,8 +40,11 @@ By encapsulating necessary logic, **SafeModifiers** ensures that your app utiliz
 ### Auxiliary View Modifiers
 
 - ``SwiftUICore/View/safeNavigationBarHidden(_:)``
+- ``SwiftUICore/View/safeNavigationBarItems(leading:trailing:)``
+- ``SwiftUICore/View/safeNavigationBarLeadingItem(content:)``
 - ``SwiftUICore/View/safeNavigationBarTitle(_:displayMode:)-3kpza``
 - ``SwiftUICore/View/safeNavigationBarTitle(_:displayMode:)-3cyjb``
+- ``SwiftUICore/View/safeNavigationBarTrailingItem(content:)``
 
 ### Drawing & Graphics Modifiers
 
