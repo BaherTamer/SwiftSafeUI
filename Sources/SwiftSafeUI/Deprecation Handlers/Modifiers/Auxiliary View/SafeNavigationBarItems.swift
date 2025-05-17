@@ -5,6 +5,8 @@
 //  Created by Baher Tamer on 17/05/2025.
 //
 
+#if os(iOS)
+
 import SwiftUI
 
 @available(iOS 13.0, macOS 10.15, *)
@@ -89,3 +91,5 @@ extension View {
     }
 
 }
+
+#endif
