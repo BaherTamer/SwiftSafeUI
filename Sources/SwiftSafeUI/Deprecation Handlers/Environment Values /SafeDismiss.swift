@@ -7,7 +7,7 @@
 //  Copyright © 2025 Baher Tamer. All rights reserved.
 //
 
-import SwiftUICore
+import SwiftUI
 
 @available(iOS 13.0, macOS 10.15, *)
 extension EnvironmentValues {
@@ -82,22 +82,14 @@ extension EnvironmentValues {
     /// The dismiss action has no effect on a view that isn’t currently presented. If you need to query whether SwiftUI is currently presenting a view, read the ``safeIsPresented`` environment value.
     @MainActor
     public var safeDismiss: () -> Void {
-        dismissAction
-    }
-
-}
-
-// MARK: - Private Helpers
-@available(iOS 13.0, macOS 10.15, *)
-extension EnvironmentValues {
-
-    /// Calls dismiss action based on OS versions.
-    @MainActor
-    private func dismissAction() {
         if #available(iOS 15.0, macOS 12.0, *) {
-            dismiss()
+            {
+                dismiss()
+            }
         } else {
-            presentationMode.wrappedValue.dismiss()
+            {
+                presentationMode.wrappedValue.dismiss()
+            }
         }
     }
 
