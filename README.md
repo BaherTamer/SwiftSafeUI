@@ -49,7 +49,7 @@ Add a dependency in your `Package.swift`
 dependencies: [
     .package(
         url: "https://github.com/BaherTamer/SwiftSafeUI.git",
-        .upToNextMajor(from: "1.7.0")
+        .upToNextMajor(from: "1.7.1")
     )
 ]
 ```

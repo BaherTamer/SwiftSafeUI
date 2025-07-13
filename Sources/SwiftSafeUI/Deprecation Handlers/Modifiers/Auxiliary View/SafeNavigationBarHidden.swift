@@ -9,7 +9,7 @@
 
 #if os(iOS)
 
-import SwiftUICore
+import SwiftUI
 
 @available(iOS 13.0, *)
 @available(macOS, unavailable)

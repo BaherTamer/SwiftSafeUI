@@ -9,7 +9,7 @@
 
 #if os(macOS)
 
-import SwiftUICore
+import SwiftUI
 
 @available(macOS 10.15, *)
 extension View {
