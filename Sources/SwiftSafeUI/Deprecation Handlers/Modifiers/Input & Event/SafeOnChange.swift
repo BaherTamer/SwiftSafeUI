@@ -7,7 +7,7 @@
 //  Copyright © 2025 Baher Tamer. All rights reserved.
 //
 
-import SwiftUICore
+import SwiftUI
 
 @available(iOS 14.0, macOS 11.0, *)
 extension View {
