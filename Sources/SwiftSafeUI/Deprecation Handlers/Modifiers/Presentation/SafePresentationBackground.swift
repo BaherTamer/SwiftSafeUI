@@ -77,6 +77,27 @@ extension View {
 
 }
 
+#if os(macOS)
+
+/// A `NSView` that clears the background color of its superview’s superview to prevent default modal backgrounds.
+private struct ClearModalBackgroundView: NSViewRepresentable {
+    private class BackgroundRemovalView: NSView {
+        override func viewDidMoveToWindow() {
+            super.viewDidMoveToWindow()
+            superview?.superview?.wantsLayer = true
+            superview?.superview?.layer?.backgroundColor = NSColor.clear.cgColor
+        }
+    }
+
+    func makeNSView(context: Context) -> NSView {
+        BackgroundRemovalView()
+    }
+
+    func updateNSView(_ nsView: NSView, context: Context) {}
+}
+
+#else
+
 /// A `UIView` that clears the background color of its superview’s superview to prevent default modal backgrounds.
 private struct ClearModalBackgroundView: UIViewRepresentable {
     private class BackgroundRemovalView: UIView {
@@ -92,3 +113,5 @@ private struct ClearModalBackgroundView: UIViewRepresentable {
 
     func updateUIView(_ uiView: UIView, context: Context) {}
 }
+
+#endif
